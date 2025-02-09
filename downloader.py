@@ -20,10 +20,6 @@ current_video_name = None
 is_collecting_links = False
 
 def find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist):
-    """
-    Загружает видео в последовательном режиме, используя один драйвер.
-    Работает в текущей вкладке.
-    """
     try:
         driver.get(video_link)
         from utils import cookies_path
@@ -71,10 +67,6 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
         save_failed_link(video_link)
 
 def download_video(video_url, output_folder, video_name, pause_event, progress_label, progress_bar, blacklist):
-    """
-    Скачивает видео с отображением прогресса.
-    Если имя видео содержит число из черного списка – пропускает.
-    """
     for num in blacklist:
         if num in video_name:
             write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
@@ -116,10 +108,10 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
 
 def collect_video_links(root, start_url, download_folder, search_pause_event):
     """
-    Сбор ссылок на видео с использованием Selenium.
-    Ссылки сохраняются в файл "video_links.txt" по мере их нахождения.
-    Если файл уже существует, новые ссылки не дублируются.
-    Сбор продолжается до тех пор, пока на странице отсутствуют видео-ссылки (конец пагинации).
+    Обновлённая функция сбора ссылок:
+    – Каждая найденная ссылка нормализуется с помощью strip().
+    – Если ссылка не содержится в файле video_links.txt, она сразу записывается.
+    – Проверка на наличие скачанного видео (по размеру файла) будет выполняться только при загрузке видео.
     """
     global is_collecting_links
     if is_collecting_links:
@@ -137,14 +129,12 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
                     existing_links.add(link)
     links_collected = list(existing_links)
 
-    # Парсим стартовый URL, чтобы извлечь offset и mode
     from urllib.parse import urlparse, parse_qs
     parsed_url = urlparse(start_url)
     query_params = parse_qs(parsed_url.query)
     current_offset = int(query_params.get("offset", [0])[0])
     mode = query_params.get("mode", ["latest"])[0]
 
-    # Формируем базовый URL без offset
     base_url = f"https://beautifulagony.com/public/main.php?page=view&mode={mode}&offset={{}}"
     current_url = base_url.format(current_offset)
 
@@ -155,16 +145,20 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
             write_log(f"Сбор ссылок, страница: {current_url}", log_type="page")
             driver.get(current_url)
             page_links = driver.find_elements(By.XPATH, '//a[contains(@href, "page=player&out=bkg&media")]')
-            # Если на странице нет видео-ссылок, считаем, что достигнут конец пагинации
             if not page_links:
                 write_log("На странице не найдено видео ссылок, завершаем сбор.", log_type="info")
                 break
-            new_links = []
             from utils import load_blacklist
             blacklist = load_blacklist("blacklist.txt")
             for link in page_links:
                 video_link = link.get_attribute("href")
+                if video_link:
+                    video_link = video_link.strip()  # Нормализуем ссылку
+                else:
+                    continue
+                # Если ссылка уже есть в файле, пропускаем её
                 if video_link in existing_links:
+                    write_log(f"Ссылка уже существует: {video_link}", log_type="info")
                     continue
                 video_name = video_link.split("/")[-1].split("?")[0]
                 skip = False
@@ -173,25 +167,15 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
                         skip = True
                         break
                 if skip:
+                    write_log(f"Ссылка {video_link} пропущена из-за черного списка", log_type="info")
                     continue
-                output_path = os.path.join(download_folder, video_name)
-                try:
-                    response = requests.head(video_link, allow_redirects=True)
-                    size_bytes = int(response.headers.get('Content-Length', 0))
-                except Exception as e:
-                    size_bytes = 0
-                if os.path.exists(output_path) and os.path.getsize(output_path) == size_bytes:
-                    continue
-                new_links.append(video_link)
-            if new_links:
+
+                # Здесь мы уже не проверяем, скачано ли видео (по размеру), просто добавляем новую ссылку.
                 with open(video_links_file, "a", encoding="utf-8") as f:
-                    for video_link in new_links:
-                        if video_link not in existing_links:
-                            f.write(video_link + "\n")
-                            existing_links.add(video_link)
-                            links_collected.append(video_link)
-            else:
-                write_log(f"На странице {current_url} не найдено новых ссылок.", log_type="info")
+                    f.write(video_link + "\n")
+                existing_links.add(video_link)
+                links_collected.append(video_link)
+                write_log(f"Новая ссылка добавлена: {video_link}", log_type="info")
             current_offset += 20
             current_url = base_url.format(current_offset)
         write_log(f"Сбор ссылок завершён, собрано {len(links_collected)} ссылок.", log_type="info")
@@ -202,10 +186,6 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
 
 
 def download_videos_sequential(root, download_folder, pause_event):
-    """
-    Последовательная загрузка видео по ссылкам, сохранённым в файле "video_links.txt".
-    Для каждого видео отображается прогресс-бар и текстовая информация о загрузке.
-    """
     from utils import load_blacklist, write_log
     try:
         with open("video_links.txt", "r", encoding="utf-8") as f:
@@ -226,7 +206,6 @@ def download_videos_sequential(root, download_folder, pause_event):
     blacklist = load_blacklist("blacklist.txt")
     from browser import driver
     for link in links:
-        # Для каждого видео создаём отдельный блок в окне прогресса
         frame = ctk.CTkFrame(progress_container)
         frame.pack(pady=5, fill="x")
         label = ctk.CTkLabel(frame, text="Подготовка...")
@@ -237,10 +216,6 @@ def download_videos_sequential(root, download_folder, pause_event):
     write_log("Последовательная загрузка завершена.", log_type="info")
 
 def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist):
-    """
-    Последовательно загружает видео по ссылке, используя один драйвер.
-    Работает без открытия новой вкладки.
-    """
     try:
         driver.get(video_link)
         from utils import cookies_path

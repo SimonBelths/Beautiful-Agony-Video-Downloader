@@ -7,7 +7,7 @@ import threading
 from browser import authorize, check_authorization
 from downloader import (
     collect_video_links,
-    download_videos_sequential,  # Изменено: последовательная загрузка
+    download_videos_sequential,  # Последовательная загрузка
     is_processing_links  # Флаг, если понадобится
 )
 from utils import (
@@ -111,12 +111,17 @@ def create_gui():
     collection_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     collection_frame.pack(pady=10, fill="x")
 
-    # Кнопка для запуска сбора ссылок (с проверкой, чтобы не запускалось несколько потоков)
+    # Функция для запуска сбора ссылок с изменением логики кнопок
     def start_collecting():
         from downloader import is_collecting_links
         if is_collecting_links:
             messagebox.showinfo("Информация", "Сбор ссылок уже запущен!")
             return
+        # Скрываем кнопку "Собрать ссылки на видео"
+        collect_button.grid_remove()
+        # Показываем кнопки "Остановить поиск ссылок" и "Возобновить поиск ссылок"
+        stop_search_button.grid()
+        resume_search_button.grid()
         threading.Thread(
             target=lambda: collect_video_links(root, url_var.get(), download_folder_var.get(), search_pause_event),
             daemon=True
@@ -127,34 +132,49 @@ def create_gui():
         command=start_collecting
     )
     collect_button.grid(row=0, column=0, padx=5, pady=5)
+    # Скрываем кнопку изначально
+    collect_button.grid_remove()
 
-    # Кнопки для остановки и возобновления поиска ссылок
     stop_search_button = ctk.CTkButton(
         master=collection_frame, text="Остановить поиск ссылок",
         command=lambda: search_pause_event.clear()
     )
     stop_search_button.grid(row=0, column=1, padx=5, pady=5)
+    # Скрываем кнопки поиска изначально
+    stop_search_button.grid_remove()
 
     resume_search_button = ctk.CTkButton(
         master=collection_frame, text="Возобновить поиск ссылок",
         command=lambda: search_pause_event.set()
     )
     resume_search_button.grid(row=0, column=2, padx=5, pady=5)
+    resume_search_button.grid_remove()
 
     #########################################
-    # 4. Блок управления загрузкой (Этап 2 и Дополнительные элементы)
+    # 4. Блок последовательной загрузки (Этап 2) и управление загрузкой
     download_control_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     download_control_frame.pack(pady=10, fill="x")
+
+    # Функция для запуска загрузки с изменением логики кнопок
+    def start_downloading():
+        # Скрываем кнопку "Скачать видео по ссылкам"
+        download_seq_button.grid_remove()
+        # Показываем кнопки "Пауза загрузки" и "Возобновить загрузку"
+        pause_button.grid()
+        resume_button.grid()
+        threading.Thread(
+            target=lambda: download_videos_sequential(root, download_folder_var.get(), pause_event),
+            daemon=True
+        ).start()
 
     download_seq_button = ctk.CTkButton(
         master=download_control_frame,
         text="Скачать видео по ссылкам",
-        command=lambda: threading.Thread(
-            target=lambda: download_videos_sequential(root, download_folder_var.get(), pause_event),
-            daemon=True
-        ).start()
+        command=start_downloading
     )
     download_seq_button.grid(row=0, column=0, padx=5, pady=5)
+    # Скрываем кнопку изначально
+    download_seq_button.grid_remove()
 
     pause_button = ctk.CTkButton(
         master=download_control_frame,
@@ -162,6 +182,7 @@ def create_gui():
         command=lambda: pause_event.clear()
     )
     pause_button.grid(row=0, column=1, padx=5, pady=5)
+    pause_button.grid_remove()
 
     resume_button = ctk.CTkButton(
         master=download_control_frame,
@@ -169,15 +190,35 @@ def create_gui():
         command=lambda: pause_event.set()
     )
     resume_button.grid(row=0, column=2, padx=5, pady=5)
+    resume_button.grid_remove()
 
     #########################################
-    # 5. Блок работы с черным списком
+    # 5. Блок для открытия файла со ссылками и папки загрузок
+    files_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
+    files_frame.pack(pady=10, fill="x")
+    open_links_button = ctk.CTkButton(
+        master=files_frame,
+        text="Открыть файл со ссылками",
+        command=lambda: __import__("os").startfile("video_links.txt")
+    )
+    open_links_button.grid(row=0, column=0, padx=5, pady=5)
+    open_downloads_button = ctk.CTkButton(
+        master=files_frame,
+        text="Открыть папку загрузок",
+        command=lambda: open_download_folder(download_folder_var.get())
+    )
+    open_downloads_button.grid(row=0, column=1, padx=5, pady=5)
+
+    #########################################
+    # 6. Блок работы с чёрным списком
     blacklist_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     blacklist_frame.pack(pady=10, fill="x")
+
     def create_blacklist():
         from utils import create_blacklist_from_pages
         blacklist = create_blacklist_from_pages()
         messagebox.showinfo("Черный список", f"Черный список создан.\nНайдено чисел: {len(blacklist)}")
+
     create_blacklist_button = ctk.CTkButton(
         master=blacklist_frame, text="Создать черный список",
         command=lambda: threading.Thread(target=create_blacklist, daemon=True).start()
@@ -190,7 +231,7 @@ def create_gui():
     open_blacklist_button.grid(row=0, column=1, padx=5, pady=5)
 
     #########################################
-    # 6. Блок логов
+    # 7. Блок логов
     log_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     log_frame.pack(pady=10, fill="both", expand=True)
     try:
@@ -202,12 +243,23 @@ def create_gui():
     log_buttons_frame.pack(pady=5, fill="x")
     log_file_button = ctk.CTkButton(master=log_buttons_frame, text="Открыть лог файл", command=open_log_file)
     log_file_button.grid(row=0, column=0, padx=5, pady=5)
-    failed_file_button = ctk.CTkButton(master=log_buttons_frame, text="Открыть файл ошибок", command=open_failed_links_file)
+    failed_file_button = ctk.CTkButton(master=log_buttons_frame, text="Открыть файл ошибок",
+                                       command=open_failed_links_file)
     failed_file_button.grid(row=0, column=1, padx=5, pady=5)
     show_only_pages_and_errors = tk.BooleanVar(value=False)
-    filter_checkbox = ctk.CTkCheckBox(master=log_buttons_frame, text="Показывать только страницы и ошибки", variable=show_only_pages_and_errors)
+    filter_checkbox = ctk.CTkCheckBox(master=log_buttons_frame, text="Показывать только страницы и ошибки",
+                                      variable=show_only_pages_and_errors)
     filter_checkbox.grid(row=0, column=2, padx=5, pady=5)
     set_log_widgets(log_text, show_only_pages_and_errors)
+
+    # Переназначаем команду кнопки авторизации, чтобы после её нажатия
+    # появились кнопки "Собрать ссылки на видео" и "Скачать видео по ссылкам"
+    def on_authorize():
+        authorize(timer_label, check_button, root)
+        collect_button.grid()       # Показываем кнопку сбора ссылок
+        download_seq_button.grid()  # Показываем кнопку загрузки видео
+
+    auth_button.configure(command=on_authorize)
 
     root.mainloop()
 
