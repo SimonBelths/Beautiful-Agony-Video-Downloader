@@ -113,19 +113,20 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
         save_failed_link(video_url)
     is_downloading_video = False
 
+
 def collect_video_links(root, start_url, download_folder, search_pause_event):
     """
     Сбор ссылок на видео с использованием Selenium.
     Ссылки сохраняются в файл "video_links.txt" по мере их нахождения.
     Если файл уже существует, новые ссылки не дублируются.
-    Сбор продолжается до тех пор, пока не достигнут конец пагинации
-    (то есть на странице отсутствуют видео-ссылки).
+    Сбор продолжается до тех пор, пока на странице отсутствуют видео-ссылки (конец пагинации).
     """
     global is_collecting_links
     if is_collecting_links:
         write_log("Сбор ссылок уже запущен!", log_type="info")
         return
     is_collecting_links = True
+
     video_links_file = "video_links.txt"
     existing_links = set()
     if os.path.exists(video_links_file):
@@ -135,10 +136,20 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
                 if link:
                     existing_links.add(link)
     links_collected = list(existing_links)
+
+    # Парсим стартовый URL, чтобы извлечь offset и mode
+    from urllib.parse import urlparse, parse_qs
+    parsed_url = urlparse(start_url)
+    query_params = parse_qs(parsed_url.query)
+    current_offset = int(query_params.get("offset", [0])[0])
+    mode = query_params.get("mode", ["latest"])[0]
+
+    # Формируем базовый URL без offset
+    base_url = f"https://beautifulagony.com/public/main.php?page=view&mode={mode}&offset={{}}"
+    current_url = base_url.format(current_offset)
+
     try:
         from browser import driver
-        current_offset = 0
-        current_url = start_url
         while True:
             search_pause_event.wait()
             write_log(f"Сбор ссылок, страница: {current_url}", log_type="page")
@@ -182,12 +193,13 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
             else:
                 write_log(f"На странице {current_url} не найдено новых ссылок.", log_type="info")
             current_offset += 20
-            current_url = f"https://beautifulagony.com/public/main.php?page=view&mode=latest&offset={current_offset}"
+            current_url = base_url.format(current_offset)
         write_log(f"Сбор ссылок завершён, собрано {len(links_collected)} ссылок.", log_type="info")
     except Exception as e:
         write_log(f"Ошибка при сборе ссылок: {e}", log_type="error")
     is_collecting_links = False
     return links_collected
+
 
 def download_videos_sequential(root, download_folder, pause_event):
     """

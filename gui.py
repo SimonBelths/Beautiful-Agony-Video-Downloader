@@ -142,33 +142,36 @@ def create_gui():
     resume_search_button.grid(row=0, column=2, padx=5, pady=5)
 
     #########################################
-    # 4. Блок последовательной загрузки (Этап 2)
-    download_seq_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
-    download_seq_frame.pack(pady=10, fill="x")
+    # 4. Блок управления загрузкой (Этап 2 и Дополнительные элементы)
+    download_control_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
+    download_control_frame.pack(pady=10, fill="x")
+
     download_seq_button = ctk.CTkButton(
-        master=download_seq_frame, text="Скачать видео по ссылкам",
+        master=download_control_frame,
+        text="Скачать видео по ссылкам",
         command=lambda: threading.Thread(
             target=lambda: download_videos_sequential(root, download_folder_var.get(), pause_event),
             daemon=True
         ).start()
     )
-    download_seq_button.pack(padx=5, pady=5)
+    download_seq_button.grid(row=0, column=0, padx=5, pady=5)
 
-    #########################################
-    # 5. Дополнительные элементы управления (Пауза/Возобновление для загрузки)
-    extra_controls_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
-    extra_controls_frame.pack(pady=10, fill="x")
     pause_button = ctk.CTkButton(
-        master=extra_controls_frame, text="Пауза загрузки", command=lambda: pause_event.clear()
+        master=download_control_frame,
+        text="Пауза загрузки",
+        command=lambda: pause_event.clear()
     )
-    pause_button.grid(row=0, column=0, padx=5, pady=5)
+    pause_button.grid(row=0, column=1, padx=5, pady=5)
+
     resume_button = ctk.CTkButton(
-        master=extra_controls_frame, text="Возобновить загрузку", command=lambda: pause_event.set()
+        master=download_control_frame,
+        text="Возобновить загрузку",
+        command=lambda: pause_event.set()
     )
-    resume_button.grid(row=0, column=1, padx=5, pady=5)
+    resume_button.grid(row=0, column=2, padx=5, pady=5)
 
     #########################################
-    # 6. Блок работы с черным списком
+    # 5. Блок работы с черным списком
     blacklist_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     blacklist_frame.pack(pady=10, fill="x")
     def create_blacklist():
@@ -187,7 +190,7 @@ def create_gui():
     open_blacklist_button.grid(row=0, column=1, padx=5, pady=5)
 
     #########################################
-    # 7. Блок логов
+    # 6. Блок логов
     log_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     log_frame.pack(pady=10, fill="both", expand=True)
     try:
