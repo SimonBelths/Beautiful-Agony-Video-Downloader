@@ -7,7 +7,7 @@ import threading
 from browser import authorize, check_authorization
 from downloader import (
     collect_video_links,
-    download_videos_multithreaded,
+    download_videos_sequential,  # Изменено: последовательная загрузка
     is_processing_links  # Флаг, если понадобится
 )
 from utils import (
@@ -142,17 +142,17 @@ def create_gui():
     resume_search_button.grid(row=0, column=2, padx=5, pady=5)
 
     #########################################
-    # 4. Блок многопоточной загрузки (Этап 2)
-    download_mt_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
-    download_mt_frame.pack(pady=10, fill="x")
-    download_mt_button = ctk.CTkButton(
-        master=download_mt_frame, text="Скачать видео по ссылкам",
+    # 4. Блок последовательной загрузки (Этап 2)
+    download_seq_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
+    download_seq_frame.pack(pady=10, fill="x")
+    download_seq_button = ctk.CTkButton(
+        master=download_seq_frame, text="Скачать видео по ссылкам",
         command=lambda: threading.Thread(
-            target=lambda: download_videos_multithreaded(root, download_folder_var.get(), pause_event),
+            target=lambda: download_videos_sequential(root, download_folder_var.get(), pause_event),
             daemon=True
         ).start()
     )
-    download_mt_button.pack(padx=5, pady=5)
+    download_seq_button.pack(padx=5, pady=5)
 
     #########################################
     # 5. Дополнительные элементы управления (Пауза/Возобновление для загрузки)
@@ -171,12 +171,10 @@ def create_gui():
     # 6. Блок работы с черным списком
     blacklist_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     blacklist_frame.pack(pady=10, fill="x")
-
     def create_blacklist():
         from utils import create_blacklist_from_pages
         blacklist = create_blacklist_from_pages()
         messagebox.showinfo("Черный список", f"Черный список создан.\nНайдено чисел: {len(blacklist)}")
-
     create_blacklist_button = ctk.CTkButton(
         master=blacklist_frame, text="Создать черный список",
         command=lambda: threading.Thread(target=create_blacklist, daemon=True).start()
@@ -201,15 +199,10 @@ def create_gui():
     log_buttons_frame.pack(pady=5, fill="x")
     log_file_button = ctk.CTkButton(master=log_buttons_frame, text="Открыть лог файл", command=open_log_file)
     log_file_button.grid(row=0, column=0, padx=5, pady=5)
-    failed_file_button = ctk.CTkButton(master=log_buttons_frame, text="Открыть файл ошибок",
-                                       command=open_failed_links_file)
+    failed_file_button = ctk.CTkButton(master=log_buttons_frame, text="Открыть файл ошибок", command=open_failed_links_file)
     failed_file_button.grid(row=0, column=1, padx=5, pady=5)
     show_only_pages_and_errors = tk.BooleanVar(value=False)
-    filter_checkbox = ctk.CTkCheckBox(
-        master=log_buttons_frame,
-        text="Показывать только страницы и ошибки",
-        variable=show_only_pages_and_errors
-    )
+    filter_checkbox = ctk.CTkCheckBox(master=log_buttons_frame, text="Показывать только страницы и ошибки", variable=show_only_pages_and_errors)
     filter_checkbox.grid(row=0, column=2, padx=5, pady=5)
     set_log_widgets(log_text, show_only_pages_and_errors)
 

@@ -19,11 +19,10 @@ current_video_name = None
 # Глобальный флаг для сбора ссылок (чтобы не запускать несколько потоков)
 is_collecting_links = False
 
-
 def find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist):
     """
-    Используется в последовательном скачивании (через Selenium).
-    Скачивает видео по ссылке, если имя видео не содержит число из черного списка.
+    Загружает видео в последовательном режиме, используя один драйвер.
+    Работает в текущей вкладке.
     """
     try:
         driver.get(video_link)
@@ -56,15 +55,13 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
                     return
-            write_log(f"Выбрана самая большая версия видео: {video_name} ({largest_video_size / (1024 ** 2):.2f} MB)",
-                      log_type="info")
+            write_log(f"Выбрана самая большая версия видео: {video_name} ({largest_video_size / (1024 ** 2):.2f} MB)", log_type="info")
             from tkinter import ttk
             progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
             progress_bar.pack(pady=(5, 10))
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
             progress_label.pack(pady=(5, 15))
-            download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar,
-                           blacklist)
+            download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar, blacklist)
             progress_label.destroy()
             progress_bar.destroy()
         else:
@@ -73,10 +70,9 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
         write_log(f"Ошибка при обработке видео {video_link}: {e}", log_type="error")
         save_failed_link(video_link)
 
-
 def download_video(video_url, output_folder, video_name, pause_event, progress_label, progress_bar, blacklist):
     """
-    Скачивает видео (используется как в последовательном, так и в многопотоковом режиме).
+    Скачивает видео с отображением прогресса.
     Если имя видео содержит число из черного списка – пропускает.
     """
     for num in blacklist:
@@ -117,7 +113,6 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
         save_failed_link(video_url)
     is_downloading_video = False
 
-
 def collect_video_links(root, start_url, download_folder, search_pause_event):
     """
     Сбор ссылок на видео с использованием Selenium.
@@ -140,7 +135,6 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
                 if link:
                     existing_links.add(link)
     links_collected = list(existing_links)
-
     try:
         from browser import driver
         current_offset = 0
@@ -178,7 +172,6 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
                 if os.path.exists(output_path) and os.path.getsize(output_path) == size_bytes:
                     continue
                 new_links.append(video_link)
-            # Сохраняем найденные новые ссылки (если они есть) в файл, без дублирования
             if new_links:
                 with open(video_links_file, "a", encoding="utf-8") as f:
                     for video_link in new_links:
@@ -196,14 +189,12 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
     is_collecting_links = False
     return links_collected
 
-
-def download_videos_multithreaded(root, download_folder, pause_event):
+def download_videos_sequential(root, download_folder, pause_event):
     """
-    Многопоточная загрузка видео по ссылкам, сохранённым в файле "video_links.txt".
-    Используется ThreadPoolExecutor, где число потоков определяется числом ядер процессора.
-    Для каждого потока создаётся отдельный прогресс-бар и метка в новом окне.
+    Последовательная загрузка видео по ссылкам, сохранённым в файле "video_links.txt".
+    Для каждого видео отображается прогресс-бар и текстовая информация о загрузке.
     """
-    import concurrent.futures
+    from utils import load_blacklist, write_log
     try:
         with open("video_links.txt", "r", encoding="utf-8") as f:
             links = [line.strip() for line in f if line.strip()]
@@ -213,51 +204,73 @@ def download_videos_multithreaded(root, download_folder, pause_event):
     if not links:
         write_log("Файл ссылок пуст.", log_type="info")
         return
-    max_workers = os.cpu_count() or 2
-    write_log(f"Запуск многопоточной загрузки с {max_workers} потоками.", log_type="info")
+    write_log("Начало последовательной загрузки видео.", log_type="info")
     import customtkinter as ctk
     progress_window = ctk.CTkToplevel(root)
-    progress_window.title("Многопоточная загрузка видео")
+    progress_window.title("Последовательная загрузка видео")
     progress_window.geometry("600x400")
     progress_container = ctk.CTkFrame(progress_window)
     progress_container.pack(fill="both", expand=True)
-
-    def download_task(link):
+    blacklist = load_blacklist("blacklist.txt")
+    from browser import driver
+    for link in links:
+        # Для каждого видео создаём отдельный блок в окне прогресса
         frame = ctk.CTkFrame(progress_container)
         frame.pack(pady=5, fill="x")
         label = ctk.CTkLabel(frame, text="Подготовка...")
         label.pack(side="left", padx=5)
         progress_bar = ctk.CTkProgressBar(frame, width=300)
         progress_bar.pack(side="left", padx=5)
-        try:
-            response = requests.get(link, stream=True)
-            response.raise_for_status()
-            total_size = int(response.headers.get('content-length', 0))
-            video_name = link.split("/")[-1].split("?")[0]
-            output_path = os.path.join(download_folder, video_name)
-            if os.path.exists(output_path) and os.path.getsize(output_path) == total_size:
-                write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
-                label.configure(text=f"{video_name} уже скачано")
-                return
-            downloaded = 0
-            chunk_size = 8192
-            start_time = time.time()
-            with open(output_path, "wb") as file:
-                for chunk in response.iter_content(chunk_size):
-                    pause_event.wait()
-                    file.write(chunk)
-                    downloaded += len(chunk)
-                    progress_percent = int(downloaded / total_size * 100)
-                    progress_bar.set(progress_percent / 100)
-                    speed = downloaded / 1024 / max(time.time() - start_time, 1)
-                    label.configure(text=f"{video_name}: {progress_percent}% @ {speed:.2f} KB/s")
-            write_log(f"{video_name} скачано успешно.", log_type="info")
-            label.configure(text=f"{video_name} скачано успешно.")
-        except Exception as e:
-            write_log(f"Ошибка при скачивании {link}: {e}", log_type="error")
-            label.configure(text=f"Ошибка: {e}")
+        download_video_sequential(driver, root, link, download_folder, pause_event, blacklist)
+    write_log("Последовательная загрузка завершена.", log_type="info")
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = [executor.submit(download_task, link) for link in links]
-        concurrent.futures.wait(futures)
-    write_log("Многопоточная загрузка завершена.", log_type="info")
+def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist):
+    """
+    Последовательно загружает видео по ссылке, используя один драйвер.
+    Работает без открытия новой вкладки.
+    """
+    try:
+        driver.get(video_link)
+        from utils import cookies_path
+        if os.path.exists(cookies_path):
+            with open(cookies_path, "rb") as file:
+                cookies = pickle.load(file)
+                for cookie in cookies:
+                    driver.add_cookie(cookie)
+            driver.refresh()
+        video_elements = WebDriverWait(driver, 10).until(
+            EC.presence_of_all_elements_located(
+                (By.XPATH, '//div[@id="playerinfo"]//a[@class="download_links_href"]')
+            )
+        )
+        video_options = []
+        for video_element in video_elements:
+            vid_url = video_element.get_attribute("href")
+            try:
+                response = requests.head(vid_url, allow_redirects=True)
+                size_bytes = int(response.headers.get('Content-Length', 0))
+                video_options.append((vid_url, size_bytes))
+            except Exception as e:
+                write_log(f"Ошибка при определении размера для ссылки: {vid_url}. Ошибка: {e}", log_type="error")
+        if video_options:
+            largest_video = max(video_options, key=lambda x: x[1])
+            largest_video_url, largest_video_size = largest_video
+            video_name = largest_video_url.split("/")[-1].split("?")[0]
+            for num in blacklist:
+                if num in video_name:
+                    write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
+                    return
+            write_log(f"Выбрана самая большая версия видео: {video_name} ({largest_video_size / (1024 ** 2):.2f} MB)", log_type="info")
+            from tkinter import ttk
+            progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
+            progress_bar.pack(pady=(5, 10))
+            progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
+            progress_label.pack(pady=(5, 15))
+            download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar, blacklist)
+            progress_label.destroy()
+            progress_bar.destroy()
+        else:
+            write_log(f"Не найдено доступных версий видео для ссылки: {video_link}", log_type="error")
+    except Exception as e:
+        write_log(f"Ошибка при обработке видео {video_link}: {e}", log_type="error")
+        save_failed_link(video_link)
