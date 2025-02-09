@@ -89,35 +89,24 @@ def create_gui():
     url_entry = ctk.CTkEntry(master=url_frame, textvariable=url_var, width=400)
     url_entry.grid(row=0, column=1, padx=5, pady=5)
 
-    # 2.3 Выбор направления обхода пагинации
-    direction_frame = ctk.CTkFrame(master=settings_frame, fg_color="transparent")
-    direction_frame.pack(pady=5, fill="x")
-    direction_label = ctk.CTkLabel(master=direction_frame, text="Выберите направление обхода пагинации:")
-    direction_label.grid(row=0, column=0, padx=5, pady=5, sticky="w")
-    direction_var = tk.StringVar(value="вперёд")
-    forward_radio = ctk.CTkRadioButton(master=direction_frame, text="Вперёд",
-                                       variable=direction_var, value="вперёд")
-    forward_radio.grid(row=0, column=1, padx=5, pady=5)
-    backward_radio = ctk.CTkRadioButton(master=direction_frame, text="Назад",
-                                        variable=direction_var, value="назад")
-    backward_radio.grid(row=0, column=2, padx=5, pady=5)
-
     #########################################
     # 3. Блок управления загрузкой
     controls_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     controls_frame.pack(pady=10, fill="x")
-    download_button = ctk.CTkButton(master=controls_frame, text="Скачать все видео",
-                                    command=lambda: threading.Thread(
-                                        target=download_all_videos,
-                                        args=(
-                                            root,
-                                            url_var.get(),
-                                            1 if direction_var.get() == "вперёд" else -1,
-                                            download_folder_var.get(),
-                                            pause_event,
-                                        ),
-                                        daemon=True
-                                    ).start())
+
+    download_button = ctk.CTkButton(
+        master=controls_frame, text="Скачать все видео",
+        command=lambda: threading.Thread(
+            target=download_all_videos,
+            args=(
+                root,
+                url_var.get(),
+                download_folder_var.get(),
+                pause_event,
+            ),
+            daemon=True
+        ).start()
+    )
     download_button.grid(row=0, column=0, padx=5, pady=5)
     open_folder_button = ctk.CTkButton(master=controls_frame, text="Открыть папку загрузок",
                                        command=lambda: open_download_folder(download_folder_var.get()))

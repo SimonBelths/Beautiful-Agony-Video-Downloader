@@ -8428,3 +8428,111 @@ Stacktrace:
 [09-02-2025 12:01:46] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
 [09-02-2025 12:01:48] Выбрана самая большая версия видео: A5534HD-A2.mp4 (386.55 MB)
 [09-02-2025 12:01:48] A5534HD-A2.mp4: размер не совпадает, перекачка.
+[09-02-2025 14:13:03] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:13:03] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:13:07] Выбрана самая большая версия видео: C5673HD-C1.mp4 (213.77 MB)
+[09-02-2025 14:13:07] Выбрана самая большая версия видео: C5673HD-C1.mp4 (213.77 MB)
+[09-02-2025 14:13:08] C5673HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:08] C5673HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:09] Выбрана самая большая версия видео: R0627HD-R1.mp4 (322.80 MB)
+[09-02-2025 14:13:09] Выбрана самая большая версия видео: R0627HD-R1.mp4 (322.80 MB)
+[09-02-2025 14:13:10] R0627HD-R1.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:10] R0627HD-R1.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:12] Пропуск A5669HD-A1.mp4: содержит число 5669 из черного списка.
+[09-02-2025 14:13:12] Пропуск A5669HD-A1.mp4: содержит число 5669 из черного списка.
+[09-02-2025 14:13:13] Пропуск A5668HD-A1.mp4: содержит число 5668 из черного списка.
+[09-02-2025 14:13:14] Пропуск A5668HD-A1.mp4: содержит число 5668 из черного списка.
+[09-02-2025 14:13:15] Пропуск C5672HD-C1.mp4: содержит число 5672 из черного списка.
+[09-02-2025 14:13:15] Пропуск C5672HD-C1.mp4: содержит число 5672 из черного списка.
+[09-02-2025 14:13:18] Выбрана самая большая версия видео: A5532HD-A2.mp4 (450.78 MB)
+[09-02-2025 14:13:18] Выбрана самая большая версия видео: A5532HD-A2.mp4 (450.78 MB)
+[09-02-2025 14:13:18] A5532HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:18] A5532HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:19] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:13:19] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:13:19] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:13:20] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33148&person_number=4487&type=A: Message: stale element reference: stale element not found
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x0092ACA9]
+	(No symbol) [0x00929D3E]
+	(No symbol) [0x009216F0]
+	(No symbol) [0x009217CC]
+	(No symbol) [0x0091FAA6]
+	(No symbol) [0x00922F2C]
+	(No symbol) [0x0099C207]
+	(No symbol) [0x00981F0C]
+	(No symbol) [0x0099B49E]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 14:13:21] Видео на странице не найдены. Завершаем обработку.
+[09-02-2025 14:13:21] Видео на странице не найдены. Завершаем обработку.
+[09-02-2025 14:13:21] Ошибка при обходе страниц: Message: stale element reference: stale element not found
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x0092ACA9]
+	(No symbol) [0x00929D3E]
+	(No symbol) [0x009216F0]
+	(No symbol) [0x009217CC]
+	(No symbol) [0x0091FAA6]
+	(No symbol) [0x00922F2C]
+	(No symbol) [0x0099C207]
+	(No symbol) [0x00981F0C]
+	(No symbol) [0x0099B49E]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 14:13:22] Выбрана самая большая версия видео: C5671HD-C1.mp4 (252.31 MB)
+[09-02-2025 14:13:22] Выбрана самая большая версия видео: C5671HD-C1.mp4 (252.31 MB)
+[09-02-2025 14:13:23] C5671HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:23] C5671HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:24] Выбрана самая большая версия видео: C5671HD-C1.mp4 (252.31 MB)
+[09-02-2025 14:13:24] Выбрана самая большая версия видео: C5671HD-C1.mp4 (252.31 MB)
+[09-02-2025 14:13:25] C5671HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:13:25] C5671HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:14:05] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:14:05] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:14:05] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:14:05] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:14:05] Обработка страницы: https://beautifulagony.com/public/main.php?offset=200
+[09-02-2025 14:14:13] Выбрана самая большая версия видео: C5673HD-C1.mp4 (213.77 MB)
+[09-02-2025 14:14:13] Выбрана самая большая версия видео: C5673HD-C1.mp4 (213.77 MB)
+[09-02-2025 14:14:13] Выбрана самая большая версия видео: C5673HD-C1.mp4 (213.77 MB)
+[09-02-2025 14:14:13] Выбрана самая большая версия видео: C5673HD-C1.mp4 (213.77 MB)
+[09-02-2025 14:14:13] Выбрана самая большая версия видео: C5673HD-C1.mp4 (213.77 MB)
+[09-02-2025 14:14:14] C5673HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:14:14] C5673HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:14:14] C5673HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:14:14] C5673HD-C1.mp4 уже скачано, пропуск.
+[09-02-2025 14:14:14] C5673HD-C1.mp4 уже скачано, пропуск.

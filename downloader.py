@@ -3,7 +3,7 @@ import pickle
 import time
 import requests
 import threading
-import tkinter as tk  # Для использования виджетов в GUI
+import tkinter as tk
 from urllib.parse import urlparse, parse_qs
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,7 +24,6 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
     try:
         driver.get(video_link)
 
-        # Загружаем куки, если они есть
         from utils import cookies_path
         if os.path.exists(cookies_path):
             with open(cookies_path, "rb") as file:
@@ -54,7 +53,6 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
             largest_video_url, largest_video_size = largest_video
             video_name = largest_video_url.split("/")[-1].split("?")[0]
 
-            # Проверка: если имя видео содержит число из черного списка, пропускаем загрузку
             for num in blacklist:
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
@@ -64,11 +62,8 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
 
             from tkinter import ttk
             progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
-            # Добавляем отступы: сверху 5 пикселей и снизу 10 пикселей
             progress_bar.pack(pady=(5, 10))
-            # Указываем увеличенный шрифт для надписи прогресса (например, Helvetica размер 14)
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
-            # Добавляем отступы: сверху 5 пикселей и снизу 15 пикселей
             progress_label.pack(pady=(5, 15))
 
             download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar, blacklist)
@@ -86,7 +81,6 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
     """
     Скачивает видео с обновлением прогресса, если имя видео не содержит число из черного списка.
     """
-    # Дополнительная проверка (на всякий случай)
     for num in blacklist:
         if num in video_name:
             write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
@@ -130,7 +124,11 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
         save_failed_link(video_url)
     is_downloading_video = False
 
-def download_all_videos(root, start_url, step, download_folder, pause_event):
+def download_all_videos(root, start_url, download_folder, pause_event):
+    """
+    Основная функция обхода страниц и скачивания видео.
+    Направление теперь фиксированное: всегда "вперёд" (offset += 20).
+    """
     global is_processing_links
     is_processing_links = True
 
@@ -156,7 +154,7 @@ def download_all_videos(root, start_url, step, download_folder, pause_event):
             for video_link in video_links:
                 pause_event.wait()
                 find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist)
-            current_offset += step * 20
+            current_offset += 20  # Теперь всегда двигаемся вперёд (offset увеличивается на 20)
             current_url = f"https://beautifulagony.com/public/main.php?page=view&mode=latest&offset={current_offset}"
     except Exception as e:
         write_log(f"Ошибка при обходе страниц: {e}", log_type="error")
