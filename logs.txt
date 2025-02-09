@@ -8539,3 +8539,1017 @@ Stacktrace:
 [09-02-2025 14:26:15] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
 [09-02-2025 14:26:17] Выбрана самая большая версия видео: A5534HD-A2.mp4 (386.55 MB)
 [09-02-2025 14:26:18] A5534HD-A2.mp4: размер не совпадает, перекачка.
+[09-02-2025 14:46:57] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 14:46:59] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:46:59] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:46:59] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:46:59] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:46:59] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:46:59] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:00] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:01] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:01] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:01] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 14:47:02] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:02] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] main.php уже скачано, пропуск.
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:03] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:04] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:04] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:04] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:04] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:04] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40
+[09-02-2025 14:47:07] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:07] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:07] main.php уже скачано, пропуск.
+[09-02-2025 14:47:07] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:07] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:07] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:07] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:47:08] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:11] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 14:49:12] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:12] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:13] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:14] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] main.php уже скачано, пропуск.
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] main.php уже скачано, пропуск.
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:16] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:17] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:17] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:17] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:49:17] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:31] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 14:51:32] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:32] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:33] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] main.php уже скачано, пропуск.
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:34] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:35] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40
+[09-02-2025 14:51:35] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:35] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:35] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:35] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:35] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:35] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:35] main.php уже скачано, пропуск.
+[09-02-2025 14:51:35] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] main.php уже скачано, пропуск.
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:36] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=60
+[09-02-2025 14:51:37] main.php уже скачано, пропуск.
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] main.php уже скачано, пропуск.
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] main.php уже скачано, пропуск.
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:37] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:38] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=80
+[09-02-2025 14:51:38] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:38] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:38] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:38] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:38] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:38] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:38] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:40] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:40] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:40] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:41] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:41] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:41] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:41] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:43] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:43] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:43] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:45] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:45] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:51:45] Ошибка при скачивании main.php: division by zero
+[09-02-2025 14:54:42] Авторизация завершена.
+[09-02-2025 14:54:44] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 14:54:46] Выбрана самая большая версия видео: A5534HD-A2.mp4 (386.55 MB)
+[09-02-2025 14:54:47] A5534HD-A2.mp4: размер не совпадает, перекачка.
+[09-02-2025 15:01:04] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:01:05] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 15:01:06] Видео на странице не найдены. Завершаем обработку.
+[09-02-2025 15:01:22] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33336&person_number=5993&type=A: Message: 
+
+[09-02-2025 15:05:00] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:06] Выбрана самая большая версия видео: A0054HD-A3.mp4 (180.04 MB)
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:07] A0054HD-A3.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] Выбрана самая большая версия видео: A4561HD-A2.mp4 (170.28 MB)
+[09-02-2025 15:05:11] Выбрана самая большая версия видео: A4561HD-A2.mp4 (170.28 MB)
+[09-02-2025 15:05:11] Выбрана самая большая версия видео: A4561HD-A2.mp4 (170.28 MB)
+[09-02-2025 15:05:11] Выбрана самая большая версия видео: A4561HD-A2.mp4 (170.28 MB)
+[09-02-2025 15:05:11] Выбрана самая большая версия видео: A4561HD-A2.mp4 (170.28 MB)
+[09-02-2025 15:05:11] Выбрана самая большая версия видео: A4561HD-A2.mp4 (170.28 MB)
+[09-02-2025 15:05:11] Выбрана самая большая версия видео: A4561HD-A2.mp4 (170.28 MB)
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:11] A4561HD-A2.mp4 уже скачано, пропуск.
+[09-02-2025 15:05:14] Выбрана самая большая версия видео: A5363HD-A3.mp4 (279.49 MB)
+[09-02-2025 15:05:14] Выбрана самая большая версия видео: A5363HD-A3.mp4 (279.49 MB)
+[09-02-2025 15:05:14] Выбрана самая большая версия видео: A5363HD-A3.mp4 (279.49 MB)
+[09-02-2025 15:05:15] A5363HD-A3.mp4: размер не совпадает, перекачка.
+[09-02-2025 15:05:15] A5363HD-A3.mp4: размер не совпадает, перекачка.
+[09-02-2025 15:05:15] A5363HD-A3.mp4: размер не совпадает, перекачка.
+[09-02-2025 15:11:10] Обработка страницы: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:11:31] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33356&person_number=1505&type=R: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:32] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33357&person_number=5746&type=A: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:33] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33355&person_number=0743&type=A: Message: 
+
+[09-02-2025 15:11:34] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33332&person_number=0063&type=A: Message: 
+
+[09-02-2025 15:11:35] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33345&person_number=5983&type=A: Message: 
+
+[09-02-2025 15:11:36] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33358&person_number=5807&type=A: Message: 
+
+[09-02-2025 15:11:36] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33353&person_number=5989&type=C: Message: 
+
+[09-02-2025 15:11:36] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33351&person_number=6004&type=C: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:48] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33334&person_number=5830&type=A: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:48] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33348&person_number=0350&type=A: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:48] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33318&person_number=4750&type=A: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:49] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33344&person_number=5983&type=C: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:50] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33342&person_number=5996&type=A: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:11:50] Ошибка при обработке видео https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33349&person_number=6010&type=C: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00AB74A3+25091]
+	(No symbol) [0x00A3DC04]
+	(No symbol) [0x0091B373]
+	(No symbol) [0x008FCEDB]
+	(No symbol) [0x00987FAF]
+	(No symbol) [0x0099ADC9]
+	(No symbol) [0x00981CA6]
+	(No symbol) [0x009531D5]
+	(No symbol) [0x0095435D]
+	GetHandleVerifier [0x00DB07C3+3142947]
+	GetHandleVerifier [0x00DC1A2B+3213195]
+	GetHandleVerifier [0x00DBC412+3191154]
+	GetHandleVerifier [0x00B58720+685184]
+	(No symbol) [0x00A46E1D]
+	(No symbol) [0x00A43E18]
+	(No symbol) [0x00A43FB6]
+	(No symbol) [0x00A366F0]
+	BaseThreadInitThunk [0x76B3FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77DA809E+286]
+	RtlGetAppContainerNamedObjectPath [0x77DA806E+238]
+
+[09-02-2025 15:21:23] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:21:35] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 15:21:47] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40
+[09-02-2025 15:21:59] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=60
+[09-02-2025 15:22:11] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=80
+[09-02-2025 15:22:23] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=100
+[09-02-2025 15:22:36] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=120
+[09-02-2025 15:22:48] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=140
+[09-02-2025 15:23:00] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=160
+[09-02-2025 15:23:12] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=180
+[09-02-2025 15:23:24] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=200
+[09-02-2025 15:23:36] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=220
+[09-02-2025 15:23:48] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=240
+[09-02-2025 15:24:01] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=260
+[09-02-2025 15:24:13] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=280
+[09-02-2025 15:24:25] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=300
+[09-02-2025 15:24:37] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=320
+[09-02-2025 15:24:49] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=340
+[09-02-2025 15:25:01] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=360
+[09-02-2025 15:25:14] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=380
+[09-02-2025 15:25:26] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=400
+[09-02-2025 15:25:38] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=420
+[09-02-2025 15:25:51] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=440
+[09-02-2025 15:26:07] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=460
+[09-02-2025 15:26:22] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=480
+[09-02-2025 15:26:40] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=500
+[09-02-2025 15:26:54] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=520
+[09-02-2025 15:28:04] Ошибка при чтении файла ссылок: [Errno 2] No such file or directory: 'video_links.txt'
+[09-02-2025 15:28:07] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:28:20] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 15:28:32] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40
+[09-02-2025 15:28:44] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=60
+[09-02-2025 15:28:57] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=80
+[09-02-2025 15:29:09] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=100
+[09-02-2025 15:29:17] Запуск многопоточной загрузки с 8 потоками.
+[09-02-2025 15:29:17] Запуск многопоточной загрузки с 8 потоками.
+[09-02-2025 15:29:17] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33351&person_number=6004&type=C: division by zero
+[09-02-2025 15:29:17] main.php уже скачано, пропуск.
+[09-02-2025 15:29:17] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33356&person_number=1505&type=R: division by zero
+[09-02-2025 15:29:18] main.php уже скачано, пропуск.
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33355&person_number=0743&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33357&person_number=5746&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33345&person_number=5983&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33353&person_number=5989&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33345&person_number=5983&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33357&person_number=5746&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33332&person_number=0063&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33351&person_number=6004&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33353&person_number=5989&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33355&person_number=0743&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33356&person_number=1505&type=R: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33358&person_number=5807&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33344&person_number=5983&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33342&person_number=5996&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33346&person_number=6001&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33349&person_number=6010&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33348&person_number=0350&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33340&person_number=5998&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33334&person_number=5830&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33318&person_number=4750&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33340&person_number=5998&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33346&person_number=6001&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33342&person_number=5996&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33348&person_number=0350&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33344&person_number=5983&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33349&person_number=6010&type=C: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33334&person_number=5830&type=A: division by zero
+[09-02-2025 15:29:18] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33318&person_number=4750&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33333&person_number=1506&type=R: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33338&person_number=6012&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33341&person_number=5996&type=C: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33329&person_number=5921&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33331&person_number=5638&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33320&person_number=5936&type=A: division by zero
+[09-02-2025 15:29:19] main.php уже скачано, пропуск.
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33336&person_number=5993&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33333&person_number=1506&type=R: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33341&person_number=5996&type=C: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33338&person_number=6012&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33320&person_number=5936&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33339&person_number=5998&type=C: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33329&person_number=5921&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33331&person_number=5638&type=A: division by zero
+[09-02-2025 15:29:19] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33336&person_number=5993&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33319&person_number=5792&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33330&person_number=1862&type=R: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33324&person_number=5973&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33325&person_number=3500&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33335&person_number=5993&type=C: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33327&person_number=5938&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33317&person_number=5915&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33337&person_number=6012&type=C: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33337&person_number=6012&type=C: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33319&person_number=5792&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33330&person_number=1862&type=R: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33327&person_number=5938&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33324&person_number=5973&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33335&person_number=5993&type=C: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33317&person_number=5915&type=A: division by zero
+[09-02-2025 15:29:20] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33325&person_number=3500&type=A: division by zero
+[09-02-2025 15:29:21] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=120
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33309&person_number=5961&type=A: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33313&person_number=5997&type=A: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33328&person_number=5921&type=C: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33314&person_number=1231&type=R: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33322&person_number=5992&type=A: division by zero
+[09-02-2025 15:29:22] main.php уже скачано, пропуск.
+[09-02-2025 15:29:22] main.php уже скачано, пропуск.
+[09-02-2025 15:29:22] main.php уже скачано, пропуск.
+[09-02-2025 15:29:22] main.php уже скачано, пропуск.
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33328&person_number=5921&type=C: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33326&person_number=5938&type=C: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33326&person_number=5938&type=C: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33316&person_number=5565&type=A: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33309&person_number=5961&type=A: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33313&person_number=5997&type=A: division by zero
+[09-02-2025 15:29:22] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33315&person_number=5833&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33323&person_number=5973&type=C: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33307&person_number=5960&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33307&person_number=5960&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33256&person_number=5834&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33321&person_number=5992&type=C: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33310&person_number=1059&type=R: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33297&person_number=5882&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33297&person_number=5882&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33312&person_number=5997&type=C: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33255&person_number=5763&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33255&person_number=5763&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33256&person_number=5834&type=A: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33312&person_number=5997&type=C: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33323&person_number=5973&type=C: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33321&person_number=5992&type=C: division by zero
+[09-02-2025 15:29:23] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33310&person_number=1059&type=R: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33302&person_number=5972&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33302&person_number=5972&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33311&person_number=2896&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33308&person_number=5961&type=C: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33304&person_number=0778&type=R: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33311&person_number=2896&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33257&person_number=5876&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33308&person_number=5961&type=C: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33300&person_number=5982&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33300&person_number=5982&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33306&person_number=5960&type=C: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33305&person_number=5818&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33304&person_number=0778&type=R: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33257&person_number=5876&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33305&person_number=5818&type=A: division by zero
+[09-02-2025 15:29:24] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33306&person_number=5960&type=C: division by zero
+[09-02-2025 15:29:34] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=140
+[09-02-2025 15:29:35] Ошибка при сборе ссылок: main thread is not in main loop
+[09-02-2025 15:31:39] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:31:39] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:31:41] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0 не найдено новых ссылок.
+[09-02-2025 15:31:41] Сбор ссылок завершён, собрано 140 ссылок.
+[09-02-2025 15:31:41] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0 не найдено новых ссылок.
+[09-02-2025 15:31:41] Сбор ссылок завершён, собрано 140 ссылок.
+[09-02-2025 15:32:09] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:32:10] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0 не найдено новых ссылок.
+[09-02-2025 15:32:10] Сбор ссылок завершён, собрано 140 ссылок.
+[09-02-2025 15:33:24] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:33:24] Ошибка при сборе ссылок: 'NoneType' object has no attribute 'get'
+[09-02-2025 15:33:46] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:33:46] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0 не найдено новых ссылок.
+[09-02-2025 15:33:46] Сбор ссылок завершён, собрано 140 ссылок.
+[09-02-2025 15:46:13] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:46:14] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0 не найдено новых ссылок.
+[09-02-2025 15:46:14] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 15:46:15] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20 не найдено новых ссылок.
+[09-02-2025 15:46:15] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40
+[09-02-2025 15:46:16] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40 не найдено новых ссылок.
+[09-02-2025 15:46:16] Обнаружено 3 последовательные страницы без новых ссылок. Завершаем сбор.
+[09-02-2025 15:46:16] Сбор ссылок завершён, собрано 140 ссылок.
+[09-02-2025 15:49:41] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[09-02-2025 15:49:42] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0 не найдено новых ссылок.
+[09-02-2025 15:49:42] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[09-02-2025 15:49:43] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20 не найдено новых ссылок.
+[09-02-2025 15:49:43] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40
+[09-02-2025 15:49:44] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40 не найдено новых ссылок.
+[09-02-2025 15:49:44] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=60
+[09-02-2025 15:49:45] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=60 не найдено новых ссылок.
+[09-02-2025 15:49:45] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=80
+[09-02-2025 15:49:46] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=80 не найдено новых ссылок.
+[09-02-2025 15:49:46] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=100
+[09-02-2025 15:49:47] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=100 не найдено новых ссылок.
+[09-02-2025 15:49:47] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=120
+[09-02-2025 15:49:48] На странице https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=120 не найдено новых ссылок.
+[09-02-2025 15:49:48] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=140
+[09-02-2025 15:50:01] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=160
+[09-02-2025 15:50:15] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=180
+[09-02-2025 15:50:28] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=200
+[09-02-2025 15:50:42] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=220
+[09-02-2025 15:50:55] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=240
+[09-02-2025 15:51:07] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=260
+[09-02-2025 15:51:20] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=280
+[09-02-2025 15:51:32] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=300
+[09-02-2025 15:51:54] Запуск многопоточной загрузки с 8 потоками.
+[09-02-2025 15:51:54] Запуск многопоточной загрузки с 8 потоками.
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33353&person_number=5989&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33358&person_number=5807&type=A: division by zero
+[09-02-2025 15:51:55] main.php уже скачано, пропуск.
+[09-02-2025 15:51:55] main.php уже скачано, пропуск.
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33351&person_number=6004&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33332&person_number=0063&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33355&person_number=0743&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33345&person_number=5983&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33358&person_number=5807&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33353&person_number=5989&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33356&person_number=1505&type=R: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33345&person_number=5983&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33357&person_number=5746&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33355&person_number=0743&type=A: division by zero
+[09-02-2025 15:51:55] main.php уже скачано, пропуск.
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33351&person_number=6004&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33349&person_number=6010&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33346&person_number=6001&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33348&person_number=0350&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33344&person_number=5983&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33342&person_number=5996&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33334&person_number=5830&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33340&person_number=5998&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33346&person_number=6001&type=C: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33342&person_number=5996&type=A: division by zero
+[09-02-2025 15:51:55] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33348&person_number=0350&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33344&person_number=5983&type=C: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33318&person_number=4750&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33349&person_number=6010&type=C: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33334&person_number=5830&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33340&person_number=5998&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33329&person_number=5921&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33341&person_number=5996&type=C: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33333&person_number=1506&type=R: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33320&person_number=5936&type=A: division by zero
+[09-02-2025 15:51:56] main.php уже скачано, пропуск.
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33331&person_number=5638&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33336&person_number=5993&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33320&person_number=5936&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33338&person_number=6012&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33333&person_number=1506&type=R: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33331&person_number=5638&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33341&person_number=5996&type=C: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33339&person_number=5998&type=C: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33329&person_number=5921&type=A: division by zero
+[09-02-2025 15:51:56] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33336&person_number=5993&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33324&person_number=5973&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33337&person_number=6012&type=C: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33319&person_number=5792&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33330&person_number=1862&type=R: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33339&person_number=5998&type=C: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33317&person_number=5915&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33327&person_number=5938&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33319&person_number=5792&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33330&person_number=1862&type=R: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33324&person_number=5973&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33335&person_number=5993&type=C: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33327&person_number=5938&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33317&person_number=5915&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33325&person_number=3500&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33337&person_number=6012&type=C: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33325&person_number=3500&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33318&person_number=4750&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33313&person_number=5997&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33314&person_number=1231&type=R: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33335&person_number=5993&type=C: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33328&person_number=5921&type=C: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33322&person_number=5992&type=A: division by zero
+[09-02-2025 15:51:57] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33322&person_number=5992&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33313&person_number=5997&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33328&person_number=5921&type=C: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33314&person_number=1231&type=R: division by zero
+[09-02-2025 15:51:58] main.php уже скачано, пропуск.
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33315&person_number=5833&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33316&person_number=5565&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33309&person_number=5961&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33326&person_number=5938&type=C: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33321&person_number=5992&type=C: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33316&person_number=5565&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33323&person_number=5973&type=C: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33297&person_number=5882&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33256&person_number=5834&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33307&person_number=5960&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33309&person_number=5961&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33297&person_number=5882&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33323&person_number=5973&type=C: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33310&person_number=1059&type=R: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33307&person_number=5960&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33255&person_number=5763&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33256&person_number=5834&type=A: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33312&person_number=5997&type=C: division by zero
+[09-02-2025 15:51:58] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33321&person_number=5992&type=C: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33311&person_number=2896&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33312&person_number=5997&type=C: division by zero
+[09-02-2025 15:51:59] main.php уже скачано, пропуск.
+[09-02-2025 15:51:59] main.php уже скачано, пропуск.
+[09-02-2025 15:51:59] main.php уже скачано, пропуск.
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33300&person_number=5982&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33255&person_number=5763&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33310&person_number=1059&type=R: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33308&person_number=5961&type=C: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33311&person_number=2896&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33306&person_number=5960&type=C: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33305&person_number=5818&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33304&person_number=0778&type=R: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33300&person_number=5982&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33257&person_number=5876&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33305&person_number=5818&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33306&person_number=5960&type=C: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33303&person_number=5972&type=C: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33304&person_number=0778&type=R: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33250&person_number=5780&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33294&person_number=4900&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33295&person_number=5990&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33299&person_number=5980&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33299&person_number=5980&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33303&person_number=5972&type=C: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33294&person_number=4900&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33247&person_number=4520&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33301&person_number=5982&type=C: division by zero
+[09-02-2025 15:51:59] main.php уже скачано, пропуск.
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33288&person_number=5977&type=A: division by zero
+[09-02-2025 15:51:59] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33250&person_number=5780&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33298&person_number=5980&type=C: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33301&person_number=5982&type=C: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33292&person_number=1003&type=R: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33292&person_number=1003&type=R: division by zero
+[09-02-2025 15:52:00] main.php уже скачано, пропуск.
+[09-02-2025 15:52:00] main.php уже скачано, пропуск.
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33287&person_number=5984&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33288&person_number=5977&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33243&person_number=5784&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33247&person_number=4520&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33296&person_number=5990&type=C: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33290&person_number=0162&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33283&person_number=5950&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33298&person_number=5980&type=C: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33290&person_number=0162&type=A: division by zero
+[09-02-2025 15:52:00] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33285&person_number=2129&type=A: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33296&person_number=5990&type=C: division by zero
+[09-02-2025 15:52:01] main.php уже скачано, пропуск.
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33244&person_number=5871&type=A: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33283&person_number=5950&type=A: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33282&person_number=0986&type=R: division by zero
+[09-02-2025 15:52:01] main.php уже скачано, пропуск.
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33244&person_number=5871&type=A: division by zero
+[09-02-2025 15:52:01] main.php уже скачано, пропуск.
+[09-02-2025 15:52:01] main.php уже скачано, пропуск.
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33280&person_number=5987&type=A: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33282&person_number=0986&type=R: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33286&person_number=5984&type=C: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33289&person_number=5977&type=C: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33276&person_number=5969&type=A: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33281&person_number=4888&type=Y: division by zero
+[09-02-2025 15:52:01] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33280&person_number=5987&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33276&person_number=5969&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33240&person_number=5827&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33274&person_number=5962&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33240&person_number=5827&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33274&person_number=5962&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33266&person_number=0951&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33279&person_number=5987&type=C: division by zero
+[09-02-2025 15:52:02] main.php уже скачано, пропуск.
+[09-02-2025 15:52:02] main.php уже скачано, пропуск.
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33284&person_number=5950&type=C: division by zero
+[09-02-2025 15:52:02] main.php уже скачано, пропуск.
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33284&person_number=5950&type=C: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33266&person_number=0951&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33277&person_number=5783&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33281&person_number=4888&type=Y: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33278&person_number=0610&type=R: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33269&person_number=5955&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33277&person_number=5783&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33271&person_number=5856&type=A: division by zero
+[09-02-2025 15:52:02] main.php уже скачано, пропуск.
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33222&person_number=5781&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33265&person_number=5777&type=A: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33275&person_number=5969&type=C: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33273&person_number=5962&type=C: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33275&person_number=5969&type=C: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33279&person_number=5987&type=C: division by zero
+[09-02-2025 15:52:02] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33212&person_number=0835&type=R: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33268&person_number=5988&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33265&person_number=5777&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33273&person_number=5962&type=C: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33269&person_number=5955&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33222&person_number=5781&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33261&person_number=5974&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33219&person_number=5712&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33270&person_number=5955&type=C: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33261&person_number=5974&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33259&person_number=5953&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33268&person_number=5988&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33293&person_number=5587&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33212&person_number=0835&type=R: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33211&person_number=5745&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33272&person_number=5856&type=C: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33272&person_number=5856&type=C: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33293&person_number=5587&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33210&person_number=4544&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33211&person_number=5745&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33259&person_number=5953&type=A: division by zero
+[09-02-2025 15:52:03] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33263&person_number=1432&type=R: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33270&person_number=5955&type=C: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33267&person_number=5988&type=C: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33208&person_number=5829&type=A: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33208&person_number=5829&type=A: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33253&person_number=5976&type=A: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33210&person_number=4544&type=A: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33262&person_number=5680&type=A: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33262&person_number=5680&type=A: division by zero
+[09-02-2025 15:52:04] main.php уже скачано, пропуск.
+[09-02-2025 15:52:04] main.php уже скачано, пропуск.
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33258&person_number=5953&type=C: division by zero
+[09-02-2025 15:52:04] main.php уже скачано, пропуск.
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33251&person_number=5963&type=A: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33209&person_number=5850&type=A: division by zero
+[09-02-2025 15:52:04] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33263&person_number=1432&type=R: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33209&person_number=5850&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33207&person_number=5903&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33248&person_number=5986&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33251&person_number=5963&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33206&person_number=0580&type=R: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33245&person_number=5886&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33206&person_number=0580&type=R: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33207&person_number=5903&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33245&person_number=5886&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33248&person_number=5986&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33241&person_number=5941&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33239&person_number=5774&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33238&person_number=3168&type=A: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33254&person_number=5976&type=C: division by zero
+[09-02-2025 15:52:05] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33239&person_number=5774&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33254&person_number=5976&type=C: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33205&person_number=5797&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33252&person_number=5963&type=C: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33238&person_number=3168&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33230&person_number=1441&type=R: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33235&person_number=5937&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33232&person_number=5967&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33230&person_number=1441&type=R: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33235&person_number=5937&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33191&person_number=5894&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33241&person_number=5941&type=A: division by zero
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33249&person_number=5986&type=C: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33252&person_number=5963&type=C: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33232&person_number=5967&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33249&person_number=5986&type=C: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33234&person_number=5852&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33237&person_number=0231&type=R: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33246&person_number=5886&type=C: division by zero
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33228&person_number=5893&type=A: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33242&person_number=5941&type=C: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33224&person_number=5968&type=A: division by zero
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] main.php уже скачано, пропуск.
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33236&person_number=5937&type=C: division by zero
+[09-02-2025 15:52:06] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33221&person_number=5979&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33221&person_number=5979&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33224&person_number=5968&type=A: division by zero
+[09-02-2025 15:52:07] main.php уже скачано, пропуск.
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33231&person_number=1965&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33189&person_number=5868&type=A: division by zero
+[09-02-2025 15:52:07] main.php уже скачано, пропуск.
+[09-02-2025 15:52:07] main.php уже скачано, пропуск.
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33229&person_number=5837&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33217&person_number=5922&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33233&person_number=5967&type=C: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33227&person_number=5893&type=C: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33227&person_number=5893&type=C: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33215&person_number=1532&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33217&person_number=5922&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33189&person_number=5868&type=A: division by zero
+[09-02-2025 15:52:07] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33218&person_number=0274&type=R: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33229&person_number=5837&type=A: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33225&person_number=5968&type=C: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33199&person_number=0952&type=A: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33214&person_number=5912&type=A: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33215&person_number=1532&type=A: division by zero
+[09-02-2025 15:52:08] main.php уже скачано, пропуск.
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33223&person_number=5909&type=F: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33214&person_number=5912&type=A: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33199&person_number=0952&type=A: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33204&person_number=5970&type=A: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33223&person_number=5909&type=F: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33225&person_number=5968&type=C: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33220&person_number=5979&type=C: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33220&person_number=5979&type=C: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33216&person_number=5922&type=C: division by zero
+[09-02-2025 15:52:08] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33181&person_number=5872&type=A: invalid command name ".!ctktoplevel2.!ctkframe.!ctkframe151.!ctklabel.!label"
+[09-02-2025 15:52:08] Многопоточная загрузка завершена.
+[09-02-2025 15:52:09] main.php уже скачано, пропуск.
+[09-02-2025 15:52:09] main.php уже скачано, пропуск.
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33196&person_number=5927&type=A: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33198&person_number=4065&type=A: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33182&person_number=5739&type=A: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33216&person_number=5922&type=C: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33204&person_number=5970&type=A: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33201&person_number=5959&type=A: division by zero
+[09-02-2025 15:52:09] main.php уже скачано, пропуск.
+[09-02-2025 15:52:09] main.php уже скачано, пропуск.
+[09-02-2025 15:52:09] main.php уже скачано, пропуск.
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33213&person_number=5912&type=C: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33192&person_number=5906&type=A: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33186&person_number=5907&type=A: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33187&person_number=5933&type=A: division by zero
+[09-02-2025 15:52:09] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33202&person_number=5959&type=C: division by zero
+[09-02-2025 15:52:10] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33183&person_number=1530&type=R: division by zero
+[09-02-2025 15:52:10] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33180&person_number=5975&type=A: division by zero
+[09-02-2025 15:52:10] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33194&person_number=5824&type=Y: division by zero
+[09-02-2025 15:52:10] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33184&person_number=0351&type=A: division by zero
+[09-02-2025 15:52:10] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33176&person_number=5861&type=A: division by zero
+[09-02-2025 15:52:10] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33173&person_number=5978&type=A: division by zero
+[09-02-2025 15:52:10] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33193&person_number=5906&type=C: division by zero
+[09-02-2025 15:52:11] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33170&person_number=5870&type=A: division by zero
+[09-02-2025 15:52:11] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33175&person_number=5681&type=A: division by zero
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33147&person_number=5879&type=A: division by zero
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33188&person_number=5933&type=C: division by zero
+[09-02-2025 15:52:11] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33179&person_number=5975&type=C: division by zero
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:11] main.php уже скачано, пропуск.
+[09-02-2025 15:52:12] main.php уже скачано, пропуск.
+[09-02-2025 15:52:12] main.php уже скачано, пропуск.
+[09-02-2025 15:52:12] main.php уже скачано, пропуск.
+[09-02-2025 15:52:12] main.php уже скачано, пропуск.
+[09-02-2025 15:52:12] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] main.php уже скачано, пропуск.
+[09-02-2025 15:52:13] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33137&person_number=5733&type=A: invalid command name ".!ctktoplevel.!ctkframe.!ctkframe210.!ctklabel.!label"
+[09-02-2025 15:52:13] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33140&person_number=5916&type=A: invalid command name ".!ctktoplevel.!ctkframe.!ctkframe209.!ctklabel.!label"
+[09-02-2025 15:52:13] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33158&person_number=5958&type=C: invalid command name ".!ctktoplevel.!ctkframe.!ctkframe205.!ctklabel.!label"
+[09-02-2025 15:52:13] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33143&person_number=5964&type=A: invalid command name ".!ctktoplevel.!ctkframe.!ctkframe204.!ctklabel.!label"
+[09-02-2025 15:52:13] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33148&person_number=4487&type=A: invalid command name ".!ctktoplevel.!ctkframe.!ctkframe207.!ctklabel.!label"
+[09-02-2025 15:52:13] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33138&person_number=5803&type=A: invalid command name ".!ctktoplevel.!ctkframe.!ctkframe206.!ctklabel.!label"
+[09-02-2025 15:52:13] Ошибка при скачивании https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33156&person_number=5951&type=C: invalid command name ".!ctktoplevel.!ctkframe.!ctkframe208.!ctklabel.!label"

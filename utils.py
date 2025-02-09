@@ -14,37 +14,27 @@ failed_links_path = "failed_links.txt"
 log_text = None
 show_only_pages_and_errors = None
 
-
 def set_log_widgets(text_widget, checkbox_var):
     global log_text, show_only_pages_and_errors
     log_text = text_widget
     show_only_pages_and_errors = checkbox_var
 
-
 def write_log(message, log_type="info"):
     from datetime import datetime
     timestamp = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
     log_entry = f"[{timestamp}] {message}"
-
-    # Запись в файл логов
     with open(log_file_path, "a", encoding="utf-8") as log_file:
         log_file.write(f"{log_entry}\n")
-
-    # Фильтрация вывода, если включена соответствующая опция
     if show_only_pages_and_errors is not None and show_only_pages_and_errors.get():
         if log_type not in ["page", "error"]:
             return
-
-    # Вывод в текстовое поле GUI
     if log_text is not None:
         log_text.insert(tk.END, f"{log_entry}\n")
         log_text.see(tk.END)
 
-
 def save_failed_link(link):
     with open(failed_links_path, "a", encoding="utf-8") as failed_file:
         failed_file.write(f"{link}\n")
-
 
 def open_log_file():
     if os.path.exists(log_file_path):
@@ -53,7 +43,6 @@ def open_log_file():
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл с логами не найден!")
 
-
 def open_failed_links_file():
     if os.path.exists(failed_links_path):
         webbrowser.open(failed_links_path)
@@ -61,14 +50,12 @@ def open_failed_links_file():
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл с ошибками не найден!")
 
-
 def select_download_folder(download_folder_var):
     from tkinter import filedialog, messagebox
     folder = filedialog.askdirectory(initialdir=DOWNLOAD_FOLDER)
     if folder:
         download_folder_var.set(folder)
         messagebox.showinfo("Папка загрузок", f"Выбрана папка: {folder}")
-
 
 def create_blacklist_for_mode(mode):
     """
@@ -81,13 +68,12 @@ def create_blacklist_for_mode(mode):
     blacklist = set()
     page = 0
     while True:
-        offset = page * 20  # offset увеличивается на 20 с каждой страницей
+        offset = page * 20
         url = base_url.format(mode, offset)
         try:
             response = requests.get(url)
             if response.status_code == 200:
                 soup = BeautifulSoup(response.text, "html.parser")
-                # Находим все элементы <font class="agonyid">
                 elements = soup.find_all("font", class_="agonyid")
                 page_numbers = set()
                 for el in elements:
@@ -110,14 +96,7 @@ def create_blacklist_for_mode(mode):
             break
     return blacklist
 
-
 def create_blacklist_from_pages(modes=["males", "transgender"], output_file="blacklist.txt"):
-    """
-    Для каждого режима (например, 'males' и 'transgender') автоматически перебирает страницы с пагинацией и собирает
-    все уникальные 4-значные номера. Итоговый черный список записывается в output_file (по одному номеру на строку).
-
-    Возвращает множество найденных номеров.
-    """
     total_blacklist = set()
     for mode in modes:
         print(f"Начало парсинга для режима: {mode}")
@@ -133,11 +112,7 @@ def create_blacklist_from_pages(modes=["males", "transgender"], output_file="bla
         print(f"Ошибка при записи файла черного списка: {e}")
     return total_blacklist
 
-
 def load_blacklist(filename="blacklist.txt"):
-    """
-    Загружает черный список из файла и возвращает его как множество.
-    """
     blacklist = set()
     try:
         with open(filename, "r", encoding="utf-8") as f:
@@ -149,11 +124,7 @@ def load_blacklist(filename="blacklist.txt"):
         print(f"Ошибка при загрузке файла черного списка: {e}")
     return blacklist
 
-
 def open_blacklist_file():
-    """
-    Открывает файл с черным списком, если он существует.
-    """
     if os.path.exists("blacklist.txt"):
         webbrowser.open("blacklist.txt")
     else:
