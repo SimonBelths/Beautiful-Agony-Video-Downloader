@@ -109,9 +109,11 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
 def collect_video_links(root, start_url, download_folder, search_pause_event):
     """
     Обновлённая функция сбора ссылок:
-    – Каждая найденная ссылка нормализуется с помощью strip().
-    – Если ссылка не содержится в файле video_links.txt, она сразу записывается.
-    – Проверка на наличие скачанного видео (по размеру файла) будет выполняться только при загрузке видео.
+    - Ссылка нормализуется с помощью strip().
+    - Если ссылка уже есть в файле video_links.txt, она игнорируется с выводом сообщения.
+    - Из ссылки извлекается person_number (четырёхзначное число). Если оно в черном списке, ссылка игнорируется.
+    - Проигнорированные ссылки выводятся в окне активности вместе с причиной игнорирования.
+    - Новые ссылки сразу записываются в файл.
     """
     global is_collecting_links
     if is_collecting_links:
@@ -140,6 +142,7 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
 
     try:
         from browser import driver
+        import re
         while True:
             search_pause_event.wait()
             write_log(f"Сбор ссылок, страница: {current_url}", log_type="page")
@@ -156,21 +159,25 @@ def collect_video_links(root, start_url, download_folder, search_pause_event):
                     video_link = video_link.strip()  # Нормализуем ссылку
                 else:
                     continue
-                # Если ссылка уже есть в файле, пропускаем её
+
+                # Если ссылка уже есть в файле — игнорируем и логируем причину.
                 if video_link in existing_links:
-                    write_log(f"Ссылка уже существует: {video_link}", log_type="info")
-                    continue
-                video_name = video_link.split("/")[-1].split("?")[0]
-                skip = False
-                for num in blacklist:
-                    if num in video_name:
-                        skip = True
-                        break
-                if skip:
-                    write_log(f"Ссылка {video_link} пропущена из-за черного списка", log_type="info")
+                    write_log(f"Ссылка проигнорирована (уже существует): {video_link}", log_type="info")
                     continue
 
-                # Здесь мы уже не проверяем, скачано ли видео (по размеру), просто добавляем новую ссылку.
+                # Извлекаем person_number из ссылки (ожидается формат person_number=XXXX)
+                m = re.search(r'person_number=(\d{4})', video_link)
+                if m:
+                    person_number = m.group(1)
+                    if person_number in blacklist:
+                        write_log(f"Ссылка проигнорирована (чёрный список): {video_link} (person_number={person_number})", log_type="info")
+                        continue
+                else:
+                    # Если в ссылке нет ожидаемого фрагмента, логируем предупреждение и пропускаем
+                    write_log(f"Ссылка не содержит person_number и проигнорирована: {video_link}", log_type="info")
+                    continue
+
+                # Ссылка новая и проходит проверки – записываем её в файл.
                 with open(video_links_file, "a", encoding="utf-8") as f:
                     f.write(video_link + "\n")
                 existing_links.add(video_link)
@@ -197,23 +204,13 @@ def download_videos_sequential(root, download_folder, pause_event):
         write_log("Файл ссылок пуст.", log_type="info")
         return
     write_log("Начало последовательной загрузки видео.", log_type="info")
-    import customtkinter as ctk
-    progress_window = ctk.CTkToplevel(root)
-    progress_window.title("Последовательная загрузка видео")
-    progress_window.geometry("600x400")
-    progress_container = ctk.CTkFrame(progress_window)
-    progress_container.pack(fill="both", expand=True)
     blacklist = load_blacklist("blacklist.txt")
     from browser import driver
+    # Проходим по всем ссылкам, не создавая отдельного окна для загрузки
     for link in links:
-        frame = ctk.CTkFrame(progress_container)
-        frame.pack(pady=5, fill="x")
-        label = ctk.CTkLabel(frame, text="Подготовка...")
-        label.pack(side="left", padx=5)
-        progress_bar = ctk.CTkProgressBar(frame, width=300)
-        progress_bar.pack(side="left", padx=5)
         download_video_sequential(driver, root, link, download_folder, pause_event, blacklist)
     write_log("Последовательная загрузка завершена.", log_type="info")
+
 
 def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist):
     try:
