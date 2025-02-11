@@ -19,7 +19,7 @@ current_video_name = None
 # Глобальный флаг для сбора ссылок (чтобы не запускать несколько потоков)
 is_collecting_links = False
 
-# Новый глобальный флаг для остановки загрузки после текущего видео
+# Новый глобальный флаг для постановки загрузки на паузу после завершения текущего видео
 stop_downloading_flag = False
 
 def find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist):
@@ -205,6 +205,7 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
     return links_collected
 
 def download_videos_sequential(root, download_folder, pause_event, stop_after_skip=False):
+    global stop_downloading_flag  # Объявляем глобально в начале функции
     from utils import load_blacklist, write_log
     try:
         with open("video_links.txt", "r", encoding="utf-8") as f:
@@ -220,6 +221,9 @@ def download_videos_sequential(root, download_folder, pause_event, stop_after_sk
     from browser import driver
     consecutive_skip_count = 0
     for link in links:
+        # Если процесс загрузки поставлен на паузу через кнопку "Остановить загрузку",
+        # то перед началом следующей итерации ждем, пока не нажмут "Возобновить загрузку"
+        pause_event.wait()
         result = download_video_sequential(driver, root, link, download_folder, pause_event, blacklist)
         if result is False:
             consecutive_skip_count += 1
@@ -229,8 +233,11 @@ def download_videos_sequential(root, download_folder, pause_event, stop_after_sk
             write_log("Остановка загрузки: 10 подряд пропущенных видео.", log_type="info")
             break
         if stop_downloading_flag:
-            write_log("Остановка загрузки по запросу.", log_type="info")
-            break
+            write_log("Пауза загрузки по запросу.", log_type="info")
+            # Перед началом следующей итерации ставим pause_event в режим ожидания
+            pause_event.clear()
+            pause_event.wait()  # Ожидаем возобновления загрузки
+            stop_downloading_flag = False
     write_log("Последовательная загрузка завершена.", log_type="info")
 
 def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist):
