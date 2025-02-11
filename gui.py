@@ -7,7 +7,7 @@ import threading
 from browser import authorize, check_authorization
 from downloader import (
     collect_video_links,
-    download_videos_sequential,  # Последовательная загрузка
+    download_videos_sequential,
     is_processing_links  # Флаг, если понадобится
 )
 from utils import (
@@ -26,14 +26,11 @@ pause_event.set()
 search_pause_event = threading.Event()
 search_pause_event.set()
 
-
 def pause_link_processing():
     pause_event.clear()
 
-
 def resume_link_processing():
     pause_event.set()
-
 
 def open_download_folder(folder_path):
     import os
@@ -42,6 +39,9 @@ def open_download_folder(folder_path):
     except Exception as e:
         messagebox.showerror("Ошибка", f"Не удалось открыть папку: {e}")
 
+def stop_downloading():
+    import downloader
+    downloader.stop_downloading_flag = True
 
 def create_gui():
     # Настройка внешнего вида customtkinter
@@ -111,6 +111,17 @@ def create_gui():
     collection_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     collection_frame.pack(pady=10, fill="x")
 
+    # Переменная для чекбокса остановки поиска после 3 пустых страниц
+    stop_empty_pages_var = tk.BooleanVar(value=False)
+
+    # Чекбокс для остановки поиска ссылок, если 3 страницы подряд не дали новых ссылок
+    stop_empty_pages_checkbox = ctk.CTkCheckBox(
+        master=collection_frame,
+        text="Остановить поиск, если 3 страницы подряд без новых ссылок",
+        variable=stop_empty_pages_var
+    )
+    stop_empty_pages_checkbox.grid(row=0, column=3, padx=5, pady=5)
+
     # Функция для запуска сбора ссылок с изменением логики кнопок
     def start_collecting():
         from downloader import is_collecting_links
@@ -123,7 +134,7 @@ def create_gui():
         stop_search_button.grid()
         resume_search_button.grid()
         threading.Thread(
-            target=lambda: collect_video_links(root, url_var.get(), download_folder_var.get(), search_pause_event),
+            target=lambda: collect_video_links(root, url_var.get(), download_folder_var.get(), search_pause_event, stop_empty_pages_var.get()),
             daemon=True
         ).start()
 
@@ -155,15 +166,30 @@ def create_gui():
     download_control_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     download_control_frame.pack(pady=10, fill="x")
 
+    # Переменная для чекбокса остановки загрузки после 10 подряд пропущенных видео
+    stop_after_skips_var = tk.BooleanVar(value=False)
+
+    # Чекбокс для остановки загрузки, если 10 видео подряд уже скачаны или в черном списке
+    stop_after_skips_checkbox = ctk.CTkCheckBox(
+        master=download_control_frame,
+        text="Остановить загрузку после 10 подряд пропущенных видео",
+        variable=stop_after_skips_var
+    )
+    stop_after_skips_checkbox.grid(row=1, column=0, padx=5, pady=5, columnspan=2)
+
     # Функция для запуска загрузки с изменением логики кнопок
     def start_downloading():
+        # Перед запуском сбрасываем флаг остановки загрузки
+        import downloader
+        downloader.stop_downloading_flag = False
         # Скрываем кнопку "Скачать видео по ссылкам"
         download_seq_button.grid_remove()
-        # Показываем кнопки "Пауза загрузки" и "Возобновить загрузку"
+        # Показываем кнопки "Пауза загрузки", "Возобновить загрузку" и "Остановить загрузку"
         pause_button.grid()
         resume_button.grid()
+        stop_download_button.grid()
         threading.Thread(
-            target=lambda: download_videos_sequential(root, download_folder_var.get(), pause_event),
+            target=lambda: download_videos_sequential(root, download_folder_var.get(), pause_event, stop_after_skips_var.get()),
             daemon=True
         ).start()
 
@@ -191,6 +217,14 @@ def create_gui():
     )
     resume_button.grid(row=0, column=2, padx=5, pady=5)
     resume_button.grid_remove()
+
+    stop_download_button = ctk.CTkButton(
+        master=download_control_frame,
+        text="Остановить загрузку после текущего видео",
+        command=stop_downloading
+    )
+    stop_download_button.grid(row=0, column=3, padx=5, pady=5)
+    stop_download_button.grid_remove()
 
     #########################################
     # 5. Блок для открытия файла со ссылками и папки загрузок
@@ -262,7 +296,6 @@ def create_gui():
     auth_button.configure(command=on_authorize)
 
     root.mainloop()
-
 
 if __name__ == "__main__":
     create_gui()

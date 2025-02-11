@@ -10,6 +10,11 @@ cookies_path = "cookies.pkl"
 log_file_path = "logs.txt"
 failed_links_path = "failed_links.txt"
 
+# Если лог-файл существует, очищаем его
+if os.path.exists(log_file_path):
+    with open(log_file_path, "w", encoding="utf-8") as f:
+        f.write("")
+
 # Виджеты для логирования (будут заданы из GUI)
 log_text = None
 show_only_pages_and_errors = None
