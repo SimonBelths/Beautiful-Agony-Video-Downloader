@@ -1,113 +1,71 @@
-[12-02-2025 12:17:12] Начало последовательной загрузки видео.
-[12-02-2025 12:17:14] Выбрана самая большая версия видео: R1511HD-R1.mp4 (211.78 MB)
-[12-02-2025 12:17:36] R1511HD-R1.mp4 скачано успешно.
-[12-02-2025 12:17:37] Пропуск A5726HD-A1.mp4: содержит число 5726 из черного списка.
-[12-02-2025 12:17:39] Выбрана самая большая версия видео: A5725HD-A1.mp4 (360.89 MB)
-[12-02-2025 12:17:39] A5725HD-A1.mp4 уже скачано, пропуск.
-[12-02-2025 12:17:41] Выбрана самая большая версия видео: A0001H-A1.mp4 (27.15 MB)
-[12-02-2025 12:17:41] A0001H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:17:44] A0001H-A1.mp4 скачано успешно.
-[12-02-2025 12:17:46] Пропуск A0002M-A1.mp4: содержит число 0002 из черного списка.
-[12-02-2025 12:17:47] Выбрана самая большая версия видео: A0003H-A1.mp4 (15.41 MB)
-[12-02-2025 12:17:48] A0003H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:17:51] A0003H-A1.mp4 скачано успешно.
-[12-02-2025 12:17:53] Выбрана самая большая версия видео: A0004H-A1.mp4 (29.19 MB)
-[12-02-2025 12:17:54] A0004H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:17:58] A0004H-A1.mp4 скачано успешно.
-[12-02-2025 12:17:59] Выбрана самая большая версия видео: A0005M-A1.mp4 (3.55 MB)
-[12-02-2025 12:17:59] A0005M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:00] A0005M-A1.mp4 скачано успешно.
-[12-02-2025 12:18:01] Выбрана самая большая версия видео: A0006M-A1.mp4 (3.09 MB)
-[12-02-2025 12:18:02] A0006M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:02] A0006M-A1.mp4 скачано успешно.
-[12-02-2025 12:18:05] Выбрана самая большая версия видео: A0009H-A1.mp4 (9.69 MB)
-[12-02-2025 12:18:06] A0009H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:07] A0009H-A1.mp4 скачано успешно.
-[12-02-2025 12:18:08] Выбрана самая большая версия видео: A0010M-A1.mp4 (9.96 MB)
-[12-02-2025 12:18:09] A0010M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:10] A0010M-A1.mp4 скачано успешно.
-[12-02-2025 12:18:12] Выбрана самая большая версия видео: A0011M-A1.mp4 (3.20 MB)
-[12-02-2025 12:18:12] A0011M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:13] A0011M-A1.mp4 скачано успешно.
-[12-02-2025 12:18:15] Выбрана самая большая версия видео: A0012M-A1.mp4 (5.65 MB)
-[12-02-2025 12:18:15] A0012M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:16] A0012M-A1.mp4 скачано успешно.
-[12-02-2025 12:18:18] Выбрана самая большая версия видео: A0013H-A1.mp4 (14.92 MB)
-[12-02-2025 12:18:18] A0013H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:21] A0013H-A1.mp4 скачано успешно.
-[12-02-2025 12:18:22] Пропуск A0015M-A1.wmv: содержит число 0015 из черного списка.
-[12-02-2025 12:18:24] Выбрана самая большая версия видео: A0016M-A1.mp4 (9.91 MB)
-[12-02-2025 12:18:24] A0016M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:29] A0016M-A1.mp4 скачано успешно.
-[12-02-2025 12:18:30] Выбрана самая большая версия видео: A0017M-A1.mp4 (1.82 MB)
-[12-02-2025 12:18:30] A0017M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:31] A0017M-A1.mp4 скачано успешно.
-[12-02-2025 12:18:32] Пропуск A0018M-A1.wmv: содержит число 0018 из черного списка.
-[12-02-2025 12:18:34] Пропуск A0020M-A1.mp4: содержит число 0020 из черного списка.
-[12-02-2025 12:18:35] Пропуск A0022M-A1.mp4: содержит число 0022 из черного списка.
-[12-02-2025 12:18:38] Выбрана самая большая версия видео: A0003H-A2.mp4 (78.66 MB)
-[12-02-2025 12:18:38] A0003H-A2.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:47] A0003H-A2.mp4 скачано успешно.
-[12-02-2025 12:18:49] Выбрана самая большая версия видео: A0023H-A1.mp4 (10.53 MB)
-[12-02-2025 12:18:49] A0023H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:51] A0023H-A1.mp4 скачано успешно.
-[12-02-2025 12:18:53] Выбрана самая большая версия видео: A0024H-A1.mp4 (18.73 MB)
-[12-02-2025 12:18:53] A0024H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:18:56] A0024H-A1.mp4 скачано успешно.
-[12-02-2025 12:18:59] Выбрана самая большая версия видео: A0025M-A1.mp4 (10.23 MB)
-[12-02-2025 12:18:59] A0025M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:00] A0025M-A1.mp4 скачано успешно.
-[12-02-2025 12:19:02] Пропуск A0026M-A1.mp4: содержит число 0026 из черного списка.
-[12-02-2025 12:19:03] Выбрана самая большая версия видео: A0028M-A1.mp4 (4.61 MB)
-[12-02-2025 12:19:03] A0028M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:04] A0028M-A1.mp4 скачано успешно.
-[12-02-2025 12:19:05] Пропуск A0029M-A1.mp4: содержит число 0029 из черного списка.
-[12-02-2025 12:19:08] Выбрана самая большая версия видео: A0001H-A2.mp4 (77.59 MB)
-[12-02-2025 12:19:08] A0001H-A2.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:16] A0001H-A2.mp4 скачано успешно.
-[12-02-2025 12:19:18] Выбрана самая большая версия видео: A0031H-A1.mp4 (19.35 MB)
-[12-02-2025 12:19:19] A0031H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:22] A0031H-A1.mp4 скачано успешно.
-[12-02-2025 12:19:23] Выбрана самая большая версия видео: A0032M-A1.mp4 (4.46 MB)
-[12-02-2025 12:19:23] A0032M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:24] A0032M-A1.mp4 скачано успешно.
-[12-02-2025 12:19:26] Выбрана самая большая версия видео: A0033H-A1.mp4 (14.61 MB)
-[12-02-2025 12:19:26] A0033H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:28] A0033H-A1.mp4 скачано успешно.
-[12-02-2025 12:19:29] Выбрана самая большая версия видео: A0035M-A1.wmv (15.12 MB)
-[12-02-2025 12:19:29] A0035M-A1.wmv уже скачано, пропуск.
-[12-02-2025 12:19:32] Выбрана самая большая версия видео: A0036M-A1.mp4 (4.21 MB)
-[12-02-2025 12:19:32] A0036M-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:33] A0036M-A1.mp4 скачано успешно.
-[12-02-2025 12:19:34] Пропуск A0037M-A1.mp4: содержит число 0037 из черного списка.
-[12-02-2025 12:19:36] Выбрана самая большая версия видео: A0039H-A1.mp4 (16.40 MB)
-[12-02-2025 12:19:37] A0039H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:40] A0039H-A1.mp4 скачано успешно.
-[12-02-2025 12:19:42] Выбрана самая большая версия видео: A0039H-A2.mp4 (110.84 MB)
-[12-02-2025 12:19:42] A0039H-A2.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:19:57] A0039H-A2.mp4 скачано успешно.
-[12-02-2025 12:19:59] Выбрана самая большая версия видео: A0040H-A1.mp4 (20.40 MB)
-[12-02-2025 12:19:59] A0040H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:20:02] A0040H-A1.mp4 скачано успешно.
-[12-02-2025 12:20:03] Выбрана самая большая версия видео: A0041H-A1.mp4 (31.75 MB)
-[12-02-2025 12:20:04] A0041H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:20:07] A0041H-A1.mp4 скачано успешно.
-[12-02-2025 12:20:09] Пропуск A0042M-A1.wmv: содержит число 0042 из черного списка.
-[12-02-2025 12:20:10] Выбрана самая большая версия видео: A0043M-A1.wmv (9.39 MB)
-[12-02-2025 12:20:10] A0043M-A1.wmv уже скачано, пропуск.
-[12-02-2025 12:20:12] Выбрана самая большая версия видео: A0044H-A1.mp4 (21.90 MB)
-[12-02-2025 12:20:12] A0044H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:20:16] A0044H-A1.mp4 скачано успешно.
-[12-02-2025 12:20:17] Пропуск A0047M-A1.wmv: содержит число 0047 из черного списка.
-[12-02-2025 12:20:19] Выбрана самая большая версия видео: A0048H-A1.mp4 (30.94 MB)
-[12-02-2025 12:20:19] A0048H-A1.mp4: размер не совпадает, перекачка.
-[12-02-2025 12:20:23] A0048H-A1.mp4 скачано успешно.
-[12-02-2025 12:20:24] Выбрана самая большая версия видео: A0049M-A1.wmv (7.57 MB)
-[12-02-2025 12:20:24] A0049M-A1.wmv уже скачано, пропуск.
-[12-02-2025 12:20:26] Выбрана самая большая версия видео: A0050M-A1.wmv (9.30 MB)
-[12-02-2025 12:20:26] A0050M-A1.wmv уже скачано, пропуск.
-[12-02-2025 12:20:27] Выбрана самая большая версия видео: A0052M-A1.wmv (5.56 MB)
-[12-02-2025 12:20:28] A0052M-A1.wmv уже скачано, пропуск.
-[12-02-2025 12:20:29] Пропуск A0053M-A1.wmv: содержит число 0053 из черного списка.
-[12-02-2025 12:20:30] Выбрана самая большая версия видео: A0054HD-A1.mp4 (296.58 MB)
-[12-02-2025 12:20:30] A0054HD-A1.mp4: размер не совпадает, перекачка.
+[12-02-2025 12:57:57] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=0
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33369&person_number=1593&type=R
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33350&person_number=6010&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33347&person_number=6001&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33358&person_number=5807&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33355&person_number=0743&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33353&person_number=5989&type=C
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33345&person_number=5983&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33351&person_number=6004&type=C
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33357&person_number=5746&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (чёрный список): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33356&person_number=1505&type=R (person_number=1505)
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33332&person_number=0063&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33349&person_number=6010&type=C
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33342&person_number=5996&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33348&person_number=0350&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33346&person_number=6001&type=C
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33334&person_number=5830&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33340&person_number=5998&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33344&person_number=5983&type=C
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33318&person_number=4750&type=A
+[12-02-2025 12:57:58] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33333&person_number=1506&type=R
+[12-02-2025 12:57:58] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=20
+[12-02-2025 12:57:59] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33338&person_number=6012&type=A
+[12-02-2025 12:57:59] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33336&person_number=5993&type=A
+[12-02-2025 12:57:59] Ссылка проигнорирована (чёрный список): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33331&person_number=5638&type=A (person_number=5638)
+[12-02-2025 12:57:59] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33341&person_number=5996&type=C
+[12-02-2025 12:57:59] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33320&person_number=5936&type=A
+[12-02-2025 12:57:59] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33329&person_number=5921&type=A
+[12-02-2025 12:57:59] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33339&person_number=5998&type=C
+[12-02-2025 12:57:59] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33319&person_number=5792&type=A
+[12-02-2025 12:58:00] Ссылка проигнорирована (чёрный список): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33330&person_number=1862&type=R (person_number=1862)
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33327&person_number=5938&type=A
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33337&person_number=6012&type=C
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33324&person_number=5973&type=A
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33317&person_number=5915&type=A
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33335&person_number=5993&type=C
+[12-02-2025 12:58:00] Ссылка проигнорирована (чёрный список): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33325&person_number=3500&type=A (person_number=3500)
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33322&person_number=5992&type=A
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33328&person_number=5921&type=C
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33315&person_number=5833&type=A
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33314&person_number=1231&type=R
+[12-02-2025 12:58:00] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33313&person_number=5997&type=A
+[12-02-2025 12:58:00] Сбор ссылок, страница: https://beautifulagony.com/public/main.php?page=view&mode=latest&offset=40
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33326&person_number=5938&type=C
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33309&person_number=5961&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33316&person_number=5565&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33323&person_number=5973&type=C
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33297&person_number=5882&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33307&person_number=5960&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33321&person_number=5992&type=C
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33256&person_number=5834&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33310&person_number=1059&type=R
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33255&person_number=5763&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33312&person_number=5997&type=C
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33302&person_number=5972&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33311&person_number=2896&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33308&person_number=5961&type=C
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33257&person_number=5876&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33300&person_number=5982&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33306&person_number=5960&type=C
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33305&person_number=5818&type=A
+[12-02-2025 12:58:01] Ссылка проигнорирована (чёрный список): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33304&person_number=0778&type=R (person_number=0778)
+[12-02-2025 12:58:01] Ссылка проигнорирована (уже существует): https://beautifulagony.com/public/main.php?page=player&out=bkg&media_id=33299&person_number=5980&type=A
+[12-02-2025 12:58:01] Остановка поиска: 3 страницы подряд без новых ссылок.
+[12-02-2025 12:58:01] Сбор ссылок завершён, собрано 10785 ссылок.
+[12-02-2025 12:58:03] Начало последовательной загрузки видео.
+[12-02-2025 12:58:05] A5534HD-A2.mp4 уже скачано, пропуск.
+[12-02-2025 12:58:06] Пропуск A0679HD-A2.mp4: содержит число 0679 из черного списка.
+[12-02-2025 12:58:07] C5728HD-C1.mp4 уже скачано, пропуск.
+[12-02-2025 12:58:08] A5724HD-A1.mp4 уже скачано, пропуск.
+[12-02-2025 12:58:10] C5727HD-C1.mp4 уже скачано, пропуск.

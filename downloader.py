@@ -54,7 +54,17 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
                     return
+            # Сначала проверяем, существует ли уже файл и его размер
+            output_path = os.path.join(download_folder, video_name)
+            if os.path.exists(output_path):
+                existing_size = os.path.getsize(output_path)
+                if existing_size == largest_video_size:
+                    write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
+                    return
+                else:
+                    write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
             write_log(f"Выбрана самая большая версия видео: {video_name} ({largest_video_size / (1024 ** 2):.2f} MB)", log_type="info")
+            # Теперь создаём блоки прогресса, только если видео ещё не скачано
             from tkinter import ttk
             progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
             progress_bar.pack(pady=(5, 10))
@@ -240,7 +250,6 @@ def download_videos_sequential(root, download_folder, pause_event, stop_after_sk
             stop_downloading_flag = False
     write_log("Последовательная загрузка завершена.", log_type="info")
 
-
 def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist):
     try:
         driver.get(video_link)
@@ -273,7 +282,15 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
                     return False
-            write_log(f"Выбрана самая большая версия видео: {video_name} ({largest_video_size / (1024 ** 2):.2f} MB)", log_type="info")
+            # Сначала проверяем, существует ли уже файл и его размер
+            output_path = os.path.join(download_folder, video_name)
+            if os.path.exists(output_path):
+                existing_size = os.path.getsize(output_path)
+                if existing_size == largest_video_size:
+                    write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
+                    return False
+                else:
+                    write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
             from tkinter import ttk
             progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
             progress_bar.pack(pady=(5, 10))
@@ -290,3 +307,4 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
         write_log(f"Ошибка при обработке видео {video_link}: {e}", log_type="error")
         save_failed_link(video_link)
         return False
+
