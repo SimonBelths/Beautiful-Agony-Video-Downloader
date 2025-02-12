@@ -79,7 +79,7 @@ def create_gui():
 
     auth_button = ctk.CTkButton(
         master=auth_frame, text="Пройти авторизацию",
-        command=lambda: authorize(timer_label, check_button, root)
+        command=lambda: on_authorize()
     )
     auth_button.pack(side="left", padx=5, pady=5)
 
@@ -124,7 +124,7 @@ def create_gui():
         if is_collecting_links:
             messagebox.showinfo("Информация", "Сбор ссылок уже запущен!")
             return
-        # Скрываем кнопку "Собрать ссылки на видео"
+        # Скрываем кнопку "Собрать ссылки на видео" (она потом исчезнет после первого нажатия)
         collect_button.grid_remove()
         # Показываем контейнер с кнопками управления поиском ссылок
         search_buttons_frame.grid()
@@ -135,12 +135,13 @@ def create_gui():
             daemon=True
         ).start()
 
-    # Исходная кнопка "Собрать ссылки на видео" (первая строка, занимает обе колонки)
+    # Исходная кнопка "Собрать ссылки на видео" (создаём, но скрываем её до авторизации)
     collect_button = ctk.CTkButton(
         master=collection_frame, text="Собрать ссылки на видео",
         command=start_collecting
     )
     collect_button.grid(row=0, column=0, columnspan=2, padx=5, pady=5, sticky="w")
+    collect_button.grid_remove()  # Скрываем до авторизации
 
     # Создаем контейнер для кнопок управления поиском ссылок
     search_buttons_frame = ctk.CTkFrame(master=collection_frame, fg_color="transparent")
@@ -170,7 +171,7 @@ def create_gui():
         variable=stop_empty_pages_var
     )
     stop_empty_pages_checkbox.grid(row=1, column=0, columnspan=2, padx=5, pady=5, sticky="w")
-    stop_empty_pages_checkbox.grid_remove()
+    stop_empty_pages_checkbox.grid_remove()  # Скрываем до авторизации
 
     #########################################
     # 4. Блок последовательной загрузки (Этап 2) и управление загрузкой
@@ -191,7 +192,7 @@ def create_gui():
             daemon=True
         ).start()
 
-    # Кнопка "Скачать видео по ссылкам" выровнена по левому краю
+    # Кнопка "Скачать видео по ссылкам" — скрыта до авторизации
     download_seq_button = ctk.CTkButton(
         master=download_control_frame,
         text="Скачать видео по ссылкам",
@@ -230,6 +231,7 @@ def create_gui():
         variable=stop_after_skips_var
     )
     stop_after_skips_checkbox.grid(row=2, column=0, padx=5, pady=5, columnspan=3, sticky="w")
+    stop_after_skips_checkbox.grid_remove()  # Скрываем до авторизации
 
     #########################################
     # 5. Блок для открытия файла со ссылками и папки загрузок
@@ -309,7 +311,6 @@ def create_gui():
     def start_blacklist_creation():
         global blacklist_thread
         create_blacklist_button.grid_remove()
-        # Показываем новые кнопки управления процессом создания черного списка
         stop_blacklist_button.grid()
         resume_blacklist_button.grid()
         blacklist_thread = threading.Thread(target=create_blacklist_process, daemon=True)
@@ -367,15 +368,14 @@ def create_gui():
     filter_checkbox.grid(row=0, column=2, padx=5, pady=5)
     set_log_widgets(log_text, show_only_pages_and_errors)
 
-    # Переназначаем команду кнопки авторизации, чтобы после её нажатия
-    # появились кнопки "Собрать ссылки на видео" и "Скачать видео по ссылкам" (а также чекбокс для поиска)
+    # Функция, которая вызывается при нажатии кнопки "Пройти авторизацию".
+    # Она показывает дополнительные элементы, которые должны появляться после авторизации.
     def on_authorize():
         authorize(timer_label, check_button, root)
-        collect_button.grid()       # Показываем кнопку сбора ссылок
-        stop_empty_pages_checkbox.grid()  # Показываем чекбокс для остановки поиска ссылок
-        download_seq_button.grid()  # Показываем кнопку загрузки видео
-
-    auth_button.configure(command=on_authorize)
+        collect_button.grid()                # Показываем кнопку сбора ссылок
+        stop_empty_pages_checkbox.grid()       # Показываем чекбокс для остановки поиска пустых страниц
+        download_seq_button.grid()           # Показываем кнопку загрузки видео
+        stop_after_skips_checkbox.grid()     # Показываем чекбокс для остановки загрузки после 10 подряд пропущенных видео
 
     root.mainloop()
 
