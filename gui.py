@@ -124,7 +124,7 @@ def create_gui():
         if is_collecting_links:
             messagebox.showinfo("Информация", "Сбор ссылок уже запущен!")
             return
-        # Скрываем кнопку "Собрать ссылки на видео" (она потом исчезнет после первого нажатия)
+        # Скрываем кнопку "Собрать ссылки на видео"
         collect_button.grid_remove()
         # Показываем контейнер с кнопками управления поиском ссылок
         search_buttons_frame.grid()
@@ -141,7 +141,7 @@ def create_gui():
         command=start_collecting
     )
     collect_button.grid(row=0, column=0, columnspan=2, padx=5, pady=5, sticky="w")
-    collect_button.grid_remove()  # Скрываем до авторизации
+    collect_button.grid_remove()
 
     # Создаем контейнер для кнопок управления поиском ссылок
     search_buttons_frame = ctk.CTkFrame(master=collection_frame, fg_color="transparent")
@@ -171,7 +171,7 @@ def create_gui():
         variable=stop_empty_pages_var
     )
     stop_empty_pages_checkbox.grid(row=1, column=0, columnspan=2, padx=5, pady=5, sticky="w")
-    stop_empty_pages_checkbox.grid_remove()  # Скрываем до авторизации
+    stop_empty_pages_checkbox.grid_remove()
 
     #########################################
     # 4. Блок последовательной загрузки (Этап 2) и управление загрузкой
@@ -187,8 +187,15 @@ def create_gui():
         pause_button.grid()
         resume_button.grid()
         stop_download_button.grid()
+        # Передаём выбранное направление обхода ссылок в функцию загрузки видео
         threading.Thread(
-            target=lambda: download_videos_sequential(root, download_folder_var.get(), pause_event, stop_after_skips_var.get()),
+            target=lambda: download_videos_sequential(
+                root,
+                download_folder_var.get(),
+                pause_event,
+                stop_after_skips_var.get(),
+                direction_var.get()
+            ),
             daemon=True
         ).start()
 
@@ -232,6 +239,20 @@ def create_gui():
     )
     stop_after_skips_checkbox.grid(row=2, column=0, padx=5, pady=5, columnspan=3, sticky="w")
     stop_after_skips_checkbox.grid_remove()  # Скрываем до авторизации
+
+    # Новые элементы для выбора направления обхода ссылок
+    direction_var = tk.StringVar(value="сначала")
+    direction_label = ctk.CTkLabel(master=download_control_frame, text="Направление обхода ссылок:")
+    direction_label.grid(row=3, column=0, padx=5, pady=(5,0), sticky="w")
+    direction_label.grid_remove()
+
+    first_radio = ctk.CTkRadioButton(master=download_control_frame, text="Сначала", variable=direction_var, value="сначала")
+    first_radio.grid(row=3, column=1, padx=5, pady=(5,0), sticky="w")
+    first_radio.grid_remove()
+
+    last_radio = ctk.CTkRadioButton(master=download_control_frame, text="С конца", variable=direction_var, value="с конца")
+    last_radio.grid(row=3, column=2, padx=5, pady=(5,0), sticky="w")
+    last_radio.grid_remove()
 
     #########################################
     # 5. Блок для открытия файла со ссылками и папки загрузок
@@ -376,6 +397,10 @@ def create_gui():
         stop_empty_pages_checkbox.grid()       # Показываем чекбокс для остановки поиска пустых страниц
         download_seq_button.grid()           # Показываем кнопку загрузки видео
         stop_after_skips_checkbox.grid()     # Показываем чекбокс для остановки загрузки после 10 подряд пропущенных видео
+        # Показываем элементы управления направлением обхода ссылок
+        direction_label.grid()
+        first_radio.grid()
+        last_radio.grid()
 
     root.mainloop()
 
