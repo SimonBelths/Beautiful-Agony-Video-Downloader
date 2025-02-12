@@ -184,10 +184,10 @@ def create_gui():
         import downloader
         downloader.stop_downloading_flag = False
         download_seq_button.grid_remove()
-        pause_button.grid()
-        resume_button.grid()
+        # Показываем контейнер с кнопками "Возобновить загрузку" и "Пауза загрузки"
+        download_buttons_frame.grid()
+        # Показываем кнопку остановки загрузки
         stop_download_button.grid()
-        # Передаём выбранное направление обхода ссылок в функцию загрузки видео
         threading.Thread(
             target=lambda: download_videos_sequential(
                 root,
@@ -208,28 +208,24 @@ def create_gui():
     download_seq_button.grid(row=0, column=0, padx=5, pady=5, sticky="w")
     download_seq_button.grid_remove()
 
-    pause_button = ctk.CTkButton(
-        master=download_control_frame,
-        text="Пауза загрузки",
-        command=lambda: pause_event.clear()
-    )
-    pause_button.grid(row=1, column=0, padx=5, pady=5, sticky="w")
-    pause_button.grid_remove()
+    # Создаем подфрейм для размещения кнопок "Возобновить загрузку" и "Пауза загрузки"
+    download_buttons_frame = ctk.CTkFrame(master=download_control_frame, fg_color="transparent")
+    download_buttons_frame.grid(row=1, column=0, padx=5, pady=5, sticky="w")
+    download_buttons_frame.grid_remove()  # Скрываем до авторизации
 
-    resume_button = ctk.CTkButton(
-        master=download_control_frame,
-        text="Возобновить загрузку",
-        command=lambda: pause_event.set()
-    )
-    resume_button.grid(row=1, column=1, padx=5, pady=5, sticky="w")
-    resume_button.grid_remove()
+    # Размещаем кнопки внутри этого фрейма с зазором 10 пикселей:
+    resume_button = ctk.CTkButton(master=download_buttons_frame, text="Возобновить загрузку", command=lambda: pause_event.set())
+    resume_button.pack(side="left", padx=(0, 10))  # Отступ справа 10 пикселей
+    pause_button = ctk.CTkButton(master=download_buttons_frame, text="Пауза загрузки", command=lambda: pause_event.clear())
+    pause_button.pack(side="left")
 
+    # Кнопка для остановки загрузки после текущего видео – размещаем в download_control_frame отдельно
     stop_download_button = ctk.CTkButton(
         master=download_control_frame,
         text="Остановить загрузку после текущего видео",
         command=stop_downloading
     )
-    stop_download_button.grid(row=1, column=2, padx=5, pady=5, sticky="w")
+    stop_download_button.grid(row=1, column=1, padx=5, pady=5, sticky="w")
     stop_download_button.grid_remove()
 
     stop_after_skips_checkbox = ctk.CTkCheckBox(
@@ -237,21 +233,21 @@ def create_gui():
         text="Остановить загрузку после 10 подряд пропущенных видео",
         variable=stop_after_skips_var
     )
-    stop_after_skips_checkbox.grid(row=2, column=0, padx=5, pady=5, columnspan=3, sticky="w")
+    stop_after_skips_checkbox.grid(row=2, column=0, padx=5, pady=5, columnspan=2, sticky="w")
     stop_after_skips_checkbox.grid_remove()  # Скрываем до авторизации
 
     # Новые элементы для выбора направления обхода ссылок
     direction_var = tk.StringVar(value="сначала")
     direction_label = ctk.CTkLabel(master=download_control_frame, text="Направление обхода ссылок:")
-    direction_label.grid(row=3, column=0, padx=5, pady=(5,0), sticky="w")
+    direction_label.grid(row=3, column=0, padx=5, pady=(5, 0), sticky="w")
     direction_label.grid_remove()
 
     first_radio = ctk.CTkRadioButton(master=download_control_frame, text="Сначала", variable=direction_var, value="сначала")
-    first_radio.grid(row=3, column=1, padx=5, pady=(5,0), sticky="w")
+    first_radio.grid(row=3, column=1, padx=5, pady=(5, 0), sticky="w")
     first_radio.grid_remove()
 
     last_radio = ctk.CTkRadioButton(master=download_control_frame, text="С конца", variable=direction_var, value="с конца")
-    last_radio.grid(row=3, column=2, padx=5, pady=(5,0), sticky="w")
+    last_radio.grid(row=3, column=2, padx=5, pady=(5, 0), sticky="w")
     last_radio.grid_remove()
 
     #########################################
@@ -276,9 +272,6 @@ def create_gui():
     blacklist_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     blacklist_frame.pack(pady=10, fill="x")
 
-    # Реализуем свой процесс создания черного списка с поддержкой паузы.
-    # Он проходит по режимам "males" и "transgender", последовательно обрабатывая страницы,
-    # и перед каждым запросом вызывает wait() на событии blacklist_pause_event.
     def create_blacklist_process():
         import requests
         from bs4 import BeautifulSoup
@@ -287,8 +280,7 @@ def create_gui():
         for mode in modes:
             page = 0
             while True:
-                # Если процесс приостановлен, wait() заблокирует выполнение здесь до возобновления.
-                blacklist_pause_event.wait()
+                blacklist_pause_event.wait()  # Приостановка процесса, если требуется
                 offset = page * 20
                 url = f"https://beautifulagony.com/public/main.php?page=view&mode={mode}&offset={offset}"
                 try:
@@ -324,11 +316,6 @@ def create_gui():
         except Exception as e:
             print(f"Ошибка при записи файла черного списка: {e}")
 
-    # Функция запуска создания черного списка.
-    # После нажатия кнопки "Создать черный список" эта функция:
-    # – скрывает кнопку "Создать черный список"
-    # – показывает кнопки "Остановить создание чёрного списка" и "Возобновить создание чёрного списка"
-    # – запускает процесс создания черного списка в отдельном потоке
     def start_blacklist_creation():
         global blacklist_thread
         create_blacklist_button.grid_remove()
@@ -337,14 +324,12 @@ def create_gui():
         blacklist_thread = threading.Thread(target=create_blacklist_process, daemon=True)
         blacklist_thread.start()
 
-    # Исходная кнопка "Создать черный список"
     create_blacklist_button = ctk.CTkButton(
         master=blacklist_frame, text="Создать черный список",
         command=start_blacklist_creation
     )
     create_blacklist_button.grid(row=0, column=0, padx=5, pady=5)
 
-    # Новая кнопка "Остановить создание чёрного списка" — при нажатии вызывается pause (через clear)
     stop_blacklist_button = ctk.CTkButton(
         master=blacklist_frame, text="Остановить создание чёрного списка",
         command=lambda: blacklist_pause_event.clear()
@@ -352,7 +337,6 @@ def create_gui():
     stop_blacklist_button.grid(row=0, column=0, padx=5, pady=5)
     stop_blacklist_button.grid_remove()
 
-    # Новая кнопка "Возобновить создание чёрного списка" — при нажатии вызывается resume (через set)
     resume_blacklist_button = ctk.CTkButton(
         master=blacklist_frame, text="Возобновить создание чёрного списка",
         command=lambda: blacklist_pause_event.set()
@@ -390,7 +374,6 @@ def create_gui():
     set_log_widgets(log_text, show_only_pages_and_errors)
 
     # Функция, которая вызывается при нажатии кнопки "Пройти авторизацию".
-    # Она показывает дополнительные элементы, которые должны появляться после авторизации.
     def on_authorize():
         authorize(timer_label, check_button, root)
         collect_button.grid()                # Показываем кнопку сбора ссылок
