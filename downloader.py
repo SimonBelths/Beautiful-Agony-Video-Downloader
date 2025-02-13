@@ -4,11 +4,19 @@ import time
 import requests
 import threading
 import tkinter as tk  # Для использования виджетов в GUI
+import re
 from urllib.parse import urlparse, parse_qs
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utils import write_log, save_failed_link
+from utils import (
+    write_log,
+    save_failed_link,
+    set_media_created,
+    set_video_id,
+    parse_release_date,
+    sizes_match
+)
 
 # Глобальные переменные для отслеживания состояния загрузки
 is_downloading_video = False
@@ -26,7 +34,6 @@ stop_downloading_flag = False
 def find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist):
     try:
         driver.get(video_link)
-        from utils import parse_release_date
         # Извлекаем дату релиза с текущей страницы
         release_date = None
         try:
@@ -35,6 +42,10 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
             release_date = parse_release_date(release_date_text)
         except Exception as e:
             write_log("Не удалось извлечь дату релиза: " + str(e), log_type="error")
+
+        # Извлекаем id участника из ссылки
+        m = re.search(r'person_number=(\d{4})', video_link)
+        participant_id = m.group(1) if m else None
 
         from utils import cookies_path
         if os.path.exists(cookies_path):
@@ -65,20 +76,6 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
                     return
-            output_path = os.path.join(download_folder, video_name)
-            if os.path.exists(output_path):
-                existing_size = os.path.getsize(output_path)
-                if existing_size == largest_video_size:
-                    if release_date:
-                        from utils import set_media_created
-                        set_media_created(output_path, release_date)
-                        write_log(f"{video_name}: Media Created, Data Created и Data Modified обновлены.",
-                                  log_type="info")
-                    else:
-                        write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
-                    return
-                else:
-                    write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
             write_log(f"Выбрана самая большая версия видео: {video_name} ({largest_video_size / (1024 ** 2):.2f} MB)",
                       log_type="info")
             from tkinter import ttk
@@ -86,8 +83,17 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
             progress_bar.pack(pady=(5, 10))
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
             progress_label.pack(pady=(5, 15))
-            download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar,
-                           blacklist, release_date)
+            download_video(
+                largest_video_url,
+                download_folder,
+                video_name,
+                pause_event,
+                progress_label,
+                progress_bar,
+                blacklist,
+                release_date,
+                participant_id
+            )
             progress_label.destroy()
             progress_bar.destroy()
         else:
@@ -98,7 +104,7 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
 
 
 def download_video(video_url, output_folder, video_name, pause_event, progress_label, progress_bar, blacklist,
-                   release_date=None):
+                   release_date=None, participant_id=None):
     for num in blacklist:
         if num in video_name:
             write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
@@ -114,16 +120,20 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
         output_path = os.path.join(output_folder, video_name)
         if os.path.exists(output_path):
             existing_size = os.path.getsize(output_path)
-            if existing_size == total_size:
+            # Используем допустимую погрешность 0.3% (tolerance_percent=0.003)
+            if sizes_match(existing_size, total_size, tolerance_percent=0.003):
                 if release_date:
-                    from utils import set_media_created
                     set_media_created(output_path, release_date)
-                    write_log(f"{video_name}: Media Created, Data Created и Data Modified обновлены.", log_type="info")
+                    if participant_id:
+                        set_video_id(output_path, participant_id)
+                    write_log(f"{video_name}: метаданные и ID обновлены.", log_type="info")
                 else:
                     write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
                 return False
             else:
                 write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
+                write_log(f"Размер скачанного файла: {existing_size} байт", log_type="info")
+                write_log(f"Ожидаемый размер файла: {total_size} байт", log_type="info")
         downloaded = 0
         chunk_size = 8192
         start_time = time.time()
@@ -137,12 +147,12 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
                 speed = downloaded / 1024 / max(time.time() - start_time, 1)
                 progress_label.config(text=f"{video_name}: {progress_percent}% @ {speed:.2f} KB/s")
         write_log(f"{video_name} скачано успешно.", log_type="info")
-        # Если видео только что скачано, обновляем метаданные
+        # После скачивания обновляем метаданные и ID
         if release_date:
-            from utils import set_media_created
             set_media_created(output_path, release_date)
-            write_log(f"{video_name}: Media Created, Data Created и Data Modified обновлены после скачивания.",
-                      log_type="info")
+            if participant_id:
+                set_video_id(output_path, participant_id)
+            write_log(f"{video_name}: метаданные и ID обновлены после скачивания.", log_type="info")
         return True
     except Exception as e:
         write_log(f"Ошибка при скачивании {video_name}: {e}", log_type="error")
@@ -156,10 +166,10 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
     """
     Обновлённая функция сбора ссылок:
     - Ссылка нормализуется с помощью strip().
-    - Если ссылка уже есть в файле video_links.txt, она игнорируется с выводом сообщения.
-    - Из ссылки извлекается person_number (четырёхзначное число). Если оно в чёрном списке, ссылка игнорируется.
+    - Если ссылка уже есть в файле video_links.txt, она игнорируется.
+    - Из ссылки извлекается person_number (четырёхзначное число). Если оно в черном списке, ссылка игнорируется.
     - Новые ссылки сразу записываются в файл.
-    - Если stop_on_empty_pages=True, то при обработке 3 страниц подряд без новых ссылок поиск прекращается.
+    - Если stop_on_empty_pages=True, то при 3 страницах подряд без новых ссылок поиск прекращается.
     """
     global is_collecting_links
     if is_collecting_links:
@@ -190,11 +200,10 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
 
     try:
         from browser import driver
-        import re
         while True:
             search_pause_event.wait()
             current_count_before = len(existing_links)
-            write_log(f"Сбор ссылок, страница: {current_url}", log_type="page")
+            write_log(f"Сбор ссылок, страница: {current_url}", log_type="info")
             driver.get(current_url)
             page_links = driver.find_elements(By.XPATH, '//a[contains(@href, "page=player&out=bkg&media")]')
             if not page_links:
@@ -217,9 +226,7 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
                 if m:
                     person_number = m.group(1)
                     if person_number in blacklist:
-                        write_log(
-                            f"Ссылка проигнорирована (чёрный список): {video_link} (person_number={person_number})",
-                            log_type="info")
+                        write_log(f"Ссылка проигнорирована (чёрный список): {video_link} (person_number={person_number})", log_type="info")
                         continue
                 else:
                     write_log(f"Ссылка не содержит person_number и проигнорирована: {video_link}", log_type="info")
@@ -294,6 +301,9 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
             release_date = parse_release_date(release_date_text)
         except Exception as e:
             write_log("Не удалось извлечь дату релиза: " + str(e), log_type="error")
+        # Извлекаем id участника из ссылки
+        m = re.search(r'person_number=(\d{4})', video_link)
+        participant_id = m.group(1) if m else None
         if os.path.exists(cookies_path):
             with open(cookies_path, "rb") as file:
                 cookies = pickle.load(file)
@@ -325,24 +335,27 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
             output_path = os.path.join(download_folder, video_name)
             if os.path.exists(output_path):
                 existing_size = os.path.getsize(output_path)
-                if existing_size == largest_video_size:
+                if sizes_match(existing_size, largest_video_size, tolerance_percent=0.003):
                     if release_date:
-                        from utils import set_media_created
+                        from utils import set_media_created, set_video_id
                         set_media_created(output_path, release_date)
-                        write_log(f"{video_name}: Media Created, Data Created и Data Modified обновлены.",
-                                  log_type="info")
+                        if participant_id:
+                            set_video_id(output_path, participant_id)
+                        write_log(f"{video_name}: метаданные и ID обновлены.", log_type="info")
                     else:
                         write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
                     return False
                 else:
                     write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
+                    write_log(f"Размер скачанного файла: {existing_size} байт", log_type="info")
+                    write_log(f"Ожидаемый размер файла: {largest_video_size} байт", log_type="info")
             from tkinter import ttk
             progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
             progress_bar.pack(pady=(5, 10))
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
             progress_label.pack(pady=(5, 15))
             result = download_video(largest_video_url, download_folder, video_name, pause_event, progress_label,
-                                    progress_bar, blacklist, release_date)
+                                    progress_bar, blacklist, release_date, participant_id)
             progress_label.destroy()
             progress_bar.destroy()
             return result

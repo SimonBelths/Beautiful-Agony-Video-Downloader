@@ -7,6 +7,7 @@ import time
 import datetime
 import ctypes
 from email.utils import parsedate_to_datetime
+from mutagen.mp4 import MP4
 
 # Константы и пути к файлам
 DOWNLOAD_FOLDER = r"S:\Beautiful Agony"
@@ -134,7 +135,6 @@ def open_blacklist_file():
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл черного списка не найден!")
 
-# Новая функция для парсинга даты релиза
 def parse_release_date(date_text):
     from datetime import datetime
     try:
@@ -172,3 +172,31 @@ def set_media_created(file_path, remote_date_str):
         ctypes.windll.kernel32.CloseHandle(handle)
         return res
     return True
+
+def set_file_title(file_path, title):
+    """
+    Устанавливает значение тега Title (©nam) для MP4-файла с помощью mutagen.
+    """
+    try:
+        video = MP4(file_path)
+        video["©nam"] = [title]
+        video.save()
+        print(f"Title установлен: {title}")
+        return True
+    except Exception as e:
+        print(f"Ошибка при установке Title для {file_path}: {e}")
+        return False
+
+def set_video_id(file_path, person_id):
+    return set_file_title(file_path, person_id)
+
+def sizes_match(actual, expected, tolerance_percent=0.003):
+    """
+    Возвращает True, если относительная разница между actual и expected не превышает tolerance_percent.
+    Выводит отладочную информацию.
+    """
+    diff = abs(actual - expected)
+    allowed = tolerance_percent * expected
+    print(f"[DEBUG] Сравнение размеров: actual = {actual}, expected = {expected}, diff = {diff}, allowed = {allowed}")
+    return diff <= allowed
+
