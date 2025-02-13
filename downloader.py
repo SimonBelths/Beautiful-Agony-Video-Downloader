@@ -22,7 +22,7 @@ is_collecting_links = False
 # Новый глобальный флаг для постановки загрузки на паузу после завершения текущего видео
 stop_downloading_flag = False
 
-def find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist):
+def find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist, update_media_created=False):
     try:
         driver.get(video_link)
         from utils import cookies_path
@@ -59,7 +59,18 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
             if os.path.exists(output_path):
                 existing_size = os.path.getsize(output_path)
                 if existing_size == largest_video_size:
-                    write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
+                    if update_media_created:
+                        head_response = requests.head(largest_video_url, allow_redirects=True)
+                        remote_media_created = head_response.headers.get("Media-Created")
+                        if not remote_media_created:
+                            remote_media_created = head_response.headers.get("Last-Modified")
+                        from utils import get_media_created, set_media_created
+                        local_media_created = get_media_created(output_path)
+                        if remote_media_created and local_media_created != remote_media_created:
+                            set_media_created(output_path, remote_media_created)
+                            write_log(f"{video_name}: Media Created обновлён.", log_type="info")
+                    else:
+                        write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
                     return
                 else:
                     write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
@@ -70,7 +81,7 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
             progress_bar.pack(pady=(5, 10))
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
             progress_label.pack(pady=(5, 15))
-            download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar, blacklist)
+            download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar, blacklist, update_media_created)
             progress_label.destroy()
             progress_bar.destroy()
         else:
@@ -79,7 +90,7 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
         write_log(f"Ошибка при обработке видео {video_link}: {e}", log_type="error")
         save_failed_link(video_link)
 
-def download_video(video_url, output_folder, video_name, pause_event, progress_label, progress_bar, blacklist):
+def download_video(video_url, output_folder, video_name, pause_event, progress_label, progress_bar, blacklist, update_media_created=False):
     for num in blacklist:
         if num in video_name:
             write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
@@ -96,7 +107,18 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
         if os.path.exists(output_path):
             existing_size = os.path.getsize(output_path)
             if existing_size == total_size:
-                write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
+                if update_media_created:
+                    head_response = requests.head(video_url, allow_redirects=True)
+                    remote_media_created = head_response.headers.get("Media-Created")
+                    if not remote_media_created:
+                        remote_media_created = head_response.headers.get("Last-Modified")
+                    from utils import get_media_created, set_media_created
+                    local_media_created = get_media_created(output_path)
+                    if remote_media_created and local_media_created != remote_media_created:
+                        set_media_created(output_path, remote_media_created)
+                        write_log(f"{video_name}: Media Created обновлён.", log_type="info")
+                else:
+                    write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
                 return False
             else:
                 write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
@@ -214,7 +236,7 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
     is_collecting_links = False
     return links_collected
 
-def download_videos_sequential(root, download_folder, pause_event, stop_after_skip=False, direction="сначала"):
+def download_videos_sequential(root, download_folder, pause_event, stop_after_skip=False, direction="сначала", update_media_created=False):
     global stop_downloading_flag
     from utils import load_blacklist, write_log
     try:
@@ -235,7 +257,7 @@ def download_videos_sequential(root, download_folder, pause_event, stop_after_sk
     consecutive_skip_count = 0
     for link in links:
         pause_event.wait()
-        result = download_video_sequential(driver, root, link, download_folder, pause_event, blacklist)
+        result = download_video_sequential(driver, root, link, download_folder, pause_event, blacklist, update_media_created)
         if result is False:
             consecutive_skip_count += 1
         else:
@@ -250,7 +272,7 @@ def download_videos_sequential(root, download_folder, pause_event, stop_after_sk
             stop_downloading_flag = False
     write_log("Последовательная загрузка завершена.", log_type="info")
 
-def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist):
+def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist, update_media_created=False):
     try:
         driver.get(video_link)
         from utils import cookies_path
@@ -282,12 +304,22 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
                     return False
-            # Сначала проверяем, существует ли уже файл и его размер
             output_path = os.path.join(download_folder, video_name)
             if os.path.exists(output_path):
                 existing_size = os.path.getsize(output_path)
                 if existing_size == largest_video_size:
-                    write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
+                    if update_media_created:
+                        head_response = requests.head(largest_video_url, allow_redirects=True)
+                        remote_media_created = head_response.headers.get("Media-Created")
+                        if not remote_media_created:
+                            remote_media_created = head_response.headers.get("Last-Modified")
+                        from utils import get_media_created, set_media_created
+                        local_media_created = get_media_created(output_path)
+                        if remote_media_created and local_media_created != remote_media_created:
+                            set_media_created(output_path, remote_media_created)
+                            write_log(f"{video_name}: Media Created обновлён.", log_type="info")
+                    else:
+                        write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
                     return False
                 else:
                     write_log(f"{video_name}: размер не совпадает, перекачка.", log_type="info")
@@ -296,7 +328,7 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
             progress_bar.pack(pady=(5, 10))
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
             progress_label.pack(pady=(5, 15))
-            result = download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar, blacklist)
+            result = download_video(largest_video_url, download_folder, video_name, pause_event, progress_label, progress_bar, blacklist, update_media_created)
             progress_label.destroy()
             progress_bar.destroy()
             return result
@@ -307,4 +339,3 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
         write_log(f"Ошибка при обработке видео {video_link}: {e}", log_type="error")
         save_failed_link(video_link)
         return False
-

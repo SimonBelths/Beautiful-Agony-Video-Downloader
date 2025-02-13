@@ -3,6 +3,10 @@ import webbrowser
 import tkinter as tk
 import requests
 from bs4 import BeautifulSoup
+import time
+import datetime
+import ctypes
+from email.utils import parsedate_to_datetime
 
 # Константы и пути к файлам
 DOWNLOAD_FOLDER = r"S:\Beautiful Agony"
@@ -135,3 +139,42 @@ def open_blacklist_file():
     else:
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл черного списка не найден!")
+
+# Новые функции для работы с метаданными Media Created
+
+def get_media_created(file_path):
+    """
+    Возвращает дату создания файла в формате "Wed, 21 Oct 2015 07:28:00 GMT".
+    Используется время создания файла (на Windows это ctime).
+    """
+    timestamp = os.path.getctime(file_path)
+    return time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime(timestamp))
+
+def set_media_created(file_path, remote_date_str):
+    """
+    Обновляет дату создания файла в соответствии с remote_date_str.
+    Пытаемся установить и время модификации через os.utime, а для Windows дополнительно обновляем время создания через Windows API.
+    """
+    try:
+        remote_dt = parsedate_to_datetime(remote_date_str)
+    except Exception as e:
+        print(f"Ошибка при разборе даты: {e}")
+        return False
+    timestamp = remote_dt.timestamp()
+    # Обновляем время модификации и доступа
+    os.utime(file_path, (timestamp, timestamp))
+    if os.name == 'nt':
+        # Обновление времени создания на Windows через ctypes
+        FILE_WRITE_ATTRIBUTES = 0x100
+        # Открываем файл для изменения атрибутов
+        handle = ctypes.windll.kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
+        if handle == -1:
+            print("Не удалось открыть файл для изменения даты создания.")
+            return False
+        # Переводим timestamp в формат Windows FILETIME (100-нс интервалов с 1 января 1601)
+        win_time = int((timestamp + 11644473600) * 10000000)
+        ctime = ctypes.c_longlong(win_time)
+        res = ctypes.windll.kernel32.SetFileTime(handle, ctypes.byref(ctime), None, None)
+        ctypes.windll.kernel32.CloseHandle(handle)
+        return res
+    return True
