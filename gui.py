@@ -179,6 +179,8 @@ def create_gui():
     download_control_frame.pack(pady=10, fill="x")
 
     stop_after_skips_var = tk.BooleanVar(value=False)
+    # Новый флажок для проверки и обновления Media Created
+    update_media_created_var = tk.BooleanVar(value=False)
 
     def start_downloading():
         import downloader
@@ -189,12 +191,13 @@ def create_gui():
         # Показываем кнопку остановки загрузки
         stop_download_button.grid()
         threading.Thread(
-            target=lambda: download_videos_sequential(
+            target=lambda: downloader.download_videos_sequential(
                 root,
                 download_folder_var.get(),
                 pause_event,
                 stop_after_skips_var.get(),
-                direction_var.get()
+                direction_var.get(),
+                update_media_created_var.get()
             ),
             daemon=True
         ).start()
@@ -249,6 +252,14 @@ def create_gui():
     last_radio = ctk.CTkRadioButton(master=download_control_frame, text="С конца", variable=direction_var, value="с конца")
     last_radio.grid(row=3, column=2, padx=5, pady=(5, 0), sticky="w")
     last_radio.grid_remove()
+
+    # Чекбокс для включения проверки и обновления Media Created
+    update_media_checkbox = ctk.CTkCheckBox(
+        master=download_control_frame,
+        text="Проверять и обновлять Media Created",
+        variable=update_media_created_var
+    )
+    update_media_checkbox.grid(row=4, column=0, padx=5, pady=5, columnspan=2, sticky="w")
 
     #########################################
     # 5. Блок для открытия файла со ссылками и папки загрузок
