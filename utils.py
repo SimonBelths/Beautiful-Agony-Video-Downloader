@@ -67,12 +67,6 @@ def select_download_folder(download_folder_var):
         messagebox.showinfo("Папка загрузок", f"Выбрана папка: {folder}")
 
 def create_blacklist_for_mode(mode):
-    """
-    Парсит страницы для заданного режима (например, 'males' или 'transgender')
-    и собирает уникальные 4-значные номера.
-    Автоматически перебирает страницы с пагинацией до тех пор, пока на странице не окажется номеров.
-    Возвращает множество найденных номеров.
-    """
     base_url = "https://beautifulagony.com/public/main.php?page=view&mode={}&offset={}"
     blacklist = set()
     page = 0
@@ -140,38 +134,38 @@ def open_blacklist_file():
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл черного списка не найден!")
 
-# Новые функции для работы с метаданными Media Created
+# Новая функция для парсинга даты релиза
+def parse_release_date(date_text):
+    from datetime import datetime
+    try:
+        dt = datetime.strptime(date_text, "%d %b %Y - %H:%M")
+        return dt.strftime("%a, %d %b %Y %H:%M:%S GMT")
+    except Exception as e:
+        print(f"Ошибка парсинга даты: {e}")
+        return None
 
 def get_media_created(file_path):
-    """
-    Возвращает дату создания файла в формате "Wed, 21 Oct 2015 07:28:00 GMT".
-    Используется время создания файла (на Windows это ctime).
-    """
     timestamp = os.path.getctime(file_path)
     return time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime(timestamp))
 
+def get_data_modified(file_path):
+    timestamp = os.path.getmtime(file_path)
+    return time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime(timestamp))
+
 def set_media_created(file_path, remote_date_str):
-    """
-    Обновляет дату создания файла в соответствии с remote_date_str.
-    Пытаемся установить и время модификации через os.utime, а для Windows дополнительно обновляем время создания через Windows API.
-    """
     try:
         remote_dt = parsedate_to_datetime(remote_date_str)
     except Exception as e:
         print(f"Ошибка при разборе даты: {e}")
         return False
     timestamp = remote_dt.timestamp()
-    # Обновляем время модификации и доступа
     os.utime(file_path, (timestamp, timestamp))
     if os.name == 'nt':
-        # Обновление времени создания на Windows через ctypes
         FILE_WRITE_ATTRIBUTES = 0x100
-        # Открываем файл для изменения атрибутов
         handle = ctypes.windll.kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
         if handle == -1:
             print("Не удалось открыть файл для изменения даты создания.")
             return False
-        # Переводим timestamp в формат Windows FILETIME (100-нс интервалов с 1 января 1601)
         win_time = int((timestamp + 11644473600) * 10000000)
         ctime = ctypes.c_longlong(win_time)
         res = ctypes.windll.kernel32.SetFileTime(handle, ctypes.byref(ctime), None, None)

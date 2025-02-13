@@ -26,10 +26,10 @@ pause_event.set()
 search_pause_event = threading.Event()
 search_pause_event.set()
 
-# Глобальное событие для управления процессом создания черного списка (пауза/возобновление)
+# Глобальное событие для управления процессом создания чёрного списка (пауза/возобновление)
 blacklist_pause_event = threading.Event()
 blacklist_pause_event.set()
-blacklist_thread = None  # Будет хранить поток создания черного списка
+blacklist_thread = None  # Будет хранить поток создания чёрного списка
 
 def pause_link_processing():
     pause_event.clear()
@@ -179,8 +179,6 @@ def create_gui():
     download_control_frame.pack(pady=10, fill="x")
 
     stop_after_skips_var = tk.BooleanVar(value=False)
-    # Новый флажок для проверки и обновления Media Created
-    update_media_created_var = tk.BooleanVar(value=False)
 
     def start_downloading():
         import downloader
@@ -196,8 +194,7 @@ def create_gui():
                 download_folder_var.get(),
                 pause_event,
                 stop_after_skips_var.get(),
-                direction_var.get(),
-                update_media_created_var.get()
+                direction_var.get()
             ),
             daemon=True
         ).start()
@@ -252,14 +249,6 @@ def create_gui():
     last_radio = ctk.CTkRadioButton(master=download_control_frame, text="С конца", variable=direction_var, value="с конца")
     last_radio.grid(row=3, column=2, padx=5, pady=(5, 0), sticky="w")
     last_radio.grid_remove()
-
-    # Чекбокс для включения проверки и обновления Media Created
-    update_media_checkbox = ctk.CTkCheckBox(
-        master=download_control_frame,
-        text="Проверять и обновлять Media Created",
-        variable=update_media_created_var
-    )
-    update_media_checkbox.grid(row=4, column=0, padx=5, pady=5, columnspan=2, sticky="w")
 
     #########################################
     # 5. Блок для открытия файла со ссылками и папки загрузок
