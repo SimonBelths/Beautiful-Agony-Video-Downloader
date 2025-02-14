@@ -1,4 +1,5 @@
 import os
+import json
 import webbrowser
 import tkinter as tk
 import requests
@@ -9,8 +10,30 @@ import ctypes
 from email.utils import parsedate_to_datetime
 from mutagen.mp4 import MP4
 
-# Константы и пути к файлам
-DOWNLOAD_FOLDER = r"S:\Beautiful Agony"
+# ======================= Функции работы с конфигурацией =======================
+CONFIG_FILE = "config.json"
+
+def load_config():
+    """Загружает настройки из файла config.json."""
+    if os.path.exists(CONFIG_FILE):
+        try:
+            with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+                config = json.load(f)
+                return config
+        except Exception as e:
+            print(f"Ошибка загрузки конфигурации: {e}")
+    return {}
+
+def save_config(config):
+    """Сохраняет настройки в файл config.json."""
+    try:
+        with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+            json.dump(config, f, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Ошибка сохранения конфигурации: {e}")
+
+# ======================= Константы и пути к файлам =======================
+DOWNLOAD_FOLDER = r"S:\Test"
 cookies_path = "cookies.pkl"
 log_file_path = "logs.txt"
 failed_links_path = "failed_links.txt"
@@ -24,6 +47,7 @@ if os.path.exists(log_file_path):
 log_text = None
 show_only_pages_and_errors = None
 
+# ======================= Функции логирования =======================
 def set_log_widgets(text_widget, checkbox_var):
     global log_text, show_only_pages_and_errors
     log_text = text_widget
@@ -60,13 +84,19 @@ def open_failed_links_file():
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл с ошибками не найден!")
 
+# ======================= Функции для работы с папкой загрузки =======================
 def select_download_folder(download_folder_var):
     from tkinter import filedialog, messagebox
     folder = filedialog.askdirectory(initialdir=DOWNLOAD_FOLDER)
     if folder:
         download_folder_var.set(folder)
+        # Загружаем текущую конфигурацию, обновляем путь и сохраняем
+        config = load_config()
+        config["download_folder"] = folder
+        save_config(config)
         messagebox.showinfo("Папка загрузок", f"Выбрана папка: {folder}")
 
+# ======================= Функции для работы с чёрным списком =======================
 def create_blacklist_for_mode(mode):
     base_url = "https://beautifulagony.com/public/main.php?page=view&mode={}&offset={}"
     blacklist = set()
@@ -135,6 +165,7 @@ def open_blacklist_file():
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл черного списка не найден!")
 
+# ======================= Функции для работы с датами и метаданными =======================
 def parse_release_date(date_text):
     from datetime import datetime
     try:
@@ -199,4 +230,3 @@ def sizes_match(actual, expected, tolerance_percent=0.003):
     allowed = tolerance_percent * expected
     print(f"[DEBUG] Сравнение размеров: actual = {actual}, expected = {expected}, diff = {diff}, allowed = {allowed}")
     return diff <= allowed
-
