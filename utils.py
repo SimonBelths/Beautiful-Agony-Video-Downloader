@@ -184,10 +184,14 @@ def get_data_modified(file_path):
     return time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime(timestamp))
 
 def set_media_created(file_path, remote_date_str):
+    """
+    Устанавливает время создания/модификации файла согласно remote_date_str.
+    После обновления записывает в лог сообщение об успешном обновлении или ошибке.
+    """
     try:
         remote_dt = parsedate_to_datetime(remote_date_str)
     except Exception as e:
-        print(f"Ошибка при разборе даты: {e}")
+        write_log(f"Ошибка при разборе даты '{remote_date_str}' для файла {file_path}: {e}", log_type="error")
         return False
     timestamp = remote_dt.timestamp()
     os.utime(file_path, (timestamp, timestamp))
@@ -195,27 +199,33 @@ def set_media_created(file_path, remote_date_str):
         FILE_WRITE_ATTRIBUTES = 0x100
         handle = ctypes.windll.kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
         if handle == -1:
-            print("Не удалось открыть файл для изменения даты создания.")
+            write_log(f"Не удалось открыть файл {file_path} для изменения даты создания.", log_type="error")
             return False
         win_time = int((timestamp + 11644473600) * 10000000)
         ctime = ctypes.c_longlong(win_time)
         res = ctypes.windll.kernel32.SetFileTime(handle, ctypes.byref(ctime), None, None)
         ctypes.windll.kernel32.CloseHandle(handle)
+        if res:
+            write_log(f"Время создания файла {file_path} успешно установлено как {remote_date_str}.", log_type="info")
+        else:
+            write_log(f"Не удалось установить время создания файла {file_path}.", log_type="error")
         return res
+    write_log(f"Время создания файла {file_path} установлено через os.utime как {remote_date_str}.", log_type="info")
     return True
 
 def set_file_title(file_path, title):
     """
     Устанавливает значение тега Title (©nam) для MP4-файла с помощью mutagen.
+    После обновления записывает в лог результат операции.
     """
     try:
         video = MP4(file_path)
         video["©nam"] = [title]
         video.save()
-        print(f"Title установлен: {title}")
+        write_log(f"Title для файла {file_path} успешно установлен: {title}.", log_type="info")
         return True
     except Exception as e:
-        print(f"Ошибка при установке Title для {file_path}: {e}")
+        write_log(f"Ошибка при установке Title для {file_path}: {e}", log_type="error")
         return False
 
 def set_video_id(file_path, person_id):

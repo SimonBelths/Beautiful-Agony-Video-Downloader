@@ -16,7 +16,9 @@ from utils import (
     open_blacklist_file,  # Функция для открытия файла черного списка
     select_download_folder,
     set_log_widgets,
-    DOWNLOAD_FOLDER
+    DOWNLOAD_FOLDER,
+    load_config,
+    save_config
 )
 
 # Глобальное событие для управления загрузкой видео
@@ -48,6 +50,16 @@ def open_download_folder(folder_path):
 def stop_downloading():
     import downloader
     downloader.stop_downloading_flag = True
+
+# Новая функция для сохранения вручную введённого пути
+def save_manual_download_folder(var):
+    folder = var.get().strip()
+    if folder:
+        config = load_config()
+        config["download_folder"] = folder
+        save_config(config)
+        # Можно добавить уведомление, если нужно:
+        # messagebox.showinfo("Настройки", f"Путь сохранён: {folder}")
 
 def create_gui():
     # Настройка внешнего вида customtkinter
@@ -93,9 +105,14 @@ def create_gui():
     folder_frame.pack(pady=5, fill="x")
     folder_label = ctk.CTkLabel(master=folder_frame, text="Выберите папку загрузки:")
     folder_label.grid(row=0, column=0, padx=5, pady=5, sticky="w")
-    download_folder_var = tk.StringVar(value=DOWNLOAD_FOLDER)
+    # Загружаем сохранённое значение или используем значение по умолчанию
+    config = load_config()
+    default_folder = config.get("download_folder", DOWNLOAD_FOLDER)
+    download_folder_var = tk.StringVar(value=default_folder)
     folder_entry = ctk.CTkEntry(master=folder_frame, textvariable=download_folder_var, width=300)
     folder_entry.grid(row=0, column=1, padx=5, pady=5)
+    # При потере фокуса сохраняем вручную введённый путь
+    folder_entry.bind("<FocusOut>", lambda event: save_manual_download_folder(download_folder_var))
     select_folder_button = ctk.CTkButton(
         master=folder_frame, text="Выбрать папку",
         command=lambda: select_download_folder(download_folder_var)
@@ -148,23 +165,21 @@ def create_gui():
     search_buttons_frame.grid(row=0, column=0, columnspan=2, padx=5, pady=5, sticky="w")
     search_buttons_frame.grid_remove()  # Скрываем контейнер до начала поиска
 
-    # Кнопка "Возобновить поиск ссылок" — размещаем её слева с отступом справа 10 пикселей
+    # Кнопка "Возобновить поиск ссылок"
     resume_search_button = ctk.CTkButton(
         master=search_buttons_frame,
         text="Возобновить поиск ссылок",
         command=lambda: search_pause_event.set()
     )
     resume_search_button.pack(side="left", padx=(0, 10))
-
-    # Кнопка "Остановить поиск ссылок" — размещаем её справа от предыдущей
+    # Кнопка "Остановить поиск ссылок"
     stop_search_button = ctk.CTkButton(
         master=search_buttons_frame,
         text="Остановить поиск ссылок",
         command=lambda: search_pause_event.clear()
     )
     stop_search_button.pack(side="left")
-
-    # Чекбокс располагается во второй строке, под контейнером с кнопками
+    # Чекбокс для остановки поиска пустых страниц
     stop_empty_pages_checkbox = ctk.CTkCheckBox(
         master=collection_frame,
         text="Остановить поиск, если 3 страницы подряд без новых ссылок",
@@ -199,7 +214,7 @@ def create_gui():
             daemon=True
         ).start()
 
-    # Кнопка "Скачать видео по ссылкам" — скрыта до авторизации
+    # Кнопка "Скачать видео по ссылкам" (скрыта до авторизации)
     download_seq_button = ctk.CTkButton(
         master=download_control_frame,
         text="Скачать видео по ссылкам",
@@ -208,18 +223,16 @@ def create_gui():
     download_seq_button.grid(row=0, column=0, padx=5, pady=5, sticky="w")
     download_seq_button.grid_remove()
 
-    # Создаем подфрейм для размещения кнопок "Возобновить загрузку" и "Пауза загрузки"
+    # Контейнер для кнопок управления загрузкой
     download_buttons_frame = ctk.CTkFrame(master=download_control_frame, fg_color="transparent")
     download_buttons_frame.grid(row=1, column=0, padx=5, pady=5, sticky="w")
     download_buttons_frame.grid_remove()  # Скрываем до авторизации
 
-    # Размещаем кнопки внутри этого фрейма с зазором 10 пикселей:
     resume_button = ctk.CTkButton(master=download_buttons_frame, text="Возобновить загрузку", command=lambda: pause_event.set())
-    resume_button.pack(side="left", padx=(0, 10))  # Отступ справа 10 пикселей
+    resume_button.pack(side="left", padx=(0, 10))
     pause_button = ctk.CTkButton(master=download_buttons_frame, text="Пауза загрузки", command=lambda: pause_event.clear())
     pause_button.pack(side="left")
 
-    # Кнопка для остановки загрузки после текущего видео – размещаем в download_control_frame отдельно
     stop_download_button = ctk.CTkButton(
         master=download_control_frame,
         text="Остановить загрузку после текущего видео",
@@ -234,9 +247,8 @@ def create_gui():
         variable=stop_after_skips_var
     )
     stop_after_skips_checkbox.grid(row=2, column=0, padx=5, pady=5, columnspan=2, sticky="w")
-    stop_after_skips_checkbox.grid_remove()  # Скрываем до авторизации
+    stop_after_skips_checkbox.grid_remove()
 
-    # Новые элементы для выбора направления обхода ссылок
     direction_var = tk.StringVar(value="сначала")
     direction_label = ctk.CTkLabel(master=download_control_frame, text="Направление обхода ссылок:")
     direction_label.grid(row=3, column=0, padx=5, pady=(5, 0), sticky="w")
@@ -280,7 +292,7 @@ def create_gui():
         for mode in modes:
             page = 0
             while True:
-                blacklist_pause_event.wait()  # Приостановка процесса, если требуется
+                blacklist_pause_event.wait()
                 offset = page * 20
                 url = f"https://beautifulagony.com/public/main.php?page=view&mode={mode}&offset={offset}"
                 try:
@@ -356,10 +368,10 @@ def create_gui():
     log_frame = ctk.CTkFrame(master=main_frame, fg_color="transparent")
     log_frame.pack(pady=10, fill="both", expand=True)
     try:
-        log_text = ctk.CTkTextbox(master=log_frame, wrap="word", width=600, height=200)
+        log_textbox = ctk.CTkTextbox(master=log_frame, wrap="word", width=600, height=200)
     except AttributeError:
-        log_text = tk.Text(master=log_frame, wrap="word", width=60, height=15)
-    log_text.pack(pady=5, padx=5, fill="both", expand=True)
+        log_textbox = tk.Text(master=log_frame, wrap="word", width=60, height=15)
+    log_textbox.pack(pady=5, padx=5, fill="both", expand=True)
     log_buttons_frame = ctk.CTkFrame(master=log_frame, fg_color="transparent")
     log_buttons_frame.pack(pady=5, fill="x")
     log_file_button = ctk.CTkButton(master=log_buttons_frame, text="Открыть лог файл", command=open_log_file)
@@ -371,7 +383,7 @@ def create_gui():
     filter_checkbox = ctk.CTkCheckBox(master=log_buttons_frame, text="Показывать только страницы и ошибки",
                                       variable=show_only_pages_and_errors)
     filter_checkbox.grid(row=0, column=2, padx=5, pady=5)
-    set_log_widgets(log_text, show_only_pages_and_errors)
+    set_log_widgets(log_textbox, show_only_pages_and_errors)
 
     # Функция, которая вызывается при нажатии кнопки "Пройти авторизацию".
     def on_authorize():

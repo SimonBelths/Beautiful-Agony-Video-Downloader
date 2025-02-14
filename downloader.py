@@ -43,7 +43,7 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
         except Exception as e:
             write_log("Не удалось извлечь дату релиза: " + str(e), log_type="error")
 
-        # Извлекаем id участника из ссылки
+        # Извлекаем id участника из ссылки (используется только для логирования)
         m = re.search(r'person_number=(\d{4})', video_link)
         participant_id = m.group(1) if m else None
 
@@ -92,7 +92,7 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
                 progress_bar,
                 blacklist,
                 release_date,
-                participant_id
+                participant_id  # для логирования, но не используется для записи title
             )
             progress_label.destroy()
             progress_bar.destroy()
@@ -124,9 +124,14 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
             if sizes_match(existing_size, total_size, tolerance_percent=0.003):
                 if release_date:
                     set_media_created(output_path, release_date)
-                    if participant_id:
-                        set_video_id(output_path, participant_id)
-                    write_log(f"{video_name}: метаданные и ID обновлены.", log_type="info")
+                    # Извлекаем ID из имени файла
+                    m2 = re.search(r'(\d{4})', video_name)
+                    if m2:
+                        file_id = m2.group(1)
+                        set_video_id(output_path, file_id)
+                        write_log(f"{video_name}: метаданные и ID обновлены (ID: {file_id}).", log_type="info")
+                    else:
+                        write_log(f"{video_name}: не удалось извлечь ID из названия файла.", log_type="error")
                 else:
                     write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
                 return False
@@ -150,9 +155,13 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
         # После скачивания обновляем метаданные и ID
         if release_date:
             set_media_created(output_path, release_date)
-            if participant_id:
-                set_video_id(output_path, participant_id)
-            write_log(f"{video_name}: метаданные и ID обновлены после скачивания.", log_type="info")
+            m2 = re.search(r'(\d{4})', video_name)
+            if m2:
+                file_id = m2.group(1)
+                set_video_id(output_path, file_id)
+                write_log(f"{video_name}: метаданные и ID обновлены после скачивания (ID: {file_id}).", log_type="info")
+            else:
+                write_log(f"{video_name}: не удалось извлечь ID из названия файла после скачивания.", log_type="error")
         return True
     except Exception as e:
         write_log(f"Ошибка при скачивании {video_name}: {e}", log_type="error")
@@ -167,7 +176,7 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
     Обновлённая функция сбора ссылок:
     - Ссылка нормализуется с помощью strip().
     - Если ссылка уже есть в файле video_links.txt, она игнорируется.
-    - Из ссылки извлекается person_number (четырёхзначное число). Если оно в черном списке, ссылка игнорируется.
+    - Из ссылки извлекается person_number (четырёхзначное число). Если оно в чёрном списке, ссылка игнорируется.
     - Новые ссылки сразу записываются в файл.
     - Если stop_on_empty_pages=True, то при 3 страницах подряд без новых ссылок поиск прекращается.
     """
@@ -301,7 +310,7 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
             release_date = parse_release_date(release_date_text)
         except Exception as e:
             write_log("Не удалось извлечь дату релиза: " + str(e), log_type="error")
-        # Извлекаем id участника из ссылки
+        # Извлекаем id участника из ссылки (используется только для логирования)
         m = re.search(r'person_number=(\d{4})', video_link)
         participant_id = m.group(1) if m else None
         if os.path.exists(cookies_path):
@@ -339,9 +348,13 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
                     if release_date:
                         from utils import set_media_created, set_video_id
                         set_media_created(output_path, release_date)
-                        if participant_id:
-                            set_video_id(output_path, participant_id)
-                        write_log(f"{video_name}: метаданные и ID обновлены.", log_type="info")
+                        m2 = re.search(r'(\d{4})', video_name)
+                        if m2:
+                            file_id = m2.group(1)
+                            set_video_id(output_path, file_id)
+                            write_log(f"{video_name}: метаданные и ID обновлены (ID: {file_id}).", log_type="info")
+                        else:
+                            write_log(f"{video_name}: не удалось извлечь ID из названия файла.", log_type="error")
                     else:
                         write_log(f"{video_name} уже скачано, пропуск.", log_type="info")
                     return False
