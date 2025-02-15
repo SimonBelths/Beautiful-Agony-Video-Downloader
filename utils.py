@@ -9,6 +9,7 @@ import datetime
 import ctypes
 from email.utils import parsedate_to_datetime
 from mutagen.mp4 import MP4
+import subprocess
 
 # ======================= Функции работы с конфигурацией =======================
 CONFIG_FILE = "config.json"
@@ -90,7 +91,6 @@ def select_download_folder(download_folder_var):
     folder = filedialog.askdirectory(initialdir=DOWNLOAD_FOLDER)
     if folder:
         download_folder_var.set(folder)
-        # Загружаем текущую конфигурацию, обновляем путь и сохраняем
         config = load_config()
         config["download_folder"] = folder
         save_config(config)
@@ -240,3 +240,186 @@ def sizes_match(actual, expected, tolerance_percent=0.003):
     allowed = tolerance_percent * expected
     print(f"[DEBUG] Сравнение размеров: actual = {actual}, expected = {expected}, diff = {diff}, allowed = {allowed}")
     return diff <= allowed
+
+# ======================= Новый подход: Извлечение Media Created через exiftool =======================
+def get_media_created_exiftool(file_path):
+    """
+    Извлекает значение Media Create Date из MP4-файла с помощью exiftool.
+    Ожидаемый формат: "YYYY:MM:DD HH:MM:SS"
+    Возвращает timestamp или None, если извлечение не удалось.
+    """
+    exiftool_path = r"C:\Portable\Exiftool\exiftool.exe"
+    file_path = os.path.normpath(file_path)
+    command = [exiftool_path, "-s", "-s", "-s", "-MediaCreateDate", file_path]
+    write_log("Exiftool get command: " + " ".join(command), log_type="info")
+    try:
+        result = subprocess.run(command, capture_output=True, text=True)
+        if result.returncode == 0:
+            media_date_str = result.stdout.strip()
+            write_log(f"Exiftool вернул MediaCreateDate: '{media_date_str}'", log_type="info")
+            if media_date_str:
+                try:
+                    media_dt = datetime.datetime.strptime(media_date_str, "%Y:%m:%d %H:%M:%S")
+                    return media_dt.timestamp()
+                except Exception as parse_ex:
+                    write_log(f"Ошибка парсинга даты из exiftool: {parse_ex}", log_type="error")
+                    return None
+            else:
+                write_log("Exiftool вернул пустую строку для MediaCreateDate", log_type="error")
+                return None
+        else:
+            write_log(f"Exiftool: ошибка извлечения MediaCreateDate: {result.stderr}", log_type="error")
+            return None
+    except Exception as e:
+        write_log(f"Exiftool: исключение при извлечении MediaCreateDate: {e}", log_type="error")
+        return None
+
+# ======================= Новый подход: Обновление внутренних MP4 метаданных через exiftool =======================
+def update_mp4_internal_dates(file_path, new_date):
+    """
+    Обновляет внутренние метаданные MP4-файла (MediaCreateDate, CreateDate, ModifyDate)
+    с использованием exiftool.
+    new_date: строка в формате "YYYY:MM:DD HH:MM:SS"
+    """
+    import subprocess
+    file_path = os.path.normpath(file_path)
+    exiftool_path = r"C:\Portable\Exiftool\exiftool.exe"
+    command = [
+        exiftool_path,
+        "-overwrite_original",
+        f"-CreateDate={new_date}",
+        f"-ModifyDate={new_date}",
+        f"-MediaCreateDate={new_date}",
+        file_path
+    ]
+    write_log("Exiftool command: " + " ".join(command), log_type="info")
+    try:
+        result = subprocess.run(command, capture_output=True, text=True)
+        if result.returncode == 0:
+            write_log(f"Exiftool: внутренние метаданные MP4 обновлены для '{file_path}' на {new_date}", log_type="info")
+        else:
+            write_log(f"Exiftool: ошибка обновления метаданных для '{file_path}': {result.stderr}", log_type="error")
+    except Exception as e:
+        write_log(f"Exiftool: исключение при обновлении метаданных для '{file_path}': {e}", log_type="error")
+
+# ======================= Функция синхронизации дат (обновлённая) =======================
+def synchronize_file_dates(file_path):
+    """
+    Сравнивает значения времени создания (Data Created), изменения (Data Modified)
+    и времени создания медиа (Media Created), извлечённые через exiftool.
+    Определяет наименьшее значение и устанавливает его для всех.
+    Затем с помощью exiftool обновляет внутренние MP4 метаданные.
+    Добавлено подробное логирование каждого шага.
+    В конце переустанавливаются системные даты, чтобы Date Modified не менялось.
+    """
+    import os, time, ctypes
+    from datetime import datetime
+    try:
+        # Извлекаем системные даты
+        creation_time = os.path.getctime(file_path)
+        modification_time = os.path.getmtime(file_path)
+        write_log(
+            f"Исходные системные даты для '{file_path}': Created = {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(creation_time))}, "
+            f"Modified = {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(modification_time))}",
+            log_type="info"
+        )
+        times = [creation_time, modification_time]
+
+        # Извлекаем Media Created через exiftool
+        media_time = get_media_created_exiftool(file_path)
+        if media_time is not None:
+            times.append(media_time)
+            write_log(f"Media Created (exiftool) timestamp: {media_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(media_time))})", log_type="info")
+        else:
+            write_log(f"Media Created не найден через exiftool для '{file_path}'", log_type="info")
+
+        # Вычисляем минимальное время
+        min_time = min(times)
+        write_log(
+            f"Минимальное время для '{file_path}': {min_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))})",
+            log_type="info"
+        )
+
+        # Обновляем MP4 тег "©day" с новым значением (через mutagen)
+        try:
+            from mutagen.mp4 import MP4
+            video = MP4(file_path)
+            new_date_str_mp4 = time.strftime("%d-%b-%y %I:%M %p", time.gmtime(min_time))
+            video["©day"] = [new_date_str_mp4]
+            video.save()
+            write_log(f"MP4 тег '©day' обновлён для '{file_path}' на {new_date_str_mp4}", log_type="info")
+        except Exception as e:
+            write_log(f"Ошибка обновления MP4 тега '©day': {e}", log_type="error")
+
+        # Обновляем системные даты через os.utime
+        os.utime(file_path, (min_time, min_time))
+        write_log(
+            f"os.utime установлено для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
+            log_type="info"
+        )
+
+        # Если Windows, обновляем все даты через Windows API
+        if os.name == 'nt':
+            from ctypes import wintypes
+            kernel32 = ctypes.windll.kernel32
+            class FILETIME(ctypes.Structure):
+                _fields_ = [("dwLowDateTime", wintypes.DWORD),
+                            ("dwHighDateTime", wintypes.DWORD)]
+            def unix_to_filetime(t):
+                ft = int((t + 11644473600) * 10000000)
+                low = ft & 0xFFFFFFFF
+                high = ft >> 32
+                return FILETIME(low, high)
+            ft_struct = unix_to_filetime(min_time)
+            FILE_WRITE_ATTRIBUTES = 0x100
+            handle = kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
+            if handle not in (-1, 0):
+                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct), ctypes.byref(ft_struct))
+                if res:
+                    write_log(
+                        f"Windows API: Все времена установлены для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
+                        log_type="info"
+                    )
+                else:
+                    write_log("Ошибка при установке времени через Windows API", log_type="error")
+                kernel32.CloseHandle(handle)
+            else:
+                write_log("Не удалось открыть файл через Windows API", log_type="error")
+
+        # Обновляем внутренние MP4 метаданные через exiftool
+        new_date_str_exif = time.strftime("%Y:%m:%d %H:%M:%S", time.gmtime(min_time))
+        update_mp4_internal_dates(file_path, new_date_str_exif)
+
+        # *** Дополнительный шаг: переустанавливаем системные даты после exiftool ***
+        os.utime(file_path, (min_time, min_time))
+        write_log(
+            f"После exiftool: os.utime переустановлено для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
+            log_type="info"
+        )
+        if os.name == 'nt':
+            from ctypes import wintypes
+            kernel32 = ctypes.windll.kernel32
+            class FILETIME(ctypes.Structure):
+                _fields_ = [("dwLowDateTime", wintypes.DWORD),
+                            ("dwHighDateTime", wintypes.DWORD)]
+            def unix_to_filetime(t):
+                ft = int((t + 11644473600) * 10000000)
+                low = ft & 0xFFFFFFFF
+                high = ft >> 32
+                return FILETIME(low, high)
+            ft_struct = unix_to_filetime(min_time)
+            FILE_WRITE_ATTRIBUTES = 0x100
+            handle = kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
+            if handle not in (-1, 0):
+                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct), ctypes.byref(ft_struct))
+                if res:
+                    write_log(
+                        f"После exiftool: Windows API: Все времена переустановлены для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
+                        log_type="info"
+                    )
+                else:
+                    write_log("Ошибка при переустановке времени через Windows API после exiftool", log_type="error")
+                kernel32.CloseHandle(handle)
+        write_log(f"Синхронизация дат для '{file_path}' завершена.", log_type="info")
+    except Exception as e:
+        write_log(f"Ошибка синхронизации дат для '{file_path}': {e}", log_type="error")
