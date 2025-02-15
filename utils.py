@@ -14,6 +14,7 @@ import subprocess
 # ======================= Функции работы с конфигурацией =======================
 CONFIG_FILE = "config.json"
 
+
 def load_config():
     """Загружает настройки из файла config.json."""
     if os.path.exists(CONFIG_FILE):
@@ -25,6 +26,7 @@ def load_config():
             print(f"Ошибка загрузки конфигурации: {e}")
     return {}
 
+
 def save_config(config):
     """Сохраняет настройки в файл config.json."""
     try:
@@ -32,6 +34,7 @@ def save_config(config):
             json.dump(config, f, ensure_ascii=False, indent=4)
     except Exception as e:
         print(f"Ошибка сохранения конфигурации: {e}")
+
 
 # ======================= Константы и пути к файлам =======================
 DOWNLOAD_FOLDER = r"S:\Test"
@@ -44,32 +47,49 @@ if os.path.exists(log_file_path):
     with open(log_file_path, "w", encoding="utf-8") as f:
         f.write("")
 
-# Виджеты для логирования (будут заданы из GUI)
+# Виджет для логирования (будет задан из GUI)
 log_text = None
 show_only_pages_and_errors = None
+
 
 # ======================= Функции логирования =======================
 def set_log_widgets(text_widget, checkbox_var):
     global log_text, show_only_pages_and_errors
     log_text = text_widget
     show_only_pages_and_errors = checkbox_var
+    # Цветовое оформление тегов убрано
+
 
 def write_log(message, log_type="info"):
-    from datetime import datetime
-    timestamp = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-    log_entry = f"[{timestamp}] {message}"
+    """
+    Если log_type равен "video", добавляется дата и время.
+    Для остальных сообщений пишется только само сообщение.
+    """
+    if log_type == "video":
+        timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+        log_entry = f"[{timestamp}] {message}"
+    else:
+        log_entry = message
+
+    # Запись в лог-файл
     with open(log_file_path, "a", encoding="utf-8") as log_file:
         log_file.write(f"{log_entry}\n")
+
+    # Если включён режим фильтрации (показывать только страницы и ошибки) — фильтруем
     if show_only_pages_and_errors is not None and show_only_pages_and_errors.get():
         if log_type not in ["page", "error"]:
             return
+
+    # Вывод в текстовый виджет, если он задан
     if log_text is not None:
         log_text.insert(tk.END, f"{log_entry}\n")
         log_text.see(tk.END)
 
+
 def save_failed_link(link):
     with open(failed_links_path, "a", encoding="utf-8") as failed_file:
         failed_file.write(f"{link}\n")
+
 
 def open_log_file():
     if os.path.exists(log_file_path):
@@ -78,12 +98,14 @@ def open_log_file():
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл с логами не найден!")
 
+
 def open_failed_links_file():
     if os.path.exists(failed_links_path):
         webbrowser.open(failed_links_path)
     else:
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл с ошибками не найден!")
+
 
 # ======================= Функции для работы с папкой загрузки =======================
 def select_download_folder(download_folder_var):
@@ -95,6 +117,7 @@ def select_download_folder(download_folder_var):
         config["download_folder"] = folder
         save_config(config)
         messagebox.showinfo("Папка загрузок", f"Выбрана папка: {folder}")
+
 
 # ======================= Функции для работы с чёрным списком =======================
 def create_blacklist_for_mode(mode):
@@ -130,6 +153,7 @@ def create_blacklist_for_mode(mode):
             break
     return blacklist
 
+
 def create_blacklist_from_pages(modes=["males", "transgender"], output_file="blacklist.txt"):
     total_blacklist = set()
     for mode in modes:
@@ -146,6 +170,7 @@ def create_blacklist_from_pages(modes=["males", "transgender"], output_file="bla
         print(f"Ошибка при записи файла черного списка: {e}")
     return total_blacklist
 
+
 def load_blacklist(filename="blacklist.txt"):
     blacklist = set()
     try:
@@ -158,12 +183,14 @@ def load_blacklist(filename="blacklist.txt"):
         print(f"Ошибка при загрузке файла черного списка: {e}")
     return blacklist
 
+
 def open_blacklist_file():
     if os.path.exists("blacklist.txt"):
         webbrowser.open("blacklist.txt")
     else:
         from tkinter import messagebox
         messagebox.showerror("Ошибка", "Файл черного списка не найден!")
+
 
 # ======================= Функции для работы с датами и метаданными =======================
 def parse_release_date(date_text):
@@ -175,19 +202,18 @@ def parse_release_date(date_text):
         print(f"Ошибка парсинга даты: {e}")
         return None
 
+
 def get_media_created(file_path):
     timestamp = os.path.getctime(file_path)
     return time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime(timestamp))
+
 
 def get_data_modified(file_path):
     timestamp = os.path.getmtime(file_path)
     return time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime(timestamp))
 
+
 def set_media_created(file_path, remote_date_str):
-    """
-    Устанавливает время создания/модификации файла согласно remote_date_str.
-    После обновления записывает в лог сообщение об успешном обновлении или ошибке.
-    """
     try:
         remote_dt = parsedate_to_datetime(remote_date_str)
     except Exception as e:
@@ -213,11 +239,8 @@ def set_media_created(file_path, remote_date_str):
     write_log(f"Время создания файла {file_path} установлено через os.utime как {remote_date_str}.", log_type="info")
     return True
 
+
 def set_file_title(file_path, title):
-    """
-    Устанавливает значение тега Title (©nam) для MP4-файла с помощью mutagen.
-    После обновления записывает в лог результат операции.
-    """
     try:
         video = MP4(file_path)
         video["©nam"] = [title]
@@ -228,26 +251,19 @@ def set_file_title(file_path, title):
         write_log(f"Ошибка при установке Title для {file_path}: {e}", log_type="error")
         return False
 
+
 def set_video_id(file_path, person_id):
     return set_file_title(file_path, person_id)
 
+
 def sizes_match(actual, expected, tolerance_percent=0.003):
-    """
-    Возвращает True, если относительная разница между actual и expected не превышает tolerance_percent.
-    Выводит отладочную информацию.
-    """
     diff = abs(actual - expected)
     allowed = tolerance_percent * expected
     print(f"[DEBUG] Сравнение размеров: actual = {actual}, expected = {expected}, diff = {diff}, allowed = {allowed}")
     return diff <= allowed
 
-# ======================= Новый подход: Извлечение Media Created через exiftool =======================
+
 def get_media_created_exiftool(file_path):
-    """
-    Извлекает значение Media Create Date из MP4-файла с помощью exiftool.
-    Ожидаемый формат: "YYYY:MM:DD HH:MM:SS"
-    Возвращает timestamp или None, если извлечение не удалось.
-    """
     exiftool_path = r"C:\Portable\Exiftool\exiftool.exe"
     file_path = os.path.normpath(file_path)
     command = [exiftool_path, "-s", "-s", "-s", "-MediaCreateDate", file_path]
@@ -274,13 +290,8 @@ def get_media_created_exiftool(file_path):
         write_log(f"Exiftool: исключение при извлечении MediaCreateDate: {e}", log_type="error")
         return None
 
-# ======================= Новый подход: Обновление внутренних MP4 метаданных через exiftool =======================
+
 def update_mp4_internal_dates(file_path, new_date):
-    """
-    Обновляет внутренние метаданные MP4-файла (MediaCreateDate, CreateDate, ModifyDate)
-    с использованием exiftool.
-    new_date: строка в формате "YYYY:MM:DD HH:MM:SS"
-    """
     import subprocess
     file_path = os.path.normpath(file_path)
     exiftool_path = r"C:\Portable\Exiftool\exiftool.exe"
@@ -302,20 +313,48 @@ def update_mp4_internal_dates(file_path, new_date):
     except Exception as e:
         write_log(f"Exiftool: исключение при обновлении метаданных для '{file_path}': {e}", log_type="error")
 
-# ======================= Функция синхронизации дат (обновлённая) =======================
-def synchronize_file_dates(file_path):
+
+# ... предыдущий код ...
+
+def extract_page_release_date(driver, media_id):
     """
-    Сравнивает значения времени создания (Data Created), изменения (Data Modified)
-    и времени создания медиа (Media Created), извлечённые через exiftool.
-    Определяет наименьшее значение и устанавливает его для всех.
-    Затем с помощью exiftool обновляет внутренние MP4 метаданные.
-    Добавлено подробное логирование каждого шага.
-    В конце переустанавливаются системные даты, чтобы Date Modified не менялось.
+    Извлекает дату релиза из блока с классом "playerthumb", где ссылка содержит заданный media_id.
+    Ожидаемый формат даты: "27 Apr 2004 - 1:04"
+    Возвращает timestamp или None, если не удалось извлечь дату.
+    """
+    import datetime
+    from selenium.webdriver.common.by import By
+    try:
+        blocks = driver.find_elements(By.CLASS_NAME, "playerthumb")
+    except Exception as e:
+        return None
+    for block in blocks:
+        try:
+            a_elem = block.find_element(By.TAG_NAME, "a")
+            href = a_elem.get_attribute("href")
+            # Проверяем, что в вызове функции содержится нужный media_id
+            if f"global.player.change_vid('{media_id}'" in href:
+                date_div = block.find_element(By.CLASS_NAME, "playerthumb_release_txt")
+                date_text = date_div.text.strip()
+                # Парсинг даты; формат: "%d %b %Y - %H:%M"
+                dt = datetime.datetime.strptime(date_text, "%d %b %Y - %H:%M")
+                return dt.timestamp()
+        except Exception as e:
+            continue
+    return None
+
+
+def synchronize_file_dates(file_path, page_release_ts=None):
+    """
+    Синхронизирует даты файла, используя:
+    - Системные даты (creation, modification)
+    - Дату, извлечённую через exiftool (Media Created)
+    - Дополнительно, если передан page_release_ts (дата из блока на странице),
+      то если она меньше, используется вместо остальных.
     """
     import os, time, ctypes
     from datetime import datetime
     try:
-        # Извлекаем системные даты
         creation_time = os.path.getctime(file_path)
         modification_time = os.path.getmtime(file_path)
         write_log(
@@ -325,56 +364,65 @@ def synchronize_file_dates(file_path):
         )
         times = [creation_time, modification_time]
 
-        # Извлекаем Media Created через exiftool
         media_time = get_media_created_exiftool(file_path)
         if media_time is not None:
             times.append(media_time)
-            write_log(f"Media Created (exiftool) timestamp: {media_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(media_time))})", log_type="info")
+            write_log(
+                f"Media Created (exiftool) timestamp: {media_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(media_time))})",
+                log_type="info")
         else:
             write_log(f"Media Created не найден через exiftool для '{file_path}'", log_type="info")
 
-        # Вычисляем минимальное время
+        # Если дата из блока получена, добавляем её в список времён
+        if page_release_ts is not None:
+            times.append(page_release_ts)
+            write_log(
+                f"Дата релиза из блока: {page_release_ts} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(page_release_ts))})",
+                log_type="info")
+
         min_time = min(times)
         write_log(
             f"Минимальное время для '{file_path}': {min_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))})",
             log_type="info"
         )
 
-        # Обновляем MP4 тег "©day" с новым значением (через mutagen)
+        # Далее идут операции по синхронизации дат файла (обновление MP4 тегов, os.utime, Windows API и т.д.)
         try:
             from mutagen.mp4 import MP4
-            video = MP4(file_path)
             new_date_str_mp4 = time.strftime("%d-%b-%y %I:%M %p", time.gmtime(min_time))
+            video = MP4(file_path)
             video["©day"] = [new_date_str_mp4]
             video.save()
             write_log(f"MP4 тег '©day' обновлён для '{file_path}' на {new_date_str_mp4}", log_type="info")
         except Exception as e:
             write_log(f"Ошибка обновления MP4 тега '©day': {e}", log_type="error")
 
-        # Обновляем системные даты через os.utime
         os.utime(file_path, (min_time, min_time))
         write_log(
             f"os.utime установлено для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
             log_type="info"
         )
 
-        # Если Windows, обновляем все даты через Windows API
         if os.name == 'nt':
             from ctypes import wintypes
             kernel32 = ctypes.windll.kernel32
+
             class FILETIME(ctypes.Structure):
                 _fields_ = [("dwLowDateTime", wintypes.DWORD),
                             ("dwHighDateTime", wintypes.DWORD)]
+
             def unix_to_filetime(t):
                 ft = int((t + 11644473600) * 10000000)
                 low = ft & 0xFFFFFFFF
                 high = ft >> 32
                 return FILETIME(low, high)
+
             ft_struct = unix_to_filetime(min_time)
             FILE_WRITE_ATTRIBUTES = 0x100
             handle = kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
             if handle not in (-1, 0):
-                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct), ctypes.byref(ft_struct))
+                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct),
+                                           ctypes.byref(ft_struct))
                 if res:
                     write_log(
                         f"Windows API: Все времена установлены для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
@@ -386,32 +434,35 @@ def synchronize_file_dates(file_path):
             else:
                 write_log("Не удалось открыть файл через Windows API", log_type="error")
 
-        # Обновляем внутренние MP4 метаданные через exiftool
         new_date_str_exif = time.strftime("%Y:%m:%d %H:%M:%S", time.gmtime(min_time))
         update_mp4_internal_dates(file_path, new_date_str_exif)
 
-        # *** Дополнительный шаг: переустанавливаем системные даты после exiftool ***
         os.utime(file_path, (min_time, min_time))
         write_log(
             f"После exiftool: os.utime переустановлено для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
             log_type="info"
         )
+
         if os.name == 'nt':
             from ctypes import wintypes
             kernel32 = ctypes.windll.kernel32
+
             class FILETIME(ctypes.Structure):
                 _fields_ = [("dwLowDateTime", wintypes.DWORD),
                             ("dwHighDateTime", wintypes.DWORD)]
+
             def unix_to_filetime(t):
                 ft = int((t + 11644473600) * 10000000)
                 low = ft & 0xFFFFFFFF
                 high = ft >> 32
                 return FILETIME(low, high)
+
             ft_struct = unix_to_filetime(min_time)
             FILE_WRITE_ATTRIBUTES = 0x100
             handle = kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
             if handle not in (-1, 0):
-                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct), ctypes.byref(ft_struct))
+                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct),
+                                           ctypes.byref(ft_struct))
                 if res:
                     write_log(
                         f"После exiftool: Windows API: Все времена переустановлены для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
@@ -423,3 +474,4 @@ def synchronize_file_dates(file_path):
         write_log(f"Синхронизация дат для '{file_path}' завершена.", log_type="info")
     except Exception as e:
         write_log(f"Ошибка синхронизации дат для '{file_path}': {e}", log_type="error")
+

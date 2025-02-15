@@ -29,21 +29,9 @@ stop_downloading_flag = False
 
 
 def find_and_download_video(driver, root, video_link, download_folder, pause_event, blacklist):
-    """
-    Обрабатывает отдельную ссылку на видео:
-    - Переходит по ссылке;
-    - Извлекает доступные версии видео;
-    - Выбирает самую большую версию;
-    - Запускает процесс скачивания.
-
-    Работа с датами полностью убрана – синхронизация выполняется только через функцию synchronize_file_dates.
-    """
     try:
         driver.get(video_link)
-        # Убираем извлечение даты релиза – все операции с датами будут выполняться позже
-        release_date = None
-
-        # Извлекаем id участника (для логирования)
+        release_date = None  # Не используется в данном случае
         m = re.search(r'person_number=(\d{4})', video_link)
         participant_id = m.group(1) if m else None
 
@@ -76,22 +64,18 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
                     return
-            write_log(f"Выбрана самая большая версия видео: {video_name} ({largest_video_size / (1024 ** 2):.2f} MB)",
-                      log_type="info")
+            # Извлекаем media_id из исходной ссылки
+            parsed = urlparse(video_link)
+            media_id = parse_qs(parsed.query).get("media_id", [None])[0]
+            write_log("=" * 80, log_type="separator")
+            write_log(f"Начало обработки файла: {video_name}", log_type="video")
             from tkinter import ttk
             progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
             progress_bar.pack(pady=(5, 10))
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
             progress_label.pack(pady=(5, 15))
-            download_video(
-                largest_video_url,
-                download_folder,
-                video_name,
-                pause_event,
-                progress_label,
-                progress_bar,
-                blacklist
-            )
+            download_video(largest_video_url, download_folder, video_name, pause_event,
+                           progress_label, progress_bar, blacklist, driver, media_id)
             progress_label.destroy()
             progress_bar.destroy()
         else:
@@ -101,13 +85,7 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
         save_failed_link(video_link)
 
 
-def download_video(video_url, output_folder, video_name, pause_event, progress_label, progress_bar, blacklist):
-    """
-    Скачивает видео по заданной ссылке.
-    Если файл уже существует и его размер соответствует ожидаемому, выполняется
-    синхронизация дат через функцию synchronize_file_dates.
-    Любая работа с датами здесь отсутствует – обновление дат происходит только через synchronize_file_dates.
-    """
+def download_video(video_url, output_folder, video_name, pause_event, progress_label, progress_bar, blacklist, driver=None, media_id=None):
     for num in blacklist:
         if num in video_name:
             write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
@@ -118,8 +96,8 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
     current_video_url = video_url
     current_video_name = video_name
 
-    write_log("=" * 80, log_type="info")
-    write_log(f"Начало обработки файла: {video_name}", log_type="info")
+    write_log("=" * 80, log_type="separator")
+    write_log(f"Начало обработки файла: {video_name}", log_type="video")
 
     try:
         response = requests.get(video_url, stream=True)
@@ -132,7 +110,12 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
             if sizes_match(existing_size, total_size, tolerance_percent=0.003):
                 write_log(f"{video_name} уже скачано, выполняем синхронизацию дат.", log_type="info")
                 from utils import synchronize_file_dates
-                synchronize_file_dates(output_path)
+                if driver is not None and media_id is not None:
+                    from utils import extract_page_release_date
+                    page_release_ts = extract_page_release_date(driver, media_id)
+                    synchronize_file_dates(output_path, page_release_ts)
+                else:
+                    synchronize_file_dates(output_path)
                 write_log(f"Обработка {video_name} завершена.", log_type="info")
                 return False
             else:
@@ -154,11 +137,13 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
                 progress_label.config(text=f"{video_name}: {progress_percent}% @ {speed:.2f} KB/s")
 
         write_log(f"{video_name} скачано успешно.", log_type="info")
-
-        # Единственная операция с датами – синхронизация после завершения скачивания
         from utils import synchronize_file_dates
-        synchronize_file_dates(output_path)
-
+        if driver is not None and media_id is not None:
+            from utils import extract_page_release_date
+            page_release_ts = extract_page_release_date(driver, media_id)
+            synchronize_file_dates(output_path, page_release_ts)
+        else:
+            synchronize_file_dates(output_path)
         write_log(f"Обработка {video_name} завершена.", log_type="info")
         return True
     except Exception as e:
@@ -170,10 +155,6 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
 
 
 def collect_video_links(root, start_url, download_folder, search_pause_event, stop_on_empty_pages=False):
-    """
-    Собирает ссылки на видео с сайта.
-    Функция не изменялась – работа с датами здесь отсутствует.
-    """
     global is_collecting_links
     if is_collecting_links:
         write_log("Сбор ссылок уже запущен!", log_type="info")
@@ -229,9 +210,7 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
                 if m:
                     person_number = m.group(1)
                     if person_number in blacklist:
-                        write_log(
-                            f"Ссылка проигнорирована (чёрный список): {video_link} (person_number={person_number})",
-                            log_type="info")
+                        write_log(f"Ссылка проигнорирована (чёрный список): {video_link} (person_number={person_number})", log_type="info")
                         continue
                 else:
                     write_log(f"Ссылка не содержит person_number и проигнорирована: {video_link}", log_type="info")
@@ -260,11 +239,6 @@ def collect_video_links(root, start_url, download_folder, search_pause_event, st
 
 
 def download_videos_sequential(root, download_folder, pause_event, stop_after_skip=False, direction="сначала"):
-    """
-    Последовательная загрузка видео по ссылкам из файла video_links.txt.
-    Если файл уже существует и его размер соответствует ожидаемому,
-    выполняется синхронизация дат через synchronize_file_dates.
-    """
     global stop_downloading_flag
     from utils import load_blacklist, write_log
     try:
@@ -301,17 +275,8 @@ def download_videos_sequential(root, download_folder, pause_event, stop_after_sk
 
 
 def download_video_sequential(driver, root, video_link, download_folder, pause_event, blacklist):
-    """
-    Скачивает видео последовательно:
-    - Переходит по ссылке;
-    - Выбирает самую большую версию видео;
-    - Если файл уже существует и размер совпадает, выполняется синхронизация дат.
-
-    Работа с датами производится только через synchronize_file_dates.
-    """
     try:
         driver.get(video_link)
-        # Убираем извлечение даты релиза
         release_date = None
 
         m = re.search(r'person_number=(\d{4})', video_link)
@@ -345,13 +310,17 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
                 if num in video_name:
                     write_log(f"Пропуск {video_name}: содержит число {num} из черного списка.", log_type="info")
                     return False
+            # Извлекаем media_id из исходной ссылки
+            parsed = urlparse(video_link)
+            media_id = parse_qs(parsed.query).get("media_id", [None])[0]
             output_path = os.path.join(download_folder, video_name)
             if os.path.exists(output_path):
                 existing_size = os.path.getsize(output_path)
                 if sizes_match(existing_size, largest_video_size, tolerance_percent=0.003):
                     write_log(f"{video_name} уже скачано, выполняем синхронизацию дат.", log_type="info")
-                    from utils import synchronize_file_dates
-                    synchronize_file_dates(output_path)
+                    from utils import synchronize_file_dates, extract_page_release_date
+                    page_release_ts = extract_page_release_date(driver, media_id)
+                    synchronize_file_dates(output_path, page_release_ts)
                     write_log(f"Обработка {video_name} завершена.", log_type="info")
                     return False
             from tkinter import ttk
@@ -360,7 +329,7 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
             progress_label = tk.Label(root, text=f"Загрузка {video_name}...", font=("Helvetica", 14))
             progress_label.pack(pady=(5, 15))
             result = download_video(largest_video_url, download_folder, video_name, pause_event,
-                                    progress_label, progress_bar, blacklist)
+                                      progress_label, progress_bar, blacklist, driver, media_id)
             progress_label.destroy()
             progress_bar.destroy()
             return result
