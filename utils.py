@@ -345,16 +345,12 @@ def extract_page_release_date(driver, media_id):
 
 
 def synchronize_file_dates(file_path, page_release_ts=None):
-    """
-    Синхронизирует даты файла, используя:
-    - Системные даты (creation, modification)
-    - Дату, извлечённую через exiftool (Media Created)
-    - Дополнительно, если передан page_release_ts (дата из блока на странице),
-      то если она меньше, используется вместо остальных.
-    """
-    import os, time, ctypes
+    import os, time, ctypes, re, subprocess
     from datetime import datetime
+    from mutagen.mp4 import MP4
+
     try:
+        # Получаем системные даты
         creation_time = os.path.getctime(file_path)
         modification_time = os.path.getmtime(file_path)
         write_log(
@@ -364,114 +360,118 @@ def synchronize_file_dates(file_path, page_release_ts=None):
         )
         times = [creation_time, modification_time]
 
+        # Получаем Media Created Date через exiftool
         media_time = get_media_created_exiftool(file_path)
         if media_time is not None:
             times.append(media_time)
             write_log(
                 f"Media Created (exiftool) timestamp: {media_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(media_time))})",
-                log_type="info")
+                log_type="info"
+            )
         else:
             write_log(f"Media Created не найден через exiftool для '{file_path}'", log_type="info")
 
-        # Если дата из блока получена, добавляем её в список времён
+        # Если передана дата релиза страницы, учитываем её
         if page_release_ts is not None:
             times.append(page_release_ts)
             write_log(
                 f"Дата релиза из блока: {page_release_ts} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(page_release_ts))})",
-                log_type="info")
+                log_type="info"
+            )
 
+        # Определяем минимальную дату
         min_time = min(times)
         write_log(
             f"Минимальное время для '{file_path}': {min_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))})",
             log_type="info"
         )
 
-        # Далее идут операции по синхронизации дат файла (обновление MP4 тегов, os.utime, Windows API и т.д.)
-        try:
-            from mutagen.mp4 import MP4
-            new_date_str_mp4 = time.strftime("%d-%b-%y %I:%M %p", time.gmtime(min_time))
-            video = MP4(file_path)
-            video["©day"] = [new_date_str_mp4]
-            video.save()
-            write_log(f"MP4 тег '©day' обновлён для '{file_path}' на {new_date_str_mp4}", log_type="info")
-        except Exception as e:
-            write_log(f"Ошибка обновления MP4 тега '©day': {e}", log_type="error")
+        # Извлекаем четырёхзначное число из названия файла
+        file_name = os.path.basename(file_path)
+        m = re.search(r'(\d{4})', file_name)
+        title_value = m.group(1) if m else None
 
+        if title_value:
+            write_log(f"Найдено 4-значное число в имени файла: {title_value}", log_type="info")
+
+            # Определяем формат файла
+            file_ext = file_path.lower().split('.')[-1]
+
+            if file_ext == "mp4":
+                # Обновляем title для MP4 через mutagen
+                try:
+                    video = MP4(file_path)
+                    video["©nam"] = [title_value]  # Устанавливаем title
+                    video.save()
+                    write_log(f"Title успешно установлен в MP4: {title_value}", log_type="info")
+                except Exception as e:
+                    write_log(f"Ошибка при записи title в MP4: {e}", log_type="error")
+
+            elif file_ext in ["wmv", "mov"]:
+                # Используем exiftool для записи title
+                try:
+                    exiftool_path = r"C:\Portable\Exiftool\exiftool.exe"
+                    command = [exiftool_path, "-overwrite_original", f"-Title={title_value}", file_path]
+                    result = subprocess.run(command, capture_output=True, text=True)
+
+                    if result.returncode == 0:
+                        write_log(f"Title успешно установлен через exiftool: {title_value}", log_type="info")
+                    else:
+                        write_log(f"Ошибка exiftool: {result.stderr}", log_type="error")
+
+                except Exception as e:
+                    write_log(f"Ошибка при записи title через exiftool: {e}", log_type="error")
+
+            else:
+                write_log(f"Формат {file_ext} не поддерживается для установки title.", log_type="error")
+
+        else:
+            write_log(f"Четырёхзначное число не найдено в имени файла '{file_name}'", log_type="error")
+
+        # Устанавливаем системные даты через os.utime
         os.utime(file_path, (min_time, min_time))
         write_log(
             f"os.utime установлено для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
             log_type="info"
         )
 
+        # Если Windows — обновляем даты через Windows API
         if os.name == 'nt':
             from ctypes import wintypes
             kernel32 = ctypes.windll.kernel32
-
             class FILETIME(ctypes.Structure):
                 _fields_ = [("dwLowDateTime", wintypes.DWORD),
                             ("dwHighDateTime", wintypes.DWORD)]
-
             def unix_to_filetime(t):
                 ft = int((t + 11644473600) * 10000000)
                 low = ft & 0xFFFFFFFF
                 high = ft >> 32
                 return FILETIME(low, high)
-
             ft_struct = unix_to_filetime(min_time)
             FILE_WRITE_ATTRIBUTES = 0x100
             handle = kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
             if handle not in (-1, 0):
-                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct),
-                                           ctypes.byref(ft_struct))
+                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct), ctypes.byref(ft_struct))
+                kernel32.CloseHandle(handle)
                 if res:
                     write_log(
-                        f"Windows API: Все времена установлены для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
+                        f"Windows API: Все времена установлены для '{file_path}'",
                         log_type="info"
                     )
                 else:
                     write_log("Ошибка при установке времени через Windows API", log_type="error")
-                kernel32.CloseHandle(handle)
-            else:
-                write_log("Не удалось открыть файл через Windows API", log_type="error")
 
+        # Обновляем внутренние MP4 метаданные через exiftool
         new_date_str_exif = time.strftime("%Y:%m:%d %H:%M:%S", time.gmtime(min_time))
         update_mp4_internal_dates(file_path, new_date_str_exif)
 
+        # Повторно устанавливаем системные даты после exiftool
         os.utime(file_path, (min_time, min_time))
         write_log(
-            f"После exiftool: os.utime переустановлено для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
+            f"После exiftool: os.utime переустановлено для '{file_path}'",
             log_type="info"
         )
 
-        if os.name == 'nt':
-            from ctypes import wintypes
-            kernel32 = ctypes.windll.kernel32
-
-            class FILETIME(ctypes.Structure):
-                _fields_ = [("dwLowDateTime", wintypes.DWORD),
-                            ("dwHighDateTime", wintypes.DWORD)]
-
-            def unix_to_filetime(t):
-                ft = int((t + 11644473600) * 10000000)
-                low = ft & 0xFFFFFFFF
-                high = ft >> 32
-                return FILETIME(low, high)
-
-            ft_struct = unix_to_filetime(min_time)
-            FILE_WRITE_ATTRIBUTES = 0x100
-            handle = kernel32.CreateFileW(file_path, FILE_WRITE_ATTRIBUTES, 0, None, 3, 0x80, None)
-            if handle not in (-1, 0):
-                res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct),
-                                           ctypes.byref(ft_struct))
-                if res:
-                    write_log(
-                        f"После exiftool: Windows API: Все времена переустановлены для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
-                        log_type="info"
-                    )
-                else:
-                    write_log("Ошибка при переустановке времени через Windows API после exiftool", log_type="error")
-                kernel32.CloseHandle(handle)
         write_log(f"Синхронизация дат для '{file_path}' завершена.", log_type="info")
     except Exception as e:
         write_log(f"Ошибка синхронизации дат для '{file_path}': {e}", log_type="error")
-

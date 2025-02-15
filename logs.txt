@@ -1,185 +1,67 @@
 Начало последовательной загрузки видео.
 Пропуск A5571HD-A2.mp4: содержит число 5571 из черного списка.
 A5618HD-A2.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A5618HD-A2.mp4': Created = Sun, 24 Mar 2024 18:24:12 GMT, Modified = Sun, 24 Mar 2024 18:24:12 GMT
+Исходные системные даты для 'S:\Test\A5618HD-A2.mp4': Created = Sun, 24 Mar 2024 03:24:12 GMT, Modified = Sun, 24 Mar 2024 03:24:12 GMT
 Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A5618HD-A2.mp4
-Exiftool вернул MediaCreateDate: '2024:03:24 18:24:12'
-Media Created (exiftool) timestamp: 1711286652.0 (Sun, 24 Mar 2024 13:24:12 GMT)
-Минимальное время для 'S:\Test\A5618HD-A2.mp4': 1711286652.0 (Sun, 24 Mar 2024 13:24:12 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A5618HD-A2.mp4' на 24-Mar-24 01:24 PM
-os.utime установлено для 'S:\Test\A5618HD-A2.mp4' на Sun, 24 Mar 2024 13:24:12 GMT
-Windows API: Все времена установлены для 'S:\Test\A5618HD-A2.mp4' на Sun, 24 Mar 2024 13:24:12 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2024:03:24 13:24:12 -ModifyDate=2024:03:24 13:24:12 -MediaCreateDate=2024:03:24 13:24:12 S:\Test\A5618HD-A2.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A5618HD-A2.mp4' на 2024:03:24 13:24:12
-После exiftool: os.utime переустановлено для 'S:\Test\A5618HD-A2.mp4' на Sun, 24 Mar 2024 13:24:12 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A5618HD-A2.mp4' на Sun, 24 Mar 2024 13:24:12 GMT
+Exiftool вернул MediaCreateDate: '2024:03:24 03:24:12'
+Media Created (exiftool) timestamp: 1711232652.0 (Sat, 23 Mar 2024 22:24:12 GMT)
+Минимальное время для 'S:\Test\A5618HD-A2.mp4': 1711232652.0 (Sat, 23 Mar 2024 22:24:12 GMT)
+Найдено 4-значное число в имени файла: 5618
+Title успешно установлен в MP4: 5618
+os.utime установлено для 'S:\Test\A5618HD-A2.mp4' на Sat, 23 Mar 2024 22:24:12 GMT
+Windows API: Все времена установлены для 'S:\Test\A5618HD-A2.mp4'
+Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2024:03:23 22:24:12 -ModifyDate=2024:03:23 22:24:12 -MediaCreateDate=2024:03:23 22:24:12 S:\Test\A5618HD-A2.mp4
+Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A5618HD-A2.mp4' на 2024:03:23 22:24:12
+После exiftool: os.utime переустановлено для 'S:\Test\A5618HD-A2.mp4'
 Синхронизация дат для 'S:\Test\A5618HD-A2.mp4' завершена.
 Обработка A5618HD-A2.mp4 завершена.
 A0001H-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0001H-A1.mp4': Created = Tue, 24 Sep 2013 01:19:18 GMT, Modified = Tue, 24 Sep 2013 01:19:18 GMT
+Исходные системные даты для 'S:\Test\A0001H-A1.mp4': Created = Thu, 15 Apr 2004 11:40:00 GMT, Modified = Thu, 15 Apr 2004 11:40:00 GMT
 Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0001H-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:24 01:19:18'
-Media Created (exiftool) timestamp: 1379967558.0 (Mon, 23 Sep 2013 20:19:18 GMT)
+Exiftool вернул MediaCreateDate: '2004:04:15 11:40:00'
+Media Created (exiftool) timestamp: 1082011200.0 (Thu, 15 Apr 2004 06:40:00 GMT)
 Дата релиза из блока: 1082065200.0 (Thu, 15 Apr 2004 21:40:00 GMT)
-Минимальное время для 'S:\Test\A0001H-A1.mp4': 1082065200.0 (Thu, 15 Apr 2004 21:40:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0001H-A1.mp4' на 15-Apr-04 09:40 PM
-os.utime установлено для 'S:\Test\A0001H-A1.mp4' на Thu, 15 Apr 2004 21:40:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0001H-A1.mp4' на Thu, 15 Apr 2004 21:40:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:15 21:40:00 -ModifyDate=2004:04:15 21:40:00 -MediaCreateDate=2004:04:15 21:40:00 S:\Test\A0001H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0001H-A1.mp4' на 2004:04:15 21:40:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0001H-A1.mp4' на Thu, 15 Apr 2004 21:40:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0001H-A1.mp4' на Thu, 15 Apr 2004 21:40:00 GMT
+Минимальное время для 'S:\Test\A0001H-A1.mp4': 1082011200.0 (Thu, 15 Apr 2004 06:40:00 GMT)
+Найдено 4-значное число в имени файла: 0001
+Title успешно установлен в MP4: 0001
+os.utime установлено для 'S:\Test\A0001H-A1.mp4' на Thu, 15 Apr 2004 06:40:00 GMT
+Windows API: Все времена установлены для 'S:\Test\A0001H-A1.mp4'
+Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:15 06:40:00 -ModifyDate=2004:04:15 06:40:00 -MediaCreateDate=2004:04:15 06:40:00 S:\Test\A0001H-A1.mp4
+Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0001H-A1.mp4' на 2004:04:15 06:40:00
+После exiftool: os.utime переустановлено для 'S:\Test\A0001H-A1.mp4'
 Синхронизация дат для 'S:\Test\A0001H-A1.mp4' завершена.
 Обработка A0001H-A1.mp4 завершена.
 Пропуск A0002M-A1.mp4: содержит число 0002 из черного списка.
 A0003H-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0003H-A1.mp4': Created = Thu, 26 Sep 2013 21:27:10 GMT, Modified = Thu, 26 Sep 2013 21:27:10 GMT
+Исходные системные даты для 'S:\Test\A0003H-A1.mp4': Created = Sun, 18 Apr 2004 10:27:00 GMT, Modified = Sun, 18 Apr 2004 10:27:00 GMT
 Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0003H-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:26 21:27:10'
-Media Created (exiftool) timestamp: 1380212830.0 (Thu, 26 Sep 2013 16:27:10 GMT)
+Exiftool вернул MediaCreateDate: '2004:04:18 10:27:00'
+Media Created (exiftool) timestamp: 1082266020.0 (Sun, 18 Apr 2004 05:27:00 GMT)
 Дата релиза из блока: 1082320020.0 (Sun, 18 Apr 2004 20:27:00 GMT)
-Минимальное время для 'S:\Test\A0003H-A1.mp4': 1082320020.0 (Sun, 18 Apr 2004 20:27:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0003H-A1.mp4' на 18-Apr-04 08:27 PM
-os.utime установлено для 'S:\Test\A0003H-A1.mp4' на Sun, 18 Apr 2004 20:27:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0003H-A1.mp4' на Sun, 18 Apr 2004 20:27:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:18 20:27:00 -ModifyDate=2004:04:18 20:27:00 -MediaCreateDate=2004:04:18 20:27:00 S:\Test\A0003H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0003H-A1.mp4' на 2004:04:18 20:27:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0003H-A1.mp4' на Sun, 18 Apr 2004 20:27:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0003H-A1.mp4' на Sun, 18 Apr 2004 20:27:00 GMT
+Минимальное время для 'S:\Test\A0003H-A1.mp4': 1082266020.0 (Sun, 18 Apr 2004 05:27:00 GMT)
+Найдено 4-значное число в имени файла: 0003
+Title успешно установлен в MP4: 0003
+os.utime установлено для 'S:\Test\A0003H-A1.mp4' на Sun, 18 Apr 2004 05:27:00 GMT
+Windows API: Все времена установлены для 'S:\Test\A0003H-A1.mp4'
+Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:18 05:27:00 -ModifyDate=2004:04:18 05:27:00 -MediaCreateDate=2004:04:18 05:27:00 S:\Test\A0003H-A1.mp4
+Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0003H-A1.mp4' на 2004:04:18 05:27:00
+После exiftool: os.utime переустановлено для 'S:\Test\A0003H-A1.mp4'
 Синхронизация дат для 'S:\Test\A0003H-A1.mp4' завершена.
 Обработка A0003H-A1.mp4 завершена.
 A0004H-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0004H-A1.mp4': Created = Tue, 24 Sep 2013 01:19:59 GMT, Modified = Tue, 24 Sep 2013 01:19:59 GMT
+Исходные системные даты для 'S:\Test\A0004H-A1.mp4': Created = Mon, 19 Apr 2004 11:52:00 GMT, Modified = Mon, 19 Apr 2004 11:52:00 GMT
 Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0004H-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:24 01:19:59'
-Media Created (exiftool) timestamp: 1379967599.0 (Mon, 23 Sep 2013 20:19:59 GMT)
+Exiftool вернул MediaCreateDate: '2004:04:19 11:52:00'
+Media Created (exiftool) timestamp: 1082357520.0 (Mon, 19 Apr 2004 06:52:00 GMT)
 Дата релиза из блока: 1082411520.0 (Mon, 19 Apr 2004 21:52:00 GMT)
-Минимальное время для 'S:\Test\A0004H-A1.mp4': 1082411520.0 (Mon, 19 Apr 2004 21:52:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0004H-A1.mp4' на 19-Apr-04 09:52 PM
-os.utime установлено для 'S:\Test\A0004H-A1.mp4' на Mon, 19 Apr 2004 21:52:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0004H-A1.mp4' на Mon, 19 Apr 2004 21:52:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:19 21:52:00 -ModifyDate=2004:04:19 21:52:00 -MediaCreateDate=2004:04:19 21:52:00 S:\Test\A0004H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0004H-A1.mp4' на 2004:04:19 21:52:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0004H-A1.mp4' на Mon, 19 Apr 2004 21:52:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0004H-A1.mp4' на Mon, 19 Apr 2004 21:52:00 GMT
+Минимальное время для 'S:\Test\A0004H-A1.mp4': 1082357520.0 (Mon, 19 Apr 2004 06:52:00 GMT)
+Найдено 4-значное число в имени файла: 0004
+Title успешно установлен в MP4: 0004
+os.utime установлено для 'S:\Test\A0004H-A1.mp4' на Mon, 19 Apr 2004 06:52:00 GMT
+Windows API: Все времена установлены для 'S:\Test\A0004H-A1.mp4'
+Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:19 06:52:00 -ModifyDate=2004:04:19 06:52:00 -MediaCreateDate=2004:04:19 06:52:00 S:\Test\A0004H-A1.mp4
+Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0004H-A1.mp4' на 2004:04:19 06:52:00
+После exiftool: os.utime переустановлено для 'S:\Test\A0004H-A1.mp4'
 Синхронизация дат для 'S:\Test\A0004H-A1.mp4' завершена.
 Обработка A0004H-A1.mp4 завершена.
-A0005M-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0005M-A1.mp4': Created = Wed, 25 Sep 2013 18:44:57 GMT, Modified = Wed, 25 Sep 2013 18:44:57 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0005M-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:25 18:44:57'
-Media Created (exiftool) timestamp: 1380116697.0 (Wed, 25 Sep 2013 13:44:57 GMT)
-Дата релиза из блока: 1082577720.0 (Wed, 21 Apr 2004 20:02:00 GMT)
-Минимальное время для 'S:\Test\A0005M-A1.mp4': 1082577720.0 (Wed, 21 Apr 2004 20:02:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0005M-A1.mp4' на 21-Apr-04 08:02 PM
-os.utime установлено для 'S:\Test\A0005M-A1.mp4' на Wed, 21 Apr 2004 20:02:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0005M-A1.mp4' на Wed, 21 Apr 2004 20:02:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:21 20:02:00 -ModifyDate=2004:04:21 20:02:00 -MediaCreateDate=2004:04:21 20:02:00 S:\Test\A0005M-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0005M-A1.mp4' на 2004:04:21 20:02:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0005M-A1.mp4' на Wed, 21 Apr 2004 20:02:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0005M-A1.mp4' на Wed, 21 Apr 2004 20:02:00 GMT
-Синхронизация дат для 'S:\Test\A0005M-A1.mp4' завершена.
-Обработка A0005M-A1.mp4 завершена.
-A0006M-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0006M-A1.mp4': Created = Wed, 25 Sep 2013 18:44:30 GMT, Modified = Wed, 25 Sep 2013 18:44:30 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0006M-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:25 18:44:30'
-Media Created (exiftool) timestamp: 1380116670.0 (Wed, 25 Sep 2013 13:44:30 GMT)
-Дата релиза из блока: 1082663700.0 (Thu, 22 Apr 2004 19:55:00 GMT)
-Минимальное время для 'S:\Test\A0006M-A1.mp4': 1082663700.0 (Thu, 22 Apr 2004 19:55:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0006M-A1.mp4' на 22-Apr-04 07:55 PM
-os.utime установлено для 'S:\Test\A0006M-A1.mp4' на Thu, 22 Apr 2004 19:55:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0006M-A1.mp4' на Thu, 22 Apr 2004 19:55:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:22 19:55:00 -ModifyDate=2004:04:22 19:55:00 -MediaCreateDate=2004:04:22 19:55:00 S:\Test\A0006M-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0006M-A1.mp4' на 2004:04:22 19:55:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0006M-A1.mp4' на Thu, 22 Apr 2004 19:55:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0006M-A1.mp4' на Thu, 22 Apr 2004 19:55:00 GMT
-Синхронизация дат для 'S:\Test\A0006M-A1.mp4' завершена.
-Обработка A0006M-A1.mp4 завершена.
-A0009H-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0009H-A1.mp4': Created = Tue, 24 Sep 2013 01:20:46 GMT, Modified = Tue, 24 Sep 2013 01:20:46 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0009H-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:24 01:20:46'
-Media Created (exiftool) timestamp: 1379967646.0 (Mon, 23 Sep 2013 20:20:46 GMT)
-Дата релиза из блока: 1083009840.0 (Mon, 26 Apr 2004 20:04:00 GMT)
-Минимальное время для 'S:\Test\A0009H-A1.mp4': 1083009840.0 (Mon, 26 Apr 2004 20:04:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0009H-A1.mp4' на 26-Apr-04 08:04 PM
-os.utime установлено для 'S:\Test\A0009H-A1.mp4' на Mon, 26 Apr 2004 20:04:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0009H-A1.mp4' на Mon, 26 Apr 2004 20:04:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:26 20:04:00 -ModifyDate=2004:04:26 20:04:00 -MediaCreateDate=2004:04:26 20:04:00 S:\Test\A0009H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0009H-A1.mp4' на 2004:04:26 20:04:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0009H-A1.mp4' на Mon, 26 Apr 2004 20:04:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0009H-A1.mp4' на Mon, 26 Apr 2004 20:04:00 GMT
-Синхронизация дат для 'S:\Test\A0009H-A1.mp4' завершена.
-Обработка A0009H-A1.mp4 завершена.
-A0010M-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0010M-A1.mp4': Created = Wed, 25 Sep 2013 18:44:49 GMT, Modified = Wed, 25 Sep 2013 18:44:49 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0010M-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:25 18:44:49'
-Media Created (exiftool) timestamp: 1380116689.0 (Wed, 25 Sep 2013 13:44:49 GMT)
-Дата релиза из блока: 1083189120.0 (Wed, 28 Apr 2004 21:52:00 GMT)
-Минимальное время для 'S:\Test\A0010M-A1.mp4': 1083189120.0 (Wed, 28 Apr 2004 21:52:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0010M-A1.mp4' на 28-Apr-04 09:52 PM
-os.utime установлено для 'S:\Test\A0010M-A1.mp4' на Wed, 28 Apr 2004 21:52:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0010M-A1.mp4' на Wed, 28 Apr 2004 21:52:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:28 21:52:00 -ModifyDate=2004:04:28 21:52:00 -MediaCreateDate=2004:04:28 21:52:00 S:\Test\A0010M-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0010M-A1.mp4' на 2004:04:28 21:52:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0010M-A1.mp4' на Wed, 28 Apr 2004 21:52:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0010M-A1.mp4' на Wed, 28 Apr 2004 21:52:00 GMT
-Синхронизация дат для 'S:\Test\A0010M-A1.mp4' завершена.
-Обработка A0010M-A1.mp4 завершена.
-================================================================================
-[15-02-2025 15:10:26] Начало обработки файла: A0011M-A1.mp4
-A0011M-A1.mp4 скачано успешно.
-Исходные системные даты для 'S:\Test\A0011M-A1.mp4': Created = Sat, 15 Feb 2025 10:10:26 GMT, Modified = Sat, 15 Feb 2025 10:10:27 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0011M-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:25 23:43:17'
-Media Created (exiftool) timestamp: 1380134597.0 (Wed, 25 Sep 2013 18:43:17 GMT)
-Дата релиза из блока: 1083268620.0 (Thu, 29 Apr 2004 19:57:00 GMT)
-Минимальное время для 'S:\Test\A0011M-A1.mp4': 1083268620.0 (Thu, 29 Apr 2004 19:57:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0011M-A1.mp4' на 29-Apr-04 07:57 PM
-os.utime установлено для 'S:\Test\A0011M-A1.mp4' на Thu, 29 Apr 2004 19:57:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0011M-A1.mp4' на Thu, 29 Apr 2004 19:57:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:29 19:57:00 -ModifyDate=2004:04:29 19:57:00 -MediaCreateDate=2004:04:29 19:57:00 S:\Test\A0011M-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0011M-A1.mp4' на 2004:04:29 19:57:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0011M-A1.mp4' на Thu, 29 Apr 2004 19:57:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0011M-A1.mp4' на Thu, 29 Apr 2004 19:57:00 GMT
-Синхронизация дат для 'S:\Test\A0011M-A1.mp4' завершена.
-Обработка A0011M-A1.mp4 завершена.
-================================================================================
-[15-02-2025 15:10:29] Начало обработки файла: A0012M-A1.mp4
-A0012M-A1.mp4 скачано успешно.
-Исходные системные даты для 'S:\Test\A0012M-A1.mp4': Created = Sat, 15 Feb 2025 10:10:29 GMT, Modified = Sat, 15 Feb 2025 10:10:29 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0012M-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:25 23:44:54'
-Media Created (exiftool) timestamp: 1380134694.0 (Wed, 25 Sep 2013 18:44:54 GMT)
-Дата релиза из блока: 1083357480.0 (Fri, 30 Apr 2004 20:38:00 GMT)
-Минимальное время для 'S:\Test\A0012M-A1.mp4': 1083357480.0 (Fri, 30 Apr 2004 20:38:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0012M-A1.mp4' на 30-Apr-04 08:38 PM
-os.utime установлено для 'S:\Test\A0012M-A1.mp4' на Fri, 30 Apr 2004 20:38:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0012M-A1.mp4' на Fri, 30 Apr 2004 20:38:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:30 20:38:00 -ModifyDate=2004:04:30 20:38:00 -MediaCreateDate=2004:04:30 20:38:00 S:\Test\A0012M-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0012M-A1.mp4' на 2004:04:30 20:38:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0012M-A1.mp4' на Fri, 30 Apr 2004 20:38:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0012M-A1.mp4' на Fri, 30 Apr 2004 20:38:00 GMT
-Синхронизация дат для 'S:\Test\A0012M-A1.mp4' завершена.
-Обработка A0012M-A1.mp4 завершена.
-================================================================================
-[15-02-2025 15:10:31] Начало обработки файла: A0013H-A1.mp4
-A0013H-A1.mp4 скачано успешно.
-Исходные системные даты для 'S:\Test\A0013H-A1.mp4': Created = Sat, 15 Feb 2025 10:10:31 GMT, Modified = Sat, 15 Feb 2025 10:10:33 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0013H-A1.mp4
-Exiftool вернул MediaCreateDate: '2013:09:24 06:21:06'
-Media Created (exiftool) timestamp: 1379985666.0 (Tue, 24 Sep 2013 01:21:06 GMT)
-Дата релиза из блока: 1083530040.0 (Sun, 02 May 2004 20:34:00 GMT)
-Минимальное время для 'S:\Test\A0013H-A1.mp4': 1083530040.0 (Sun, 02 May 2004 20:34:00 GMT)
-MP4 тег '©day' обновлён для 'S:\Test\A0013H-A1.mp4' на 02-May-04 08:34 PM
-os.utime установлено для 'S:\Test\A0013H-A1.mp4' на Sun, 02 May 2004 20:34:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0013H-A1.mp4' на Sun, 02 May 2004 20:34:00 GMT
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:05:02 20:34:00 -ModifyDate=2004:05:02 20:34:00 -MediaCreateDate=2004:05:02 20:34:00 S:\Test\A0013H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0013H-A1.mp4' на 2004:05:02 20:34:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0013H-A1.mp4' на Sun, 02 May 2004 20:34:00 GMT
-После exiftool: Windows API: Все времена переустановлены для 'S:\Test\A0013H-A1.mp4' на Sun, 02 May 2004 20:34:00 GMT
-Синхронизация дат для 'S:\Test\A0013H-A1.mp4' завершена.
-Обработка A0013H-A1.mp4 завершена.
 Пауза загрузки по запросу.
