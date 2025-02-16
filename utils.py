@@ -231,12 +231,9 @@ def set_media_created(file_path, remote_date_str):
         ctime = ctypes.c_longlong(win_time)
         res = ctypes.windll.kernel32.SetFileTime(handle, ctypes.byref(ctime), None, None)
         ctypes.windll.kernel32.CloseHandle(handle)
-        if res:
-            write_log(f"Время создания файла {file_path} успешно установлено как {remote_date_str}.", log_type="info")
-        else:
+        if not res:
             write_log(f"Не удалось установить время создания файла {file_path}.", log_type="error")
         return res
-    write_log(f"Время создания файла {file_path} установлено через os.utime как {remote_date_str}.", log_type="info")
     return True
 
 
@@ -245,7 +242,6 @@ def set_file_title(file_path, title):
         video = MP4(file_path)
         video["©nam"] = [title]
         video.save()
-        write_log(f"Title для файла {file_path} успешно установлен: {title}.", log_type="info")
         return True
     except Exception as e:
         write_log(f"Ошибка при установке Title для {file_path}: {e}", log_type="error")
@@ -267,12 +263,10 @@ def get_media_created_exiftool(file_path):
     exiftool_path = r"C:\Portable\Exiftool\exiftool.exe"
     file_path = os.path.normpath(file_path)
     command = [exiftool_path, "-s", "-s", "-s", "-MediaCreateDate", file_path]
-    write_log("Exiftool get command: " + " ".join(command), log_type="info")
     try:
         result = subprocess.run(command, capture_output=True, text=True)
         if result.returncode == 0:
             media_date_str = result.stdout.strip()
-            write_log(f"Exiftool вернул MediaCreateDate: '{media_date_str}'", log_type="info")
             if media_date_str:
                 try:
                     media_dt = datetime.datetime.strptime(media_date_str, "%Y:%m:%d %H:%M:%S")
@@ -303,12 +297,9 @@ def update_mp4_internal_dates(file_path, new_date):
         f"-MediaCreateDate={new_date}",
         file_path
     ]
-    write_log("Exiftool command: " + " ".join(command), log_type="info")
     try:
         result = subprocess.run(command, capture_output=True, text=True)
-        if result.returncode == 0:
-            write_log(f"Exiftool: внутренние метаданные MP4 обновлены для '{file_path}' на {new_date}", log_type="info")
-        else:
+        if result.returncode != 0:
             write_log(f"Exiftool: ошибка обновления метаданных для '{file_path}': {result.stderr}", log_type="error")
     except Exception as e:
         write_log(f"Exiftool: исключение при обновлении метаданных для '{file_path}': {e}", log_type="error")
@@ -351,38 +342,21 @@ def synchronize_file_dates(file_path, page_release_ts=None):
         # Получаем системные даты
         creation_time = os.path.getctime(file_path)
         modification_time = os.path.getmtime(file_path)
-        write_log(
-            f"Исходные системные даты для '{file_path}': Created = {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(creation_time))}, "
-            f"Modified = {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(modification_time))}",
-            log_type="info"
-        )
         times = [creation_time, modification_time]
 
         # Получаем Media Created Date через exiftool
         media_time = get_media_created_exiftool(file_path)
         if media_time is not None:
             times.append(media_time)
-            write_log(
-                f"Media Created (exiftool) timestamp: {media_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(media_time))})",
-                log_type="info"
-            )
         else:
             write_log(f"Media Created не найден через exiftool для '{file_path}'", log_type="info")
 
         # Если передана дата релиза страницы, учитываем её
         if page_release_ts is not None:
             times.append(page_release_ts)
-            write_log(
-                f"Дата релиза из блока: {page_release_ts} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(page_release_ts))})",
-                log_type="info"
-            )
 
         # Определяем минимальную дату
         min_time = min(times)
-        write_log(
-            f"Минимальное время для '{file_path}': {min_time} ({time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))})",
-            log_type="info"
-        )
 
         # Извлекаем четырёхзначное число из названия файла
         file_name = os.path.basename(file_path)
@@ -390,7 +364,6 @@ def synchronize_file_dates(file_path, page_release_ts=None):
         title_value = m.group(1) if m else None
 
         if title_value:
-            write_log(f"Найдено 4-значное число в имени файла: {title_value}", log_type="info")
 
             # Определяем формат файла
             file_ext = file_path.lower().split('.')[-1]
@@ -401,7 +374,6 @@ def synchronize_file_dates(file_path, page_release_ts=None):
                     video = MP4(file_path)
                     video["©nam"] = [title_value]  # Устанавливаем title
                     video.save()
-                    write_log(f"Title успешно установлен в MP4: {title_value}", log_type="info")
                 except Exception as e:
                     write_log(f"Ошибка при записи title в MP4: {e}", log_type="error")
 
@@ -412,9 +384,7 @@ def synchronize_file_dates(file_path, page_release_ts=None):
                     command = [exiftool_path, "-overwrite_original", f"-Title={title_value}", file_path]
                     result = subprocess.run(command, capture_output=True, text=True)
 
-                    if result.returncode == 0:
-                        write_log(f"Title успешно установлен через exiftool: {title_value}", log_type="info")
-                    else:
+                    if result.returncode != 0:
                         write_log(f"Ошибка exiftool: {result.stderr}", log_type="error")
 
                 except Exception as e:
@@ -428,10 +398,6 @@ def synchronize_file_dates(file_path, page_release_ts=None):
 
         # Устанавливаем системные даты через os.utime
         os.utime(file_path, (min_time, min_time))
-        write_log(
-            f"os.utime установлено для '{file_path}' на {time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.gmtime(min_time))}",
-            log_type="info"
-        )
 
         # Если Windows — обновляем даты через Windows API
         if os.name == 'nt':
@@ -451,12 +417,7 @@ def synchronize_file_dates(file_path, page_release_ts=None):
             if handle not in (-1, 0):
                 res = kernel32.SetFileTime(handle, ctypes.byref(ft_struct), ctypes.byref(ft_struct), ctypes.byref(ft_struct))
                 kernel32.CloseHandle(handle)
-                if res:
-                    write_log(
-                        f"Windows API: Все времена установлены для '{file_path}'",
-                        log_type="info"
-                    )
-                else:
+                if not res:
                     write_log("Ошибка при установке времени через Windows API", log_type="error")
 
         # Обновляем внутренние MP4 метаданные через exiftool
@@ -465,11 +426,6 @@ def synchronize_file_dates(file_path, page_release_ts=None):
 
         # Повторно устанавливаем системные даты после exiftool
         os.utime(file_path, (min_time, min_time))
-        write_log(
-            f"После exiftool: os.utime переустановлено для '{file_path}'",
-            log_type="info"
-        )
 
-        write_log(f"Синхронизация дат для '{file_path}' завершена.", log_type="info")
     except Exception as e:
         write_log(f"Ошибка синхронизации дат для '{file_path}': {e}", log_type="error")

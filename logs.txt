@@ -1,67 +1,47 @@
 Начало последовательной загрузки видео.
-Пропуск A5571HD-A2.mp4: содержит число 5571 из черного списка.
-A5618HD-A2.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A5618HD-A2.mp4': Created = Sun, 24 Mar 2024 03:24:12 GMT, Modified = Sun, 24 Mar 2024 03:24:12 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A5618HD-A2.mp4
-Exiftool вернул MediaCreateDate: '2024:03:24 03:24:12'
-Media Created (exiftool) timestamp: 1711232652.0 (Sat, 23 Mar 2024 22:24:12 GMT)
-Минимальное время для 'S:\Test\A5618HD-A2.mp4': 1711232652.0 (Sat, 23 Mar 2024 22:24:12 GMT)
-Найдено 4-значное число в имени файла: 5618
-Title успешно установлен в MP4: 5618
-os.utime установлено для 'S:\Test\A5618HD-A2.mp4' на Sat, 23 Mar 2024 22:24:12 GMT
-Windows API: Все времена установлены для 'S:\Test\A5618HD-A2.mp4'
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2024:03:23 22:24:12 -ModifyDate=2024:03:23 22:24:12 -MediaCreateDate=2024:03:23 22:24:12 S:\Test\A5618HD-A2.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A5618HD-A2.mp4' на 2024:03:23 22:24:12
-После exiftool: os.utime переустановлено для 'S:\Test\A5618HD-A2.mp4'
-Синхронизация дат для 'S:\Test\A5618HD-A2.mp4' завершена.
-Обработка A5618HD-A2.mp4 завершена.
-A0001H-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0001H-A1.mp4': Created = Thu, 15 Apr 2004 11:40:00 GMT, Modified = Thu, 15 Apr 2004 11:40:00 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0001H-A1.mp4
-Exiftool вернул MediaCreateDate: '2004:04:15 11:40:00'
-Media Created (exiftool) timestamp: 1082011200.0 (Thu, 15 Apr 2004 06:40:00 GMT)
-Дата релиза из блока: 1082065200.0 (Thu, 15 Apr 2004 21:40:00 GMT)
-Минимальное время для 'S:\Test\A0001H-A1.mp4': 1082011200.0 (Thu, 15 Apr 2004 06:40:00 GMT)
-Найдено 4-значное число в имени файла: 0001
-Title успешно установлен в MP4: 0001
-os.utime установлено для 'S:\Test\A0001H-A1.mp4' на Thu, 15 Apr 2004 06:40:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0001H-A1.mp4'
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:15 06:40:00 -ModifyDate=2004:04:15 06:40:00 -MediaCreateDate=2004:04:15 06:40:00 S:\Test\A0001H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0001H-A1.mp4' на 2004:04:15 06:40:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0001H-A1.mp4'
-Синхронизация дат для 'S:\Test\A0001H-A1.mp4' завершена.
-Обработка A0001H-A1.mp4 завершена.
-Пропуск A0002M-A1.mp4: содержит число 0002 из черного списка.
-A0003H-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0003H-A1.mp4': Created = Sun, 18 Apr 2004 10:27:00 GMT, Modified = Sun, 18 Apr 2004 10:27:00 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0003H-A1.mp4
-Exiftool вернул MediaCreateDate: '2004:04:18 10:27:00'
-Media Created (exiftool) timestamp: 1082266020.0 (Sun, 18 Apr 2004 05:27:00 GMT)
-Дата релиза из блока: 1082320020.0 (Sun, 18 Apr 2004 20:27:00 GMT)
-Минимальное время для 'S:\Test\A0003H-A1.mp4': 1082266020.0 (Sun, 18 Apr 2004 05:27:00 GMT)
-Найдено 4-значное число в имени файла: 0003
-Title успешно установлен в MP4: 0003
-os.utime установлено для 'S:\Test\A0003H-A1.mp4' на Sun, 18 Apr 2004 05:27:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0003H-A1.mp4'
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:18 05:27:00 -ModifyDate=2004:04:18 05:27:00 -MediaCreateDate=2004:04:18 05:27:00 S:\Test\A0003H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0003H-A1.mp4' на 2004:04:18 05:27:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0003H-A1.mp4'
-Синхронизация дат для 'S:\Test\A0003H-A1.mp4' завершена.
-Обработка A0003H-A1.mp4 завершена.
-A0004H-A1.mp4 уже скачано, выполняем синхронизацию дат.
-Исходные системные даты для 'S:\Test\A0004H-A1.mp4': Created = Mon, 19 Apr 2004 11:52:00 GMT, Modified = Mon, 19 Apr 2004 11:52:00 GMT
-Exiftool get command: C:\Portable\Exiftool\exiftool.exe -s -s -s -MediaCreateDate S:\Test\A0004H-A1.mp4
-Exiftool вернул MediaCreateDate: '2004:04:19 11:52:00'
-Media Created (exiftool) timestamp: 1082357520.0 (Mon, 19 Apr 2004 06:52:00 GMT)
-Дата релиза из блока: 1082411520.0 (Mon, 19 Apr 2004 21:52:00 GMT)
-Минимальное время для 'S:\Test\A0004H-A1.mp4': 1082357520.0 (Mon, 19 Apr 2004 06:52:00 GMT)
-Найдено 4-значное число в имени файла: 0004
-Title успешно установлен в MP4: 0004
-os.utime установлено для 'S:\Test\A0004H-A1.mp4' на Mon, 19 Apr 2004 06:52:00 GMT
-Windows API: Все времена установлены для 'S:\Test\A0004H-A1.mp4'
-Exiftool command: C:\Portable\Exiftool\exiftool.exe -overwrite_original -CreateDate=2004:04:19 06:52:00 -ModifyDate=2004:04:19 06:52:00 -MediaCreateDate=2004:04:19 06:52:00 S:\Test\A0004H-A1.mp4
-Exiftool: внутренние метаданные MP4 обновлены для 'S:\Test\A0004H-A1.mp4' на 2004:04:19 06:52:00
-После exiftool: os.utime переустановлено для 'S:\Test\A0004H-A1.mp4'
-Синхронизация дат для 'S:\Test\A0004H-A1.mp4' завершена.
-Обработка A0004H-A1.mp4 завершена.
+A5727HD-A1.mp4 уже скачано.
+Обработка A5727HD-A1.mp4 завершена.
+C5729HD-C1.mp4 уже скачано.
+Обработка C5729HD-C1.mp4 завершена.
+R1511HD-R1.mp4 уже скачано.
+Обработка R1511HD-R1.mp4 завершена.
+Пропуск A5726HD-A1.mp4: содержит число 5726 из черного списка.
+A5725HD-A1.mp4 уже скачано.
+Обработка A5725HD-A1.mp4 завершена.
+A5534HD-A2.mp4 уже скачано.
+Обработка A5534HD-A2.mp4 завершена.
+Пропуск A0679HD-A2.mp4: содержит число 0679 из черного списка.
+C5728HD-C1.mp4 уже скачано.
+Обработка C5728HD-C1.mp4 завершена.
+A5724HD-A1.mp4 уже скачано.
+Обработка A5724HD-A1.mp4 завершена.
+C5727HD-C1.mp4 уже скачано.
+Обработка C5727HD-C1.mp4 завершена.
+A5483HD-A3.mp4 уже скачано.
+Обработка A5483HD-A3.mp4 завершена.
+A0054HD-A3.mp4 уже скачано.
+Обработка A0054HD-A3.mp4 завершена.
+Пропуск C5726HD-C1.mp4: содержит число 5726 из черного списка.
+[16-02-2025 11:58:35] Начало обработки файла: A5723HD-A1.mp4
+A5723HD-A1.mp4 скачано успешно.
+Обработка A5723HD-A1.mp4 завершена.
+[16-02-2025 11:58:54] Начало обработки файла: A0305HD-A2.mp4
+A0305HD-A2.mp4 скачано успешно.
+Обработка A0305HD-A2.mp4 завершена.
+[16-02-2025 11:59:28] Начало обработки файла: C5725HD-C1.mp4
+C5725HD-C1.mp4 скачано успешно.
+Обработка C5725HD-C1.mp4 завершена.
+Пропуск A5536HD-A2.mp4: содержит число 5536 из черного списка.
+[16-02-2025 12:00:10] Начало обработки файла: A5722HD-A1.mp4
+A5722HD-A1.mp4 скачано успешно.
+Обработка A5722HD-A1.mp4 завершена.
+[16-02-2025 12:00:33] Начало обработки файла: C5724HD-C1.mp4
+C5724HD-C1.mp4 скачано успешно.
+Обработка C5724HD-C1.mp4 завершена.
+[16-02-2025 12:00:53] Начало обработки файла: A4561HD-A2.mp4
+A4561HD-A2.mp4 скачано успешно.
+Обработка A4561HD-A2.mp4 завершена.
+[16-02-2025 12:01:12] Начало обработки файла: R1343HD-R1.mp4
+R1343HD-R1.mp4 скачано успешно.
+Обработка R1343HD-R1.mp4 завершена.
 Пауза загрузки по запросу.

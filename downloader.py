@@ -67,7 +67,6 @@ def find_and_download_video(driver, root, video_link, download_folder, pause_eve
             # Извлекаем media_id из исходной ссылки
             parsed = urlparse(video_link)
             media_id = parse_qs(parsed.query).get("media_id", [None])[0]
-            write_log("=" * 80, log_type="separator")
             write_log(f"Начало обработки файла: {video_name}", log_type="video")
             from tkinter import ttk
             progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
@@ -96,7 +95,6 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
     current_video_url = video_url
     current_video_name = video_name
 
-    write_log("=" * 80, log_type="separator")
     write_log(f"Начало обработки файла: {video_name}", log_type="video")
 
     try:
@@ -108,7 +106,7 @@ def download_video(video_url, output_folder, video_name, pause_event, progress_l
         if os.path.exists(output_path):
             existing_size = os.path.getsize(output_path)
             if sizes_match(existing_size, total_size, tolerance_percent=0.003):
-                write_log(f"{video_name} уже скачано, выполняем синхронизацию дат.", log_type="info")
+                write_log(f"{video_name} уже скачано.", log_type="info")
                 from utils import synchronize_file_dates
                 if driver is not None and media_id is not None:
                     from utils import extract_page_release_date
@@ -317,7 +315,7 @@ def download_video_sequential(driver, root, video_link, download_folder, pause_e
             if os.path.exists(output_path):
                 existing_size = os.path.getsize(output_path)
                 if sizes_match(existing_size, largest_video_size, tolerance_percent=0.003):
-                    write_log(f"{video_name} уже скачано, выполняем синхронизацию дат.", log_type="info")
+                    write_log(f"{video_name} уже скачано.", log_type="info")
                     from utils import synchronize_file_dates, extract_page_release_date
                     page_release_ts = extract_page_release_date(driver, media_id)
                     synchronize_file_dates(output_path, page_release_ts)
