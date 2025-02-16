@@ -314,8 +314,6 @@ def update_mp4_internal_dates(file_path, new_date):
         write_log(f"Exiftool: исключение при обновлении метаданных для '{file_path}': {e}", log_type="error")
 
 
-# ... предыдущий код ...
-
 def extract_page_release_date(driver, media_id):
     """
     Извлекает дату релиза из блока с классом "playerthumb", где ссылка содержит заданный media_id.
